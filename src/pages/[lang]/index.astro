@@ -1,0 +1,146 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import RegionNotice from "@/components/i18n/RegionNotice.astro";
+import MarketGrid from "@/components/regions/MarketGrid.astro";
+import { LOCALES, type Lang } from "@/data/locales";
+import { buildLanguageAlternates } from "@/lib/seo/meta";
+import { getLatestNews } from "@/lib/content/news";
+import { formatDate } from "@/lib/utils/format";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({
+    params: {
+      lang: locale.code
+    }
+  }));
+}
+
+const lang = Astro.params.lang as Lang;
+const latestNews = await getLatestNews(lang);
+
+const copy = {
+  es: {
+    title: "Suncapital | Inversion, estrategia y real estate",
+    description:
+      "Plataforma corporativa optimizada para velocidad, SEO internacional y posicionamiento por mercado.",
+    eyebrow: "Capital, real estate y posicionamiento premium",
+    heading: "Una base digital preparada para crecer por idioma y mercado.",
+    intro:
+      "Este boilerplate combina paginas estaticas ultrarrapidas con una capa edge minima para decidir el idioma inicial sin sacrificar SEO ni cache global.",
+    ctaPrimary: "Ver mercados",
+    ctaSecondary: "Leer noticias",
+    marketsTitle: "Mercados prioritarios",
+    newsTitle: "Ultimas noticias"
+  },
+  en: {
+    title: "Suncapital | Investment, strategy and real estate",
+    description:
+      "Corporate platform optimized for speed, international SEO and market-led positioning.",
+    eyebrow: "Capital, real estate and premium positioning",
+    heading: "A digital foundation built to scale by language and market.",
+    intro:
+      "This boilerplate combines ultra-fast static pages with a minimal edge layer to resolve the initial locale without compromising SEO or global cache behavior.",
+    ctaPrimary: "View markets",
+    ctaSecondary: "Read news",
+    marketsTitle: "Priority markets",
+    newsTitle: "Latest news"
+  }
+};
+---
+
+<BaseLayout
+  lang={lang}
+  title={copy[lang].title}
+  description={copy[lang].description}
+  path={`/${lang}/`}
+  alternates={buildLanguageAlternates("/")}
+>
+  <section class="hero-grid border-b border-ink/10">
+    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[1.2fr_0.8fr] md:py-28">
+      <div>
+        <p class="text-sm uppercase tracking-[0.22em] text-coral">{copy[lang].eyebrow}</p>
+        <h1 class="mt-6 max-w-3xl font-display text-5xl leading-tight text-ink md:text-7xl">
+          {copy[lang].heading}
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-ink/70">{copy[lang].intro}</p>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href={`/${lang}/#markets`}
+            class="rounded-full bg-pine px-6 py-3 text-sm font-medium text-sand transition hover:bg-ink"
+          >
+            {copy[lang].ctaPrimary}
+          </a>
+          <a
+            href={`/${lang}/news/`}
+            class="rounded-full border border-ink/15 bg-white/70 px-6 py-3 text-sm font-medium text-ink transition hover:border-coral/30 hover:text-coral"
+          >
+            {copy[lang].ctaSecondary}
+          </a>
+        </div>
+      </div>
+
+      <div class="rounded-[32px] border border-ink/10 bg-white/75 p-6 shadow-card">
+        <RegionNotice lang={lang} />
+        <div class="mt-8 space-y-4">
+          <div class="rounded-3xl bg-ink p-5 text-sand">
+            <p class="text-xs uppercase tracking-[0.18em] text-gold">SSG First</p>
+            <p class="mt-3 text-sm leading-6 text-sand/75">
+              {lang === "es"
+                ? "Contenido editorial y landings compilados como HTML estatico para rendimiento maximo."
+                : "Editorial content and landing pages compiled as static HTML for maximum performance."}
+            </p>
+          </div>
+          <div class="rounded-3xl bg-white p-5">
+            <p class="text-xs uppercase tracking-[0.18em] text-coral">Edge Scope</p>
+            <p class="mt-3 text-sm leading-6 text-ink/70">
+              {lang === "es"
+                ? "La geolocalizacion solo actua en la entrada. Las rutas internas siguen siendo estables y rastreables."
+                : "Geolocation only acts at the entry point. Internal routes remain stable and crawlable."}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="markets" class="mx-auto max-w-6xl px-6 py-16 md:py-24">
+    <div class="flex items-end justify-between gap-6">
+      <div>
+        <p class="text-sm uppercase tracking-[0.18em] text-coral">Markets</p>
+        <h2 class="mt-3 font-display text-4xl text-ink">{copy[lang].marketsTitle}</h2>
+      </div>
+    </div>
+
+    <div class="mt-10">
+      <MarketGrid lang={lang} />
+    </div>
+  </section>
+
+  <section class="border-t border-ink/10 bg-white/55">
+    <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
+      <div class="flex items-end justify-between gap-6">
+        <div>
+          <p class="text-sm uppercase tracking-[0.18em] text-coral">Insights</p>
+          <h2 class="mt-3 font-display text-4xl text-ink">{copy[lang].newsTitle}</h2>
+        </div>
+      </div>
+
+      <div class="mt-10 grid gap-5 md:grid-cols-3">
+        {
+          latestNews.map((entry) => (
+            <a
+              href={`/${lang}/news/${entry.slug}/`}
+              class="rounded-[28px] border border-ink/10 bg-sand p-6 shadow-card transition hover:-translate-y-1"
+            >
+              <p class="text-xs uppercase tracking-[0.16em] text-coral">{entry.data.category}</p>
+              <h3 class="mt-3 font-display text-2xl text-ink">{entry.data.title}</h3>
+              <p class="mt-3 text-sm leading-6 text-ink/70">{entry.data.excerpt}</p>
+              <p class="mt-6 text-sm text-ink/50">{formatDate(entry.data.publishedAt, lang)}</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: local("Arial");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: local("Arial");
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Satoshi", system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(201, 109, 82, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(184, 134, 59, 0.16), transparent 24%),
+    linear-gradient(180deg, #f8f5ef 0%, #efe7da 100%);
+}
+
+.site-shell {
+  min-height: 100vh;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(15, 23, 32, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 32, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)) {
+  color: #163228;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.prose :where(a):not(:where([class~="not-prose"] *)):hover {
+  color: #c96d52;
+}

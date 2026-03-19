@@ -1,0 +1,33 @@
+---
+import { NAV_ITEMS } from "@/data/navigation";
+import type { Lang } from "@/data/locales";
+import LanguageSwitcher from "@/components/i18n/LanguageSwitcher.astro";
+
+type Props = {
+  lang: Lang;
+};
+
+const { lang } = Astro.props;
+---
+
+<header class="sticky top-0 z-40 border-b border-white/10 bg-ink/85 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href={`/${lang}/`} class="font-display text-xl font-semibold tracking-wide text-sand">
+      Suncapital
+    </a>
+
+    <div class="flex items-center gap-6">
+      <nav aria-label="Primary" class="hidden gap-5 md:flex">
+        {
+          NAV_ITEMS.map((item) => (
+            <a class="text-sm text-sand/80 transition hover:text-sand" href={`/${lang}${item.href}`}>
+              {item.label[lang]}
+            </a>
+          ))
+        }
+      </nav>
+
+      <LanguageSwitcher currentLang={lang} currentPath={Astro.url.pathname} />
+    </div>
+  </div>
+</header>
