@@ -5,7 +5,7 @@ import astro from "eslint-plugin-astro";
 
 export default [
   {
-    ignores: [".astro/", "dist/", "node_modules/"]
+    ignores: [".astro/", ".vercel/", "dist/", "node_modules/"]
   },
   js.configs.recommended,
   ...astro.configs["flat/recommended"],
@@ -24,6 +24,7 @@ export default [
     },
     rules: {
       ...tsPlugin.configs.recommended.rules,
+      "no-undef": "off",
       "@typescript-eslint/no-unused-vars": [
         "warn",
         {

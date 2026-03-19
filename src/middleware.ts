@@ -24,8 +24,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
     detectLangFromCountry(context.request.headers.get("x-vercel-ip-country") ?? undefined) ??
     DEFAULT_LANG;
 
-  const response = context.redirect(`/${resolvedLang}/`, 302);
-  response.cookies.set("sun_locale", resolvedLang, {
+  context.cookies.set("sun_locale", resolvedLang, {
     path: "/",
     sameSite: "lax",
     httpOnly: false,
@@ -33,5 +32,5 @@ export const onRequest = defineMiddleware(async (context, next) => {
     maxAge: 60 * 60 * 24 * 365
   });
 
-  return response;
+  return context.redirect(`/${resolvedLang}/`, 302);
 });

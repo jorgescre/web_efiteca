@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=20.0.0"
+    "node": "20.x"
   },
   "scripts": {
     "dev": "astro dev",
@@ -22,6 +22,7 @@
     "zod": "^3.24.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.8",
     "@eslint/js": "^9.0.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.0.0",

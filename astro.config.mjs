@@ -4,7 +4,6 @@ import vercel from "@astrojs/vercel";
 
 export default defineConfig({
   site: "https://www.suncapital.es",
-  output: "hybrid",
   integrations: [mdx()],
   adapter: vercel(),
   markdown: {

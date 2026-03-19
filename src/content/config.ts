@@ -32,7 +32,6 @@ const pages = defineCollection({
 const markets = defineCollection({
   type: "content",
   schema: z.object({
-    slug: z.string(),
     title: z.string(),
     lang: z.enum(["es", "en"]),
     seo: seoSchema
