@@ -16,7 +16,7 @@ export type SeoInput = {
 };
 
 export function getSiteUrl() {
-  return import.meta.env.SITE_URL ?? "https://www.suncapital.es";
+  return import.meta.env.SITE_URL ?? "https://www.efiteca.com";
 }
 
 export function absoluteUrl(path: string) {

@@ -3,7 +3,7 @@ import mdx from "@astrojs/mdx";
 import vercel from "@astrojs/vercel";
 
 export default defineConfig({
-  site: "https://www.suncapital.es",
+  site: "https://www.efiteca.com",
   integrations: [mdx()],
   adapter: vercel(),
   markdown: {

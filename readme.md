@@ -1,6 +1,6 @@
-# Suncapital Corporate Web
+# Efiteca Corporate Web
 
-Boilerplate base para la web corporativa de Suncapital: una arquitectura orientada a rendimiento extremo, SEO internacional y operación simple a largo plazo.
+Base para la web corporativa de Efiteca: una arquitectura orientada a rendimiento extremo, SEO internacional y operación simple a largo plazo.
 
 La estrategia técnica prioriza contenido estático para maximizar velocidad, estabilidad y cacheabilidad, y reserva la logica en el edge solo para decisiones ligeras de entrada, como la sugerencia inicial de idioma o mercado.
 
@@ -60,7 +60,7 @@ Si una pagina regional replica casi todo el contenido del idioma base, es mejor 
 
 ### 3. SEO internacional controlado
 
-El boilerplate debe generar automaticamente:
+La base del proyecto debe generar automaticamente:
 
 - `canonical` por pagina.
 - `hreflang` por idioma y mercado.
@@ -158,7 +158,7 @@ Responsabilidades que conviene evitar:
 
 ## Seguridad
 
-El boilerplate debe salir con una base de cabeceras robusta:
+La base del proyecto debe salir con una base de cabeceras robusta:
 
 - `Strict-Transport-Security`
 - `Content-Security-Policy`
@@ -180,7 +180,7 @@ Tambien se recomienda:
 
 El objetivo correcto no es prometer siempre `100/100` en Lighthouse, sino construir el sistema para maximizar Core Web Vitals desde la base.
 
-Principios del boilerplate:
+Principios de esta base:
 
 - HTML estatico cuando sea posible.
 - CSS utilitario purgado.
@@ -224,9 +224,9 @@ npm run astro:check
 npm run build
 ```
 
-## Criterios para considerar este boilerplate robusto
+## Criterios para considerar esta base robusta
 
-El boilerplate se considera listo para produccion cuando cumpla estos minimos:
+La base se considera lista para produccion cuando cumpla estos minimos:
 
 - Todas las rutas clave compilan en estatico.
 - El middleware solo afecta la entrada y no degrada SEO.
@@ -238,6 +238,6 @@ El boilerplate se considera listo para produccion cuando cumpla estos minimos:
 
 ## Conclusión
 
-Esta arquitectura es recomendable para Suncapital porque combina rendimiento, claridad operativa y capacidad de crecimiento internacional sin introducir una capa de complejidad innecesaria.
+Esta arquitectura es recomendable para Efiteca porque combina rendimiento, claridad operativa y capacidad de crecimiento internacional sin introducir una capa de complejidad innecesaria.
 
 La clave para que funcione bien no es usar edge en todas partes, sino mantenerlo bajo control. Si el proyecto conserva ese principio, este stack es una base muy solida para la web corporativa.
