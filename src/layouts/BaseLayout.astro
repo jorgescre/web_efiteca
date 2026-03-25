@@ -32,10 +32,10 @@ const { lang, title, description, path, alternates = [], image, noindex = false 
     />
   </head>
 
-  <body class="bg-sand text-ink antialiased">
+  <body class="antialiased">
     <div class="site-shell">
       <Header lang={lang} />
-      <main>
+      <main class="site-main">
         <slot />
       </main>
       <Footer lang={lang} />

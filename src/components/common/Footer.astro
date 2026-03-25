@@ -10,7 +10,7 @@ const { lang } = Astro.props;
 const copy = {
   es: {
     tagline: "Arquitectura digital para mercados inmobiliarios y capital privado.",
-    legal: "Boilerplate inicial. Ajusta textos legales, cookies y dominio antes de salir a produccion."
+    legal: "Base inicial. Ajusta textos legales, cookies y dominio antes de salir a produccion."
   },
   en: {
     tagline: "Digital architecture for real estate markets and private capital.",
@@ -19,10 +19,10 @@ const copy = {
 };
 ---
 
-<footer class="border-t border-ink/10 bg-sand/60">
-  <div class="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 md:flex-row md:items-center md:justify-between">
+<footer class="site-footer">
+  <div class="site-container site-footer__inner">
     <div>
-      <p class="font-display text-xl text-ink">Efiteca</p>
+      <p class="brand-mark text-ink">Efiteca</p>
       <p class="mt-2 max-w-xl text-sm text-ink/70">{copy[lang].tagline}</p>
     </div>
 

@@ -55,44 +55,36 @@ const copy = {
   path={`/${lang}/`}
   alternates={buildLanguageAlternates("/")}
 >
-  <section class="hero-grid border-b border-ink/10">
-    <div class="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-[1.2fr_0.8fr] md:py-28">
+  <section class="hero-grid section-split">
+    <div class="site-container hero-shell">
       <div>
-        <p class="text-sm uppercase tracking-[0.22em] text-coral">{copy[lang].eyebrow}</p>
-        <h1 class="mt-6 max-w-3xl font-display text-5xl leading-tight text-ink md:text-7xl">
-          {copy[lang].heading}
-        </h1>
-        <p class="mt-6 max-w-2xl text-lg leading-8 text-ink/70">{copy[lang].intro}</p>
+        <p class="section-eyebrow">{copy[lang].eyebrow}</p>
+        <h1 class="section-title mt-6 max-w-3xl">{copy[lang].heading}</h1>
+        <p class="section-copy max-w-2xl">{copy[lang].intro}</p>
 
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a
-            href={`/${lang}/#markets`}
-            class="rounded-full bg-pine px-6 py-3 text-sm font-medium text-sand transition hover:bg-ink"
-          >
+        <div class="button-row">
+          <a href={`/${lang}/#markets`} class="button button-primary">
             {copy[lang].ctaPrimary}
           </a>
-          <a
-            href={`/${lang}/news/`}
-            class="rounded-full border border-ink/15 bg-white/70 px-6 py-3 text-sm font-medium text-ink transition hover:border-coral/30 hover:text-coral"
-          >
+          <a href={`/${lang}/news/`} class="button button-secondary">
             {copy[lang].ctaSecondary}
           </a>
         </div>
       </div>
 
-      <div class="rounded-[32px] border border-ink/10 bg-white/75 p-6 shadow-card">
+      <div class="surface-card glass-panel hero-aside">
         <RegionNotice lang={lang} />
         <div class="mt-8 space-y-4">
-          <div class="rounded-3xl bg-ink p-5 text-sand">
-            <p class="text-xs uppercase tracking-[0.18em] text-gold">SSG First</p>
+          <div class="surface-card surface-card--dark rounded-[1.5rem] p-5">
+            <p class="data-pill">SSG First</p>
             <p class="mt-3 text-sm leading-6 text-sand/75">
               {lang === "es"
                 ? "Contenido editorial y landings compilados como HTML estatico para rendimiento maximo."
                 : "Editorial content and landing pages compiled as static HTML for maximum performance."}
             </p>
           </div>
-          <div class="rounded-3xl bg-white p-5">
-            <p class="text-xs uppercase tracking-[0.18em] text-coral">Edge Scope</p>
+          <div class="surface-card surface-card--soft rounded-[1.5rem] p-5">
+            <p class="data-pill data-pill--accent">Edge Scope</p>
             <p class="mt-3 text-sm leading-6 text-ink/70">
               {lang === "es"
                 ? "La geolocalizacion solo actua en la entrada. Las rutas internas siguen siendo estables y rastreables."
@@ -104,11 +96,11 @@ const copy = {
     </div>
   </section>
 
-  <section id="markets" class="mx-auto max-w-6xl px-6 py-16 md:py-24">
-    <div class="flex items-end justify-between gap-6">
+  <section id="markets" class="site-container site-section">
+    <div class="cluster-between">
       <div>
-        <p class="text-sm uppercase tracking-[0.18em] text-coral">Markets</p>
-        <h2 class="mt-3 font-display text-4xl text-ink">{copy[lang].marketsTitle}</h2>
+        <p class="section-eyebrow">Markets</p>
+        <h2 class="section-title mt-3 text-4xl">{copy[lang].marketsTitle}</h2>
       </div>
     </div>
 
@@ -117,26 +109,26 @@ const copy = {
     </div>
   </section>
 
-  <section class="border-t border-ink/10 bg-white/55">
-    <div class="mx-auto max-w-6xl px-6 py-16 md:py-20">
-      <div class="flex items-end justify-between gap-6">
+  <section class="section-split section-muted">
+    <div class="site-container site-section">
+      <div class="cluster-between">
         <div>
-          <p class="text-sm uppercase tracking-[0.18em] text-coral">Insights</p>
-          <h2 class="mt-3 font-display text-4xl text-ink">{copy[lang].newsTitle}</h2>
+          <p class="section-eyebrow">Insights</p>
+          <h2 class="section-title mt-3 text-4xl">{copy[lang].newsTitle}</h2>
         </div>
       </div>
 
-      <div class="mt-10 grid gap-5 md:grid-cols-3">
+      <div class="mt-10 grid-cards">
         {
           latestNews.map((entry) => (
             <a
               href={`/${lang}/news/${entry.slug}/`}
-              class="rounded-[28px] border border-ink/10 bg-sand p-6 shadow-card transition hover:-translate-y-1"
+              class="surface-card card-link hover-lift"
             >
-              <p class="text-xs uppercase tracking-[0.16em] text-coral">{entry.data.category}</p>
-              <h3 class="mt-3 font-display text-2xl text-ink">{entry.data.title}</h3>
-              <p class="mt-3 text-sm leading-6 text-ink/70">{entry.data.excerpt}</p>
-              <p class="mt-6 text-sm text-ink/50">{formatDate(entry.data.publishedAt, lang)}</p>
+              <p class="card-kicker">{entry.data.category}</p>
+              <h3 class="card-title">{entry.data.title}</h3>
+              <p class="card-copy">{entry.data.excerpt}</p>
+              <p class="card-meta">{formatDate(entry.data.publishedAt, lang)}</p>
             </a>
           ))
         }

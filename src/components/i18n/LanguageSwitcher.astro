@@ -11,7 +11,7 @@ const { currentLang, currentPath } = Astro.props;
 const relativePath = stripLangFromPath(currentPath);
 ---
 
-<div class="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1">
+<div class="language-switcher">
   {
     LOCALES.map((locale) => {
       const isActive = locale.code === currentLang;
@@ -20,8 +20,8 @@ const relativePath = stripLangFromPath(currentPath);
         <a
           href={withLang(locale.code, relativePath)}
           class:list={[
-            "rounded-full px-3 py-1.5 text-xs font-medium transition",
-            isActive ? "bg-gold text-ink" : "text-sand/80 hover:bg-white/10 hover:text-sand"
+            "language-switcher__link",
+            { "is-active": isActive }
           ]}
         >
           {locale.label}

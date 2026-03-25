@@ -10,9 +10,9 @@ type Props = {
 const { lang } = Astro.props;
 ---
 
-<header class="sticky top-0 z-40 border-b border-white/10 bg-ink/85 backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href={`/${lang}/`} class="font-display text-xl font-semibold tracking-wide text-sand">
+<header class="site-header">
+  <div class="site-container site-header__inner">
+    <a href={`/${lang}/`} class="brand-mark text-sand">
       Efiteca
     </a>
 
@@ -20,7 +20,7 @@ const { lang } = Astro.props;
       <nav aria-label="Primary" class="hidden gap-5 md:flex">
         {
           NAV_ITEMS.map((item) => (
-            <a class="text-sm text-sand/80 transition hover:text-sand" href={`/${lang}${item.href}`}>
+            <a class="nav-link" href={`/${lang}${item.href}`}>
               {item.label[lang]}
             </a>
           ))
