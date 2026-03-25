@@ -1,7 +1,7 @@
 import type { APIRoute } from "astro";
 import { LOCALES } from "@/data/locales";
 import { MARKETS } from "@/data/markets";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { absoluteUrl } from "@/lib/seo/meta";
 
 export const prerender = true;
@@ -17,7 +17,9 @@ export const GET: APIRoute = async () => {
     ...MARKETS.flatMap((market) =>
       market.languages.map((lang) => absoluteUrl(`/${lang}/${market.slug}/`))
     ),
-    ...newsEntries.map((entry) => absoluteUrl(`/${entry.data.lang}/news/${entry.slug}/`))
+    ...newsEntries.map((entry: CollectionEntry<"news">) =>
+      absoluteUrl(`/${entry.data.lang}/news/${entry.slug}/`)
+    )
   ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls
