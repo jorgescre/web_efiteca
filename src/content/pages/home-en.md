@@ -11,10 +11,8 @@ hero:
   cta:
     label: "Schedule your 10-minute diagnosis"
     href: "#diagnosis"
-  background_layer_1: "/images/imgFrame1272638150.png"
-  background_layer_2: "/images/imgFrame1272638151.png"
-  main_background: "/images/imgFrame5.png"
-  person_image: "/images/imgDisenoSinTitulo601.png"
+  background_desktop: "/images/imgFrame5.png"
+  background_mobile: "/images/imgFrame5.png"
 services:
   title: "Our Services"
   description: "We accompany you every step of the way to ensure your financial success."

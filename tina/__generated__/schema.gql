@@ -107,10 +107,8 @@ type PagesHero {
   title_part1: String
   title_part2: String
   description: String
-  background_layer_1: String
-  background_layer_2: String
-  main_background: String
-  person_image: String
+  background_desktop: String
+  background_mobile: String
   cta: PagesHeroCta
 }
 
@@ -347,10 +345,8 @@ input PagesHeroFilter {
   title_part1: StringFilter
   title_part2: StringFilter
   description: StringFilter
-  background_layer_1: ImageFilter
-  background_layer_2: ImageFilter
-  main_background: ImageFilter
-  person_image: ImageFilter
+  background_desktop: ImageFilter
+  background_mobile: ImageFilter
   cta: PagesHeroCtaFilter
 }
 
@@ -725,10 +721,8 @@ input PagesHeroMutation {
   title_part1: String
   title_part2: String
   description: String
-  background_layer_1: String
-  background_layer_2: String
-  main_background: String
-  person_image: String
+  background_desktop: String
+  background_mobile: String
   cta: PagesHeroCtaMutation
 }
 

@@ -52,11 +52,7 @@ function FauxInput({
 function Frame74({ content }: { content: any }) {
   if (!content?.hero) return null;
   return (
-    <div className="content-stretch flex flex-col gap-[40px] h-[590px] items-start justify-center pl-[40px] pr-[200px] relative rounded-[20px] shrink-0 w-[688px]">
-      <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[20px]">
-        {content.hero.background_layer_1 && <img alt="" className="absolute max-w-none object-cover opacity-60 rounded-[20px] size-full" src={content.hero.background_layer_1} />}
-        {content.hero.background_layer_2 && <img alt="" className="absolute max-w-none object-cover rounded-[20px] size-full" src={content.hero.background_layer_2} />}
-      </div>
+    <div className="content-stretch flex flex-col gap-[40px] h-[590px] items-start justify-center pl-[40px] pr-[200px] relative shrink-0 w-[688px] z-10">
       <p className="font-['Inter:Bold',sans-serif] font-bold leading-[0] min-w-full not-italic relative shrink-0 text-[56px] text-white tracking-[1px] w-[min-content]">
         <span className="leading-[1.1] text-[#fcc63d]">{content.hero.title_part1}</span>
         <span className="leading-[1.1]">{content.hero.title_part2}</span>
@@ -3638,50 +3634,199 @@ export default function Home({
           transform: scale(0.95);
         }
       `}</style>
-      <div data-tina-field={fieldFor(tinaPage, "hero")}>
-        <Frame content={page} />
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "hero")}>
+        <HeroSection content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "services")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "services")}>
         <Frame18 content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "metrics")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "metrics")}>
         <StaggeredMetricsSection content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "whoIsItFor")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "whoIsItFor")}>
         <Frame122 content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "testimonials")}>
-        <Frame21 content={page} />
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "testimonials")}>
+        <TestimonialsSection content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "partners")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "partners")}>
         <Frame86 content={page} />
       </div>
       <div className="bg-white content-stretch flex flex-col items-center mb-[-2px] px-[250px] py-[80px] relative shrink-0 w-[1920px]" data-name="cifras">
         <Frame49 content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "benefits")}>
-        <Frame85 content={page} />
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "benefits")}>
+        <BenefitsSection content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "contact")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "contact")}>
         <Frame83 content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "blog")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "blog")}>
         <Frame22 content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "newsletter")}>
-        <Frame1 content={page} />
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "newsletter")}>
+        <NewsletterSection content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "locations")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "locations")}>
         <Frame51 content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "faq")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "faq")}>
         <Frame52 content={page} />
       </div>
-      <div data-tina-field={fieldFor(tinaPage, "locations")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "locations")}>
         <Frame60 content={page} />
       </div>
       
     </div>
+  );
+}
+
+function HeroSection({ content }: { content: any }) {
+  if (!content?.hero) return null;
+
+  return (
+    <section className="mb-[-60px] relative shrink-0 w-full min-h-[847px] overflow-hidden">
+      <img
+        alt=""
+        className="absolute inset-0 max-w-none object-cover pointer-events-none size-full hidden md:block"
+        src={content.hero.background_desktop}
+      />
+      <img
+        alt=""
+        className="absolute inset-0 max-w-none object-cover pointer-events-none size-full md:hidden"
+        src={content.hero.background_mobile || content.hero.background_desktop}
+      />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,19,0.84)_0%,rgba(8,8,19,0.58)_44%,rgba(8,8,19,0.2)_100%)]" />
+      <div className="relative w-full max-w-[1460px] min-h-[847px] mx-auto px-[24px] md:px-[48px] xl:px-[80px] py-[80px] flex items-center">
+        <div className="content-stretch flex flex-col gap-[40px] items-start justify-center relative w-full max-w-[688px] z-10">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[0] min-w-full not-italic relative shrink-0 text-[56px] text-white tracking-[1px] w-[min-content]">
+            <span className="leading-[1.1] text-[#fcc63d]">{content.hero.title_part1}</span>
+            <span className="leading-[1.1]">{content.hero.title_part2}</span>
+          </p>
+          <p className="font-['Trueno:Light',sans-serif] leading-[1.1] min-w-full not-italic relative shrink-0 text-[18px] text-white w-[min-content]">
+            {content.hero.description}
+          </p>
+          <a href={content.hero.cta?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0 hover:scale-105 active:scale-95 transition-transform no-underline">
+            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">
+              {content.hero.cta?.label}
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function TestimonialsSection({ content }: { content: any }) {
+  if (!content?.testimonials) return null;
+  const t = content.testimonials;
+
+  return (
+    <section className="bg-[#f7f5f9] mb-[-2px] relative shrink-0 w-full" data-name="testimonios">
+      <div className="w-full max-w-[1460px] mx-auto px-[24px] md:px-[48px] xl:px-[80px] py-[80px] flex flex-col gap-[60px] items-center">
+        <div className="content-stretch flex flex-col gap-[30px] items-start relative shrink-0 w-full max-w-[947px]">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[40px] text-center w-full">{t.title}</p>
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[24px] text-center w-full">{t.description}</p>
+        </div>
+        <div className="content-stretch flex gap-[40px] items-start relative shrink-0 w-full justify-center flex-wrap">
+          {t.items?.map((item: any, idx: number) => (
+            <div key={idx} className="bg-white content-stretch flex flex-col gap-[40px] min-h-[400px] items-start justify-center p-[40px] relative rounded-[20px] shrink-0 w-[420px] max-w-full">
+              <div className="content-stretch flex gap-[16px] items-center relative shrink-0 w-full">
+                <img src={item.image} alt={item.name} className="size-[64px] rounded-full object-cover" />
+                <div className="flex flex-col">
+                  <p className="font-bold text-[18px] text-[#080813]">{item.name}</p>
+                  <p className="text-[#9d9ba8] text-[14px]">{item.role}</p>
+                  <div className="flex gap-1 text-[#fcc63d] mt-1">
+                    {renderStars(item.stars || 5)}
+                  </div>
+                </div>
+              </div>
+              <p className="font-['Inter:Regular',sans-serif] text-[16px] leading-[1.6] text-[#080813] italic">"{item.text}"</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function BenefitsSection({ content }: { content: any }) {
+  if (!content?.benefits) return null;
+
+  return (
+    <section className="bg-[#f7f5f9] mb-[-2px] relative shrink-0 w-full">
+      <div className="w-full max-w-[1460px] mx-auto px-[24px] md:px-[48px] xl:px-[80px] py-[80px]">
+        <div className="bg-[#fcc63d] content-stretch flex flex-col gap-[10px] items-center justify-center relative rounded-[60px] shrink-0 w-full overflow-hidden">
+          <div className="w-full max-w-[1320px] mx-auto content-stretch flex gap-[80px] items-center justify-between relative px-[32px] py-[70px]">
+            <div className="flex-[1_0_0] min-h-px min-w-px relative">
+              <div className="content-stretch flex flex-col items-center relative w-full">
+                <Frame5 content={content} />
+              </div>
+            </div>
+            <div className="h-[407px] relative rounded-br-[60px] rounded-tr-[60px] shrink-0 w-[791px] max-w-[55%]" data-name="Diseño sin título (57) 1">
+              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-br-[60px] rounded-tr-[60px] size-full" src="/images/imgDisenoSinTitulo571.png" />
+            </div>
+          </div>
+          <div className="absolute h-[491px] left-[52%] top-[-84px] w-[397px] pointer-events-none" data-name="Diseño sin título (58) 1">
+            <div className="absolute bg-clip-padding border-0 border-[transparent] border-solid inset-0 overflow-hidden">
+              <img alt="" className="absolute h-[128.5%] left-[-28.56%] max-w-none top-0 w-[238.36%]" src="/images/imgDisenoSinTitulo581.png" />
+            </div>
+          </div>
+          <Recurso2EfitecaELinea />
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function NewsletterSection({ content }: { content: any }) {
+  if (!content?.newsletter) return null;
+
+  return (
+    <section className="mb-[-2px] overflow-clip relative shrink-0 w-full bg-[url('/images/frame7.png')] bg-cover bg-center bg-no-repeat">
+      <div className="w-full max-w-[1460px] mx-auto px-[24px] md:px-[48px] xl:px-[80px] py-[80px] relative overflow-hidden">
+        <div className="absolute flex h-[865.826px] items-center justify-center left-[-39px] top-[80px] w-[873.938px] pointer-events-none" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
+          <div className="flex-none rotate-[-42.93deg]">
+            <div className="h-[536px] relative w-[695px]">
+              <div className="absolute inset-[-93.28%_-71.94%]">
+                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1695 1536">
+                  <g filter="url(#filter0_f_1_1072)" id="Ellipse 3">
+                    <ellipse cx="847.5" cy="768" fill="var(--fill-0, #4F3BF9)" rx="347.5" ry="268" />
+                  </g>
+                  <defs>
+                    <filter colorInterpolationFilters="sRGB" filterUnits="userSpaceOnUse" height="1536" id="filter0_f_1_1072" width="1695" x="0" y="0">
+                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                      <feBlend in="SourceGraphic" in2="BackgroundImageFix" mode="normal" result="shape" />
+                      <feGaussianBlur result="effect1_foregroundBlur_1_1072" stdDeviation="250" />
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="content-stretch flex gap-[80px] items-center justify-center relative shrink-0 w-full">
+          <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-[495px]">
+            <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white w-[min-content]">
+              <p className="leading-[1.1]">{content.newsletter.title}</p>
+            </div>
+            <div className="flex flex-col font-['Manrope:Regular',sans-serif] font-normal justify-center leading-[0] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">
+              <p className="leading-[20px]">{content.newsletter.description}</p>
+            </div>
+            <div className="bg-[#f4f5f9] h-[46px] relative rounded-[8px] shrink-0 w-full" data-name="Full name">
+              <div className="overflow-clip relative rounded-[inherit] size-full">
+                <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[1.1] left-[15px] not-italic text-[#9d9ba8] text-[18px] top-[calc(50%-10px)] whitespace-nowrap">{content.newsletter.emailPlaceholder || "Email"}</p>
+              </div>
+              <div aria-hidden="true" className="absolute border border-[#dbdcde] border-solid inset-0 pointer-events-none rounded-[8px]" />
+            </div>
+            <a href={content.newsletter.button?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0 no-underline">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">{content.newsletter.button?.label}</p>
+            </a>
+          </div>
+          <Recurso1EfitecaCasa />
+        </div>
+      </div>
+    </section>
   );
 }
 export function FigmaFooter() {

@@ -8,10 +8,8 @@ hero:
   title_part1: 'Consigue una hipoteca '
   title_part2: en España sin sorpresas
   description: 'Te ayudamos a entender tus opciones, elegir la mejor estrategia y coordinar todo el proceso hasta la firma, con claridad, acompañamiento experto y decisiones que realmente encajan contigo.'
-  background_layer_1: /images/imgFrame1272638150.png
-  background_layer_2: /images/imgFrame1272638151.png
-  main_background: /images/bg-hero.jpg
-  person_image: /images/imgDisenoSinTitulo601.png
+  background_desktop: /images/bg-hero.jpg
+  background_mobile: /images/bg-hero.jpg
   cta:
     label: Agenda tu diagnóstico en 10 minutos
     href: '#diagnosis'
@@ -221,4 +219,3 @@ footer:
     - label: Simulador de hipoteca
       href: '#simulator'
 ---
-

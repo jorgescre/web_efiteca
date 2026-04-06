@@ -69,10 +69,8 @@ var config_default = defineConfig({
               { type: "string", name: "title_part1", label: "Title part 1" },
               { type: "string", name: "title_part2", label: "Title part 2" },
               { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
-              { type: "image", name: "background_layer_1", label: "Background layer 1" },
-              { type: "image", name: "background_layer_2", label: "Background layer 2" },
-              { type: "image", name: "main_background", label: "Main background" },
-              { type: "image", name: "person_image", label: "Person image" },
+              { type: "image", name: "background_desktop", label: "Background desktop" },
+              { type: "image", name: "background_mobile", label: "Background mobile" },
               {
                 type: "object",
                 name: "cta",

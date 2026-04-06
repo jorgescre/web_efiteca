@@ -46,7 +46,8 @@ const pages = defineCollection({
       title_part2: z.string(),
       description: z.string(),
       cta: buttonSchema,
-      images: z.array(z.string()).optional()
+      background_desktop: z.string(),
+      background_mobile: z.string().optional()
     }).optional(),
     services: z.object({
       title: z.string(),
