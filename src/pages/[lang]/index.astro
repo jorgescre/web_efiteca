@@ -17,7 +17,206 @@ export function getStaticPaths() {
 const lang = Astro.params.lang as Lang;
 
 const entry = await getEntry("pages", `home-${lang}`);
-const content = entry?.data;
+let content = entry?.data;
+let tinaProps:
+  | {
+      query: string;
+      variables: Record<string, unknown>;
+      data: Record<string, unknown>;
+    }
+  | undefined;
+
+if (import.meta.env.DEV) {
+  const query = `
+    query HomePage($relativePath: String!) {
+      pages(relativePath: $relativePath) {
+        id
+        _sys {
+          filename
+          basename
+          path
+          breadcrumbs
+          relativePath
+          extension
+        }
+        lang
+        title
+        seo {
+          title
+          description
+        }
+        hero {
+          title_part1
+          title_part2
+          description
+          background_layer_1
+          background_layer_2
+          main_background
+          person_image
+          cta {
+            label
+            href
+          }
+        }
+        services {
+          title
+          description
+          items {
+            title
+            description
+            image
+            button {
+              label
+              href
+            }
+          }
+        }
+        whoIsItFor {
+          title
+          items {
+            title
+            image
+          }
+        }
+        steps {
+          title
+          image
+          items {
+            number
+            title
+            description
+          }
+        }
+        benefits {
+          title
+          description
+          ctaText
+          ctaLink
+          items {
+            text
+          }
+        }
+        metrics {
+          title
+          items {
+            title
+            value
+          }
+        }
+        testimonials {
+          title
+          description
+          items {
+            name
+            role
+            text
+            image
+            stars
+          }
+        }
+        partners {
+          title
+          description
+          items {
+            name
+          }
+        }
+        faq {
+          title
+          items {
+            question
+            answer
+          }
+        }
+        locations {
+          title
+          subtitle
+          items {
+            city
+            address
+            image
+            summary
+            seoLabel
+            cta {
+              label
+              href
+            }
+          }
+        }
+        blog {
+          title
+          subtitle
+          cta {
+            label
+            href
+          }
+          items {
+            title
+            description
+            image
+            cta {
+              label
+              href
+            }
+          }
+        }
+        newsletter {
+          title
+          description
+          emailPlaceholder
+          button {
+            label
+            href
+          }
+        }
+        contact {
+          title
+          description
+          highlights
+          form {
+            name_label
+            lastname_label
+            email_label
+            phone_label
+            role_label
+            role_placeholder
+            message_label
+            terms_label
+            submit_label
+          }
+        }
+        footer {
+          services_title
+          links {
+            label
+            href
+          }
+        }
+      }
+    }
+  `;
+  const variables = {
+    relativePath: `home-${lang}.md`
+  };
+  const response = await fetch("http://localhost:4001/graphql", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      query,
+      variables
+    })
+  });
+  const payload = await response.json();
+
+  tinaProps = {
+    query,
+    variables,
+    data: payload.data
+  };
+  content = payload.data.pages;
+}
 
 if (!content) {
   return Astro.redirect(`/${lang}/404`);
@@ -31,5 +230,5 @@ if (!content) {
   path={`/${lang}/`}
   alternates={buildLanguageAlternates("/")}
 >
-  <ReactHome client:load content={content} />
+  <ReactHome client:load content={content} {...tinaProps} />
 </BaseLayout>

@@ -87,6 +87,9 @@ metrics:
       value: "300"
 benefits:
   title: "Discover our benefits"
+  description: "We guide you with a clear strategy, real market comparisons and expert support so you can move forward with confidence."
+  ctaText: "Talk to an expert"
+  ctaLink: "#contact"
   items:
     - text: "You understand exactly what you are signing."
     - text: "You make decisions with clear information."
@@ -132,24 +135,32 @@ locations:
     - city: "Barcelona"
       address: "C/ d'Aragó, 383, Pl. 5ª, 08013"
       image: "/images/barcelona.png"
+      summary: "In Barcelona we analyze your mortgage profile to find the best possible route, comparing real options and coordinating the process until the signing."
+      seoLabel: "Mortgage advisory in Barcelona"
       cta:
         label: "See on map"
         href: "#map-barcelona"
     - city: "Madrid"
       address: "Paseo de la Castellana, 193, 28046"
       image: "/images/madrid.png"
+      summary: "If you want to buy a home or improve your mortgage in Madrid, we guide you with clear options, the right strategy and full support until the signing."
+      seoLabel: "Mortgage advisory in Madrid"
       cta:
         label: "See on map"
         href: "#map-madrid"
     - city: "Valencia"
       address: "Av. Corts Valencianes, 58, 46015"
       image: "/images/valencia.png"
+      summary: "We help you get or improve your mortgage in Valencia with a clear process, compared options and expert support from diagnosis to signing."
+      seoLabel: "Mortgage advisory in Valencia"
       cta:
         label: "See on map"
         href: "#map-valencia"
     - city: "Marbella"
       address: "Av. Ricardo Soriano, 4, Pl. 6ª D, 29601"
       image: "/images/marbella.png"
+      summary: "We help you get or improve your mortgage in Marbella with expert support, personalized analysis and full coordination to reach signing without surprises."
+      seoLabel: "Mortgage advisory in Marbella"
       cta:
         label: "See on map"
         href: "#map-marbella"
@@ -181,17 +192,24 @@ blog:
 newsletter:
   title: "Subscribe to our newsletter and download our free guide"
   description: "Receive clear information about mortgages, financial decisions and market opportunities."
+  emailPlaceholder: "Email"
   button:
     label: "SUBSCRIBE"
     href: "#subscribe"
 contact:
   title: "Contact Us"
   description: "We work with financial entities and actors from the real estate ecosystem to offer real options adapted to each profile."
+  highlights:
+    - "Total clarity on real costs"
+    - "No fine print or surprises"
+    - "Impartial market comparison"
   form:
     name_label: "First Name"
     lastname_label: "Last Name"
     email_label: "Email"
     phone_label: "Phone"
+    role_label: "Role"
+    role_placeholder: "Tell us your role"
     message_label: "Message"
     terms_label: "I accept the terms and conditions"
     submit_label: "SEND"

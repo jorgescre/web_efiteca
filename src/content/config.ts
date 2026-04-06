@@ -25,6 +25,15 @@ const buttonSchema = z.object({
   href: z.string()
 });
 
+const locationItemSchema = z.object({
+  city: z.string(),
+  address: z.string(),
+  image: z.string(),
+  summary: z.string().optional(),
+  seoLabel: z.string().optional(),
+  cta: buttonSchema
+});
+
 const pages = defineCollection({
   type: "content",
   schema: z.object({
@@ -67,6 +76,9 @@ const pages = defineCollection({
     }).optional(),
     benefits: z.object({
       title: z.string(),
+      description: z.string().optional(),
+      ctaText: z.string().optional(),
+      ctaLink: z.string().optional(),
       items: z.array(z.object({
         text: z.string()
       }))
@@ -95,6 +107,55 @@ const pages = defineCollection({
         items: z.array(z.object({
             name: z.string()
         }))
+    }).optional(),
+    faq: z.object({
+      title: z.string(),
+      items: z.array(z.object({
+        question: z.string(),
+        answer: z.string()
+      }))
+    }).optional(),
+    locations: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      items: z.array(locationItemSchema)
+    }).optional(),
+    blog: z.object({
+      title: z.string(),
+      subtitle: z.string(),
+      items: z.array(z.object({
+        title: z.string(),
+        description: z.string(),
+        image: z.string(),
+        cta: buttonSchema
+      })),
+      cta: buttonSchema
+    }).optional(),
+    newsletter: z.object({
+      title: z.string(),
+      description: z.string(),
+      button: buttonSchema,
+      emailPlaceholder: z.string().optional()
+    }).optional(),
+    contact: z.object({
+      title: z.string(),
+      description: z.string(),
+      highlights: z.array(z.string()).optional(),
+      form: z.object({
+        name_label: z.string(),
+        lastname_label: z.string(),
+        email_label: z.string(),
+        phone_label: z.string(),
+        role_label: z.string().optional(),
+        role_placeholder: z.string().optional(),
+        message_label: z.string(),
+        terms_label: z.string(),
+        submit_label: z.string()
+      })
+    }).optional(),
+    footer: z.object({
+      services_title: z.string(),
+      links: z.array(buttonSchema)
     }).optional()
   })
 });

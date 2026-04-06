@@ -2,27 +2,46 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { svgPaths } from '../../data/svgData';
 import useEmblaCarousel from 'embla-carousel-react';
 import * as Accordion from '@radix-ui/react-accordion';
+import { tinaField, useTina } from 'tinacms/dist/react';
+function fieldFor(object: any, property: string) {
+  return object ? tinaField(object, property) : undefined;
+}
 
+function renderStars(count = 5) {
+  return Array.from({ length: count }).map((_, index) => (
+    <span key={index}>★</span>
+  ));
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function FauxInput({
+  placeholder,
+  textarea = false,
+  withChevron = false
+}: {
+  placeholder: string;
+  textarea?: boolean;
+  withChevron?: boolean;
+}) {
+  return (
+    <div className={`bg-white relative rounded-[6px] shrink-0 w-full ${textarea ? "h-[68px]" : ""}`} data-name="Input Field">
+      <div aria-hidden="true" className="absolute border border-[#9d9ba8] border-solid inset-0 pointer-events-none rounded-[6px]" />
+      <div className={`content-stretch ${textarea ? "flex items-start px-[20px] py-[16px]" : "flex items-center px-[20px] py-[12px]"} relative size-full`}>
+        <p className={`flex-[1_0_0] font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-h-px min-w-px not-italic relative text-[#9d9ba8] text-[12px]`}>{placeholder}</p>
+        {withChevron ? (
+          <div className="overflow-clip relative shrink-0 size-[24px]" data-name="chevron-down">
+            <div className="absolute bottom-[37.5%] left-1/4 right-1/4 top-[37.5%]" data-name="Icon">
+              <div className="absolute inset-[-16.67%_-8.33%]">
+                <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 14 8">
+                  <path d="M1 1L7 7L13 1" id="Icon" stroke="var(--stroke-0, #8949FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
+}
 
 
 
@@ -2153,12 +2172,80 @@ function Container25() {
   );
 }
 
-function Frame83() {
+function Frame83({ content }: { content: any }) {
+  if (!content?.contact) return null;
+
+  const highlights = content.contact.highlights || [];
+  const form = content.contact.form || {};
+
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center mb-[-2px] py-[80px] relative shrink-0 w-full">
       <Container23 />
       <Container24 />
-      <Container25 />
+      <div className="content-stretch flex items-start justify-between relative shrink-0 w-[1279px]" data-name="Container">
+        <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[412px]" data-name="Text Container">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[40px] w-full">{content.contact.title}</p>
+          <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[15px] w-full">{content.contact.description}</p>
+          <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Container">
+            {highlights.map((item: string, index: number) => (
+              <div key={index} className="h-[24px] relative shrink-0 w-full" data-name="Container">
+                <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[12px] items-center relative size-full">
+                  <div className="bg-[rgba(137,73,255,0.1)] relative rounded-[33554400px] shrink-0 size-[24px]" data-name="Container">
+                    <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex items-center justify-center relative size-full">
+                      <CheckCircle4 />
+                    </div>
+                  </div>
+                  <p className="font-['Inter:Bold',sans-serif] font-bold leading-[16px] not-italic relative text-[#314158] text-[16px] whitespace-nowrap">{item}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="bg-[#8949ff] content-stretch flex flex-col gap-[24px] items-center justify-center p-[40px] relative rounded-[10px] shrink-0 w-[798px]" data-name="Form">
+          <div aria-hidden="true" className="absolute border border-[#8949ff] border-solid inset-0 pointer-events-none rounded-[10px]" />
+          <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Form Elements">
+            <div className="content-stretch flex gap-[30px] items-start relative shrink-0 w-full" data-name="Container">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
+                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.name_label}</p>
+                <FauxInput placeholder={`Escribe tu ${String(form.name_label || "").toLowerCase()}`} />
+              </div>
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
+                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.lastname_label}</p>
+                <FauxInput placeholder={`Escribe tu ${String(form.lastname_label || "").toLowerCase()}`} />
+              </div>
+            </div>
+            <div className="content-stretch flex gap-[30px] items-start relative shrink-0 w-full" data-name="Container">
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
+                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.email_label}</p>
+                <FauxInput placeholder={`Ingresa tu ${String(form.email_label || "").toLowerCase()}`} />
+              </div>
+              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
+                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.phone_label}</p>
+                <FauxInput placeholder={`Ingresa tu ${String(form.phone_label || "").toLowerCase()}`} />
+              </div>
+            </div>
+            <div className="content-stretch flex flex-col gap-[14px] items-start relative shrink-0 w-full" data-name="Sub Container">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.role_label || "Cargo"}</p>
+              <FauxInput placeholder={form.role_placeholder || "Cuéntanos tu cargo"} withChevron />
+            </div>
+            <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Container">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.message_label}</p>
+              <FauxInput placeholder={`Escribe tu ${String(form.message_label || "").toLowerCase()}`} textarea />
+            </div>
+          </div>
+          <div className="content-stretch flex gap-[50px] items-center justify-center relative shrink-0 w-full" data-name="Container">
+            <div className="content-stretch flex flex-[1_0_0] gap-[6px] items-center min-h-px min-w-px relative" data-name="Check Box">
+              <div className="bg-[#ecddee] relative rounded-[4px] shrink-0 size-[24px]" data-name="Shape">
+                <div aria-hidden="true" className="absolute border border-[#9d9ba8] border-solid inset-0 pointer-events-none rounded-[4px]" />
+              </div>
+              <p className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-[#d9d9d9] text-[12px]">{form.terms_label}</p>
+            </div>
+            <div className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">{form.submit_label}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -2310,10 +2397,49 @@ function Section() {
   );
 }
 
-function Frame22() {
+function Frame22({ content }: { content: any }) {
+  if (!content?.blog) return null;
+
   return (
     <div className="bg-[#080813] content-stretch flex flex-col items-center mb-[-2px] py-[80px] relative shrink-0 w-[1920px]">
-      <Section />
+      <div className="relative shrink-0 w-full" data-name="Section">
+        <div className="flex flex-col items-center size-full">
+          <div className="content-stretch flex flex-col gap-[40px] items-center px-[240px] relative w-full">
+            <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
+              <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[40px] text-center text-white w-full">
+                <p className="leading-[1.1]">{content.blog.title}</p>
+              </div>
+            </div>
+            <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-center text-white whitespace-nowrap">
+              <p className="leading-[1.1]">{content.blog.subtitle}</p>
+            </div>
+            <div className="content-stretch flex gap-[32px] items-start justify-center relative shrink-0 w-full" data-name="Container">
+              {content.blog.items?.map((item: any, index: number) => (
+                <div key={index} className="content-stretch flex flex-col gap-[20px] h-[508px] items-start relative shrink-0 w-[458.667px]" data-name="Blog card">
+                  <div className="h-[320px] relative rounded-[24px] w-full">
+                    <img alt={item.title} className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={item.image} />
+                  </div>
+                  <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[28px] text-white w-[min-content]">
+                    <p className="leading-[1.1]">{item.title}</p>
+                  </div>
+                  <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#b7b7b7] text-[16px] w-[min-content]">
+                    <p className="leading-[1.1]">{item.description}</p>
+                  </div>
+                  <a href={item.cta?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline">
+                    <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[18px] text-center whitespace-nowrap">
+                      <p className="leading-[1.1] whitespace-pre">{item.cta?.label}</p>
+                    </div>
+                    <Container39 />
+                  </a>
+                </div>
+              ))}
+            </div>
+            <a href={content.blog.cta?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0 no-underline">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">{content.blog.cta?.label}</p>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -2357,7 +2483,9 @@ function Frame65() {
   );
 }
 
-function Frame1() {
+function Frame1({ content }: { content: any }) {
+  if (!content?.newsletter) return null;
+
   return (
     <div className="content-stretch flex flex-col gap-[10px] items-center mb-[-2px] overflow-clip py-[80px] px-[24px] relative shrink-0 w-full bg-[url('/images/frame7.png')] bg-cover bg-center bg-no-repeat">
       <div className="absolute flex h-[865.826px] items-center justify-center left-[-39px] top-[80px] w-[873.938px]" style={{ "--transform-inner-width": "1185", "--transform-inner-height": "21" } as React.CSSProperties}>
@@ -2400,7 +2528,26 @@ function Frame1() {
           </div>
         </div>
       </div>
-      <Frame65 />
+      <div className="content-stretch flex gap-[80px] items-center justify-center relative shrink-0 w-[1170px]">
+        <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-[495px]">
+          <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white w-[min-content]">
+            <p className="leading-[1.1]">{content.newsletter.title}</p>
+          </div>
+          <div className="flex flex-col font-['Manrope:Regular',sans-serif] font-normal justify-center leading-[0] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">
+            <p className="leading-[20px]">{content.newsletter.description}</p>
+          </div>
+          <div className="bg-[#f4f5f9] h-[46px] relative rounded-[8px] shrink-0 w-full" data-name="Full name">
+            <div className="overflow-clip relative rounded-[inherit] size-full">
+              <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[1.1] left-[15px] not-italic text-[#9d9ba8] text-[18px] top-[calc(50%-10px)] whitespace-nowrap">{content.newsletter.emailPlaceholder || "Email"}</p>
+            </div>
+            <div aria-hidden="true" className="absolute border border-[#dbdcde] border-solid inset-0 pointer-events-none rounded-[8px]" />
+          </div>
+          <a href={content.newsletter.button?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0 no-underline">
+            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">{content.newsletter.button?.label}</p>
+          </a>
+        </div>
+        <Recurso1EfitecaCasa />
+      </div>
     </div>
   );
 }
@@ -2624,18 +2771,44 @@ function Frame77() {
   );
 }
 
-function Frame51() {
+function Frame51({ content }: { content: any }) {
+  if (!content?.locations) return null;
+
   return (
     <div className="bg-white mb-[-2px] relative shrink-0 w-full">
       <div className="flex flex-col items-center size-full">
         <div className="content-stretch flex flex-col gap-[40px] items-center px-[230px] py-[80px] relative w-full">
           <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#080813] text-[40px] text-center w-[min-content]">
-            <p className="leading-[1.1]">Conoce nuestras ubicaciones</p>
+            <p className="leading-[1.1]">{content.locations.title}</p>
           </div>
           <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#080813] text-[18px] text-center whitespace-nowrap">
-            <p className="leading-[1.1]">Atendemos de forma digital con acompañamiento personalizado durante todo el proceso.</p>
+            <p className="leading-[1.1]">{content.locations.subtitle}</p>
           </div>
-          <Frame77 />
+          <div className="content-stretch flex items-start justify-between relative shrink-0 w-[1440px]">
+            {(content.locations.items || []).slice(0, 4).map((item: any, index: number) => (
+              <div key={index} className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[330px]" data-name="Ubicaciones card">
+                <div className="bg-[#8949ff] content-stretch flex items-center justify-center px-[16px] py-[2px] relative rounded-[20px] shrink-0">
+                  <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">
+                    <p className="leading-[1.1]">{item.city}</p>
+                  </div>
+                </div>
+                <div className="h-[320px] relative rounded-[24px] w-full">
+                  <img alt={item.city} className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={item.image} />
+                </div>
+                <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
+                  <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#080813] text-[22px] w-[min-content]">
+                    <p className="leading-[1.1]">{item.address}</p>
+                  </div>
+                  <a href={item.cta?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline">
+                    <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[18px] text-center whitespace-nowrap">
+                      <p className="leading-[1.1] whitespace-pre">{item.cta?.label}</p>
+                    </div>
+                    <Container42 />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
@@ -2827,10 +3000,38 @@ function Container46() {
   );
 }
 
-function Frame52() {
+function Frame52({ content }: { content: any }) {
+  if (!content?.faq) return null;
+
   return (
     <div className="bg-[#ecddee] content-stretch flex flex-col items-center mb-[-2px] px-[230px] py-[80px] relative shrink-0 w-[1920px]">
-      <Container46 />
+      <div className="content-stretch flex flex-col gap-[40px] items-center relative shrink-0 w-full" data-name="Container">
+        <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
+          <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Text Container">
+            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[40px] text-center w-full">{content.faq.title}</p>
+          </div>
+        </div>
+        <Accordion.Root type="single" collapsible className="w-[787px] flex flex-col gap-[16px] items-start justify-center relative shrink-0">
+          {content.faq.items?.map((item: any, index: number) => (
+            <Accordion.Item key={index} value={`item-${index + 1}`} className="w-full">
+              <Accordion.Trigger className="w-full text-left focus:outline-none">
+                <div className="bg-[#8949ff] content-stretch flex flex-col items-center justify-center px-[40px] py-[16px] relative rounded-[10px] shrink-0 w-full" data-name="FAQ">
+                  <div aria-hidden="true" className="absolute border border-[#8949ff] border-solid inset-0 pointer-events-none rounded-[10px]" />
+                  <div className="content-stretch flex gap-[40px] items-center relative shrink-0 w-full">
+                    <p className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-[18px] text-left text-white">{item.question}</p>
+                    <Frame23 />
+                  </div>
+                </div>
+              </Accordion.Trigger>
+              <Accordion.Content className="w-full bg-[#f7f5f9] rounded-b-[10px] mt-[-8px] overflow-hidden data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95">
+                <div className="p-[30px] font-['Inter:Regular',sans-serif] text-[18px] text-[#080813] leading-[1.4]">
+                  {item.answer}
+                </div>
+              </Accordion.Content>
+            </Accordion.Item>
+          ))}
+        </Accordion.Root>
+      </div>
     </div>
   );
 }
@@ -3137,11 +3338,60 @@ function Group1({ selectedIndex, onDotClick }: { selectedIndex: number, onDotCli
   );
 }
 
-function Frame60() {
+function Frame60({ content }: { content: any }) {
+  if (!content?.locations?.items?.length) return null;
+
+  const cards = content.locations.items.slice(0, 4);
+
   return (
     <div className="content-stretch flex flex-col gap-[40px] items-center mb-[-2px] py-[80px] relative shrink-0 w-full">
-      <Frame126 />
-      <Frame127 />
+      <div className="relative shrink-0 w-full">
+        <div className="flex flex-col items-center size-full">
+          <div className="content-stretch flex flex-col gap-[40px] items-center leading-[0] not-italic pr-[230px] relative text-[#080813] text-center w-full">
+            <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center min-w-full relative shrink-0 text-[40px] w-[min-content]">
+              <p className="leading-[1.1]">Asesoría hipotecaria en las principales ciudades de España</p>
+            </div>
+            <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative shrink-0 text-[18px] whitespace-nowrap">
+              <p className="leading-[1.1]">{content.locations.subtitle}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="content-stretch flex flex-col gap-[20px] w-full">
+        <div className="h-[204px] relative shrink-0 w-full overflow-hidden">
+          <div className="flex gap-[40px] items-start h-full">
+            {cards.map((item: any, index: number) => (
+              <div key={index} className={`flex-[0_0_auto] min-w-0 bg-[#ecddee] flex flex-col gap-[16px] h-full items-start justify-center pr-[20px] relative rounded-[24px] shrink-0 ${index === 0 ? "ml-[230px]" : ""}`} data-name="SEO local card">
+                <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-start min-h-px min-w-px relative">
+                  <div className="flex h-full items-center justify-center relative shrink-0">
+                    <div className="h-full relative rounded-[24px] w-[306.5px]">
+                      <img alt={item.city} className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={item.image} />
+                    </div>
+                  </div>
+                  <div className="h-full relative shrink-0">
+                    <div className="flex flex-col justify-center size-full">
+                      <div className="content-stretch flex flex-col gap-[12px] h-full items-start justify-center py-[20px] relative">
+                        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#8949ff] text-[28px] w-[min-content]">
+                          <p className="leading-[1.1]">{item.city}</p>
+                        </div>
+                        <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#080813] text-[15px] w-[min-content]">
+                          <p className="leading-[1.1]">{item.summary || item.address}</p>
+                        </div>
+                        <a href={item.cta?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline">
+                          <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[18px] text-center whitespace-nowrap">
+                            <p className="leading-[1.1]">{item.seoLabel || item.cta?.label}</p>
+                          </div>
+                          <Container47 />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
@@ -3358,7 +3608,21 @@ function Frame49({ content }: { content: any }) {
   );
 }
 
-export default function Home({ content }: { content: any }) {
+export default function Home({
+  content,
+  data,
+  query,
+  variables
+}: {
+  content: any;
+  data?: any;
+  query?: string;
+  variables?: Record<string, any>;
+}) {
+  const tinaState = query && variables && data ? useTina({ query, variables, data }) : null;
+  const page = tinaState?.data?.pages ?? content;
+  const tinaPage = tinaState?.data?.pages ?? null;
+
   return (
     <div className="bg-white content-stretch flex flex-col items-center pb-[2px] relative size-full overflow-hidden" data-name="Home">
       <style>{`
@@ -3374,22 +3638,48 @@ export default function Home({ content }: { content: any }) {
           transform: scale(0.95);
         }
       `}</style>
-      <Frame content={content} />
-      <Frame18 content={content} />
-      <StaggeredMetricsSection content={content} />
-      <Frame122 content={content} />
-      <Frame21 content={content} />
-      <Frame86 content={content} />
-      <div className="bg-white content-stretch flex flex-col items-center mb-[-2px] px-[250px] py-[80px] relative shrink-0 w-[1920px]" data-name="cifras">
-        <Frame49 content={content} />
+      <div data-tina-field={fieldFor(tinaPage, "hero")}>
+        <Frame content={page} />
       </div>
-      <Frame85 content={content} />
-      <Frame83 content={content} />
-      <Frame22 content={content} />
-      <Frame1 content={content} />
-      <Frame51 content={content} />
-      <Frame52 content={content} />
-      <Frame60 content={content} />
+      <div data-tina-field={fieldFor(tinaPage, "services")}>
+        <Frame18 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "metrics")}>
+        <StaggeredMetricsSection content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "whoIsItFor")}>
+        <Frame122 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "testimonials")}>
+        <Frame21 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "partners")}>
+        <Frame86 content={page} />
+      </div>
+      <div className="bg-white content-stretch flex flex-col items-center mb-[-2px] px-[250px] py-[80px] relative shrink-0 w-[1920px]" data-name="cifras">
+        <Frame49 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "benefits")}>
+        <Frame85 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "contact")}>
+        <Frame83 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "blog")}>
+        <Frame22 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "newsletter")}>
+        <Frame1 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "locations")}>
+        <Frame51 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "faq")}>
+        <Frame52 content={page} />
+      </div>
+      <div data-tina-field={fieldFor(tinaPage, "locations")}>
+        <Frame60 content={page} />
+      </div>
       
     </div>
   );

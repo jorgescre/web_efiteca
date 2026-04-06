@@ -7,10 +7,11 @@
     "node": "24.x"
   },
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
+    "dev": "tinacms dev -c \"astro dev\"",
+    "start": "tinacms dev -c \"astro dev\"",
+    "build": "node scripts/tina-build.mjs && astro build",
     "preview": "astro preview",
+    "tina:build": "tinacms build",
     "typecheck": "tsc --noEmit",
     "astro:check": "astro check",
     "lint": "eslint ."
@@ -32,6 +33,7 @@
     "@radix-ui/react-switch": "^1.2.6",
     "@radix-ui/react-tabs": "^1.1.13",
     "@radix-ui/react-tooltip": "^1.2.8",
+    "@tinacms/cli": "^2.2.1",
     "astro": "^5.0.0",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
@@ -41,6 +43,7 @@
     "react-dom": "^19.2.4",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.5.0",
+    "tinacms": "^3.7.1",
     "vaul": "^1.1.2",
     "zod": "^3.24.0"
   },

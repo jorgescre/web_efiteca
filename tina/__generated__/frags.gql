@@ -1,0 +1,220 @@
+fragment PagesParts on Pages {
+  __typename
+  lang
+  title
+  seo {
+    __typename
+    title
+    description
+  }
+  hero {
+    __typename
+    title_part1
+    title_part2
+    description
+    background_layer_1
+    background_layer_2
+    main_background
+    person_image
+    cta {
+      __typename
+      label
+      href
+    }
+  }
+  services {
+    __typename
+    title
+    description
+    items {
+      __typename
+      title
+      description
+      image
+      button {
+        __typename
+        label
+        href
+      }
+    }
+  }
+  whoIsItFor {
+    __typename
+    title
+    items {
+      __typename
+      title
+      image
+    }
+  }
+  steps {
+    __typename
+    title
+    image
+    items {
+      __typename
+      number
+      title
+      description
+    }
+  }
+  benefits {
+    __typename
+    title
+    description
+    ctaText
+    ctaLink
+    items {
+      __typename
+      text
+    }
+  }
+  metrics {
+    __typename
+    title
+    items {
+      __typename
+      title
+      value
+    }
+  }
+  testimonials {
+    __typename
+    title
+    description
+    items {
+      __typename
+      name
+      role
+      text
+      image
+      stars
+    }
+  }
+  partners {
+    __typename
+    title
+    description
+    items {
+      __typename
+      name
+    }
+  }
+  faq {
+    __typename
+    title
+    items {
+      __typename
+      question
+      answer
+    }
+  }
+  locations {
+    __typename
+    title
+    subtitle
+    items {
+      __typename
+      city
+      address
+      summary
+      seoLabel
+      image
+      cta {
+        __typename
+        label
+        href
+      }
+    }
+  }
+  blog {
+    __typename
+    title
+    subtitle
+    cta {
+      __typename
+      label
+      href
+    }
+    items {
+      __typename
+      title
+      description
+      image
+      cta {
+        __typename
+        label
+        href
+      }
+    }
+  }
+  newsletter {
+    __typename
+    title
+    description
+    emailPlaceholder
+    button {
+      __typename
+      label
+      href
+    }
+  }
+  contact {
+    __typename
+    title
+    description
+    highlights
+    form {
+      __typename
+      name_label
+      lastname_label
+      email_label
+      phone_label
+      role_label
+      role_placeholder
+      message_label
+      terms_label
+      submit_label
+    }
+  }
+  footer {
+    __typename
+    services_title
+    links {
+      __typename
+      label
+      href
+    }
+  }
+  body
+}
+
+fragment NewsParts on News {
+  __typename
+  lang
+  market
+  title
+  excerpt
+  publishedAt
+  updatedAt
+  category
+  featured
+  seo {
+    __typename
+    title
+    description
+  }
+  body
+}
+
+fragment MarketsParts on Markets {
+  __typename
+  title
+  lang
+  seo {
+    __typename
+    title
+    description
+  }
+  body
+}

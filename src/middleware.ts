@@ -8,6 +8,10 @@ const BOT_PATTERN =
 export const onRequest = defineMiddleware(async (context, next) => {
   const { pathname } = context.url;
 
+  if (pathname === "/admin" || pathname === "/admin/") {
+    return context.redirect("/admin/index.html", 302);
+  }
+
   if (pathname !== "/") {
     return next();
   }
