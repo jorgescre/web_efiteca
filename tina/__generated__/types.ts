@@ -250,10 +250,32 @@ export type PagesWhoIsItForItems = {
   image?: Maybe<Scalars['String']['output']>;
 };
 
+export type PagesWhoIsItForProcessPricingButton = {
+  __typename?: 'PagesWhoIsItForProcessPricingButton';
+  label: Scalars['String']['output'];
+  href: Scalars['String']['output'];
+};
+
+export type PagesWhoIsItForProcessPricing = {
+  __typename?: 'PagesWhoIsItForProcessPricing';
+  title?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  highlight?: Maybe<Scalars['String']['output']>;
+  button?: Maybe<PagesWhoIsItForProcessPricingButton>;
+};
+
+export type PagesWhoIsItForProcess = {
+  __typename?: 'PagesWhoIsItForProcess';
+  title?: Maybe<Scalars['String']['output']>;
+  requirements?: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  pricing?: Maybe<PagesWhoIsItForProcessPricing>;
+};
+
 export type PagesWhoIsItFor = {
   __typename?: 'PagesWhoIsItFor';
   title?: Maybe<Scalars['String']['output']>;
   items?: Maybe<Array<Maybe<PagesWhoIsItForItems>>>;
+  process?: Maybe<PagesWhoIsItForProcess>;
 };
 
 export type PagesStepsItems = {
@@ -272,6 +294,7 @@ export type PagesSteps = {
 
 export type PagesBenefitsItems = {
   __typename?: 'PagesBenefitsItems';
+  icon?: Maybe<Scalars['String']['output']>;
   text?: Maybe<Scalars['String']['output']>;
 };
 
@@ -515,9 +538,28 @@ export type PagesWhoIsItForItemsFilter = {
   image?: InputMaybe<ImageFilter>;
 };
 
+export type PagesWhoIsItForProcessPricingButtonFilter = {
+  label?: InputMaybe<StringFilter>;
+  href?: InputMaybe<StringFilter>;
+};
+
+export type PagesWhoIsItForProcessPricingFilter = {
+  title?: InputMaybe<StringFilter>;
+  description?: InputMaybe<StringFilter>;
+  highlight?: InputMaybe<StringFilter>;
+  button?: InputMaybe<PagesWhoIsItForProcessPricingButtonFilter>;
+};
+
+export type PagesWhoIsItForProcessFilter = {
+  title?: InputMaybe<StringFilter>;
+  requirements?: InputMaybe<StringFilter>;
+  pricing?: InputMaybe<PagesWhoIsItForProcessPricingFilter>;
+};
+
 export type PagesWhoIsItForFilter = {
   title?: InputMaybe<StringFilter>;
   items?: InputMaybe<PagesWhoIsItForItemsFilter>;
+  process?: InputMaybe<PagesWhoIsItForProcessFilter>;
 };
 
 export type NumberFilter = {
@@ -543,6 +585,7 @@ export type PagesStepsFilter = {
 };
 
 export type PagesBenefitsItemsFilter = {
+  icon?: InputMaybe<ImageFilter>;
   text?: InputMaybe<StringFilter>;
 };
 
@@ -971,9 +1014,28 @@ export type PagesWhoIsItForItemsMutation = {
   image?: InputMaybe<Scalars['String']['input']>;
 };
 
+export type PagesWhoIsItForProcessPricingButtonMutation = {
+  label?: InputMaybe<Scalars['String']['input']>;
+  href?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type PagesWhoIsItForProcessPricingMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  highlight?: InputMaybe<Scalars['String']['input']>;
+  button?: InputMaybe<PagesWhoIsItForProcessPricingButtonMutation>;
+};
+
+export type PagesWhoIsItForProcessMutation = {
+  title?: InputMaybe<Scalars['String']['input']>;
+  requirements?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  pricing?: InputMaybe<PagesWhoIsItForProcessPricingMutation>;
+};
+
 export type PagesWhoIsItForMutation = {
   title?: InputMaybe<Scalars['String']['input']>;
   items?: InputMaybe<Array<InputMaybe<PagesWhoIsItForItemsMutation>>>;
+  process?: InputMaybe<PagesWhoIsItForProcessMutation>;
 };
 
 export type PagesStepsItemsMutation = {
@@ -989,6 +1051,7 @@ export type PagesStepsMutation = {
 };
 
 export type PagesBenefitsItemsMutation = {
+  icon?: InputMaybe<Scalars['String']['input']>;
   text?: InputMaybe<Scalars['String']['input']>;
 };
 
@@ -1180,7 +1243,7 @@ export type MarketsMutation = {
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type PagesPartsFragment = { __typename: 'Pages', lang: string, title: string, body?: any | null, seo?: { __typename: 'PagesSeo', title: string, description: string } | null, hero?: { __typename: 'PagesHero', title_part1?: string | null, title_part2?: string | null, description?: string | null, background_desktop?: string | null, background_mobile?: string | null, cta?: { __typename: 'PagesHeroCta', label: string, href: string } | null } | null, services?: { __typename: 'PagesServices', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesServicesItems', title?: string | null, description?: string | null, image?: string | null, button?: { __typename: 'PagesServicesItemsButton', label: string, href: string } | null } | null> | null } | null, whoIsItFor?: { __typename: 'PagesWhoIsItFor', title?: string | null, items?: Array<{ __typename: 'PagesWhoIsItForItems', title?: string | null, image?: string | null } | null> | null } | null, steps?: { __typename: 'PagesSteps', title?: string | null, image?: string | null, items?: Array<{ __typename: 'PagesStepsItems', number?: number | null, title?: string | null, description?: string | null } | null> | null } | null, benefits?: { __typename: 'PagesBenefits', title?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, items?: Array<{ __typename: 'PagesBenefitsItems', text?: string | null } | null> | null } | null, metrics?: { __typename: 'PagesMetrics', title?: string | null, items?: Array<{ __typename: 'PagesMetricsItems', title?: string | null, value?: string | null } | null> | null } | null, testimonials?: { __typename: 'PagesTestimonials', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesTestimonialsItems', name?: string | null, role?: string | null, text?: string | null, image?: string | null, stars?: number | null } | null> | null } | null, partners?: { __typename: 'PagesPartners', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesPartnersItems', name?: string | null } | null> | null } | null, faq?: { __typename: 'PagesFaq', title?: string | null, items?: Array<{ __typename: 'PagesFaqItems', question?: string | null, answer?: string | null } | null> | null } | null, locations?: { __typename: 'PagesLocations', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesLocationsItems', city?: string | null, address?: string | null, summary?: string | null, seoLabel?: string | null, image?: string | null, cta?: { __typename: 'PagesLocationsItemsCta', label: string, href: string } | null } | null> | null } | null, blog?: { __typename: 'PagesBlog', title?: string | null, subtitle?: string | null, cta?: { __typename: 'PagesBlogCta', label: string, href: string } | null, items?: Array<{ __typename: 'PagesBlogItems', title?: string | null, description?: string | null, image?: string | null, cta?: { __typename: 'PagesBlogItemsCta', label: string, href: string } | null } | null> | null } | null, newsletter?: { __typename: 'PagesNewsletter', title?: string | null, description?: string | null, emailPlaceholder?: string | null, button?: { __typename: 'PagesNewsletterButton', label: string, href: string } | null } | null, contact?: { __typename: 'PagesContact', title?: string | null, description?: string | null, highlights?: Array<string | null> | null, form?: { __typename: 'PagesContactForm', name_label?: string | null, lastname_label?: string | null, email_label?: string | null, phone_label?: string | null, role_label?: string | null, role_placeholder?: string | null, message_label?: string | null, terms_label?: string | null, submit_label?: string | null } | null } | null, footer?: { __typename: 'PagesFooter', services_title?: string | null, links?: Array<{ __typename: 'PagesFooterLinks', label: string, href: string } | null> | null } | null };
+export type PagesPartsFragment = { __typename: 'Pages', lang: string, title: string, body?: any | null, seo?: { __typename: 'PagesSeo', title: string, description: string } | null, hero?: { __typename: 'PagesHero', title_part1?: string | null, title_part2?: string | null, description?: string | null, background_desktop?: string | null, background_mobile?: string | null, cta?: { __typename: 'PagesHeroCta', label: string, href: string } | null } | null, services?: { __typename: 'PagesServices', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesServicesItems', title?: string | null, description?: string | null, image?: string | null, button?: { __typename: 'PagesServicesItemsButton', label: string, href: string } | null } | null> | null } | null, whoIsItFor?: { __typename: 'PagesWhoIsItFor', title?: string | null, items?: Array<{ __typename: 'PagesWhoIsItForItems', title?: string | null, image?: string | null } | null> | null, process?: { __typename: 'PagesWhoIsItForProcess', title?: string | null, requirements?: Array<string | null> | null, pricing?: { __typename: 'PagesWhoIsItForProcessPricing', title?: string | null, description?: string | null, highlight?: string | null, button?: { __typename: 'PagesWhoIsItForProcessPricingButton', label: string, href: string } | null } | null } | null } | null, steps?: { __typename: 'PagesSteps', title?: string | null, image?: string | null, items?: Array<{ __typename: 'PagesStepsItems', number?: number | null, title?: string | null, description?: string | null } | null> | null } | null, benefits?: { __typename: 'PagesBenefits', title?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, items?: Array<{ __typename: 'PagesBenefitsItems', icon?: string | null, text?: string | null } | null> | null } | null, metrics?: { __typename: 'PagesMetrics', title?: string | null, items?: Array<{ __typename: 'PagesMetricsItems', title?: string | null, value?: string | null } | null> | null } | null, testimonials?: { __typename: 'PagesTestimonials', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesTestimonialsItems', name?: string | null, role?: string | null, text?: string | null, image?: string | null, stars?: number | null } | null> | null } | null, partners?: { __typename: 'PagesPartners', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesPartnersItems', name?: string | null } | null> | null } | null, faq?: { __typename: 'PagesFaq', title?: string | null, items?: Array<{ __typename: 'PagesFaqItems', question?: string | null, answer?: string | null } | null> | null } | null, locations?: { __typename: 'PagesLocations', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesLocationsItems', city?: string | null, address?: string | null, summary?: string | null, seoLabel?: string | null, image?: string | null, cta?: { __typename: 'PagesLocationsItemsCta', label: string, href: string } | null } | null> | null } | null, blog?: { __typename: 'PagesBlog', title?: string | null, subtitle?: string | null, cta?: { __typename: 'PagesBlogCta', label: string, href: string } | null, items?: Array<{ __typename: 'PagesBlogItems', title?: string | null, description?: string | null, image?: string | null, cta?: { __typename: 'PagesBlogItemsCta', label: string, href: string } | null } | null> | null } | null, newsletter?: { __typename: 'PagesNewsletter', title?: string | null, description?: string | null, emailPlaceholder?: string | null, button?: { __typename: 'PagesNewsletterButton', label: string, href: string } | null } | null, contact?: { __typename: 'PagesContact', title?: string | null, description?: string | null, highlights?: Array<string | null> | null, form?: { __typename: 'PagesContactForm', name_label?: string | null, lastname_label?: string | null, email_label?: string | null, phone_label?: string | null, role_label?: string | null, role_placeholder?: string | null, message_label?: string | null, terms_label?: string | null, submit_label?: string | null } | null } | null, footer?: { __typename: 'PagesFooter', services_title?: string | null, links?: Array<{ __typename: 'PagesFooterLinks', label: string, href: string } | null> | null } | null };
 
 export type NewsPartsFragment = { __typename: 'News', lang: string, market?: string | null, title: string, excerpt: string, publishedAt: string, updatedAt?: string | null, category: string, featured?: boolean | null, body?: any | null, seo?: { __typename: 'NewsSeo', title?: string | null, description?: string | null } | null };
 
@@ -1191,7 +1254,7 @@ export type PagesQueryVariables = Exact<{
 }>;
 
 
-export type PagesQuery = { __typename?: 'Query', pages: { __typename: 'Pages', id: string, lang: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PagesSeo', title: string, description: string } | null, hero?: { __typename: 'PagesHero', title_part1?: string | null, title_part2?: string | null, description?: string | null, background_desktop?: string | null, background_mobile?: string | null, cta?: { __typename: 'PagesHeroCta', label: string, href: string } | null } | null, services?: { __typename: 'PagesServices', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesServicesItems', title?: string | null, description?: string | null, image?: string | null, button?: { __typename: 'PagesServicesItemsButton', label: string, href: string } | null } | null> | null } | null, whoIsItFor?: { __typename: 'PagesWhoIsItFor', title?: string | null, items?: Array<{ __typename: 'PagesWhoIsItForItems', title?: string | null, image?: string | null } | null> | null } | null, steps?: { __typename: 'PagesSteps', title?: string | null, image?: string | null, items?: Array<{ __typename: 'PagesStepsItems', number?: number | null, title?: string | null, description?: string | null } | null> | null } | null, benefits?: { __typename: 'PagesBenefits', title?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, items?: Array<{ __typename: 'PagesBenefitsItems', text?: string | null } | null> | null } | null, metrics?: { __typename: 'PagesMetrics', title?: string | null, items?: Array<{ __typename: 'PagesMetricsItems', title?: string | null, value?: string | null } | null> | null } | null, testimonials?: { __typename: 'PagesTestimonials', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesTestimonialsItems', name?: string | null, role?: string | null, text?: string | null, image?: string | null, stars?: number | null } | null> | null } | null, partners?: { __typename: 'PagesPartners', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesPartnersItems', name?: string | null } | null> | null } | null, faq?: { __typename: 'PagesFaq', title?: string | null, items?: Array<{ __typename: 'PagesFaqItems', question?: string | null, answer?: string | null } | null> | null } | null, locations?: { __typename: 'PagesLocations', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesLocationsItems', city?: string | null, address?: string | null, summary?: string | null, seoLabel?: string | null, image?: string | null, cta?: { __typename: 'PagesLocationsItemsCta', label: string, href: string } | null } | null> | null } | null, blog?: { __typename: 'PagesBlog', title?: string | null, subtitle?: string | null, cta?: { __typename: 'PagesBlogCta', label: string, href: string } | null, items?: Array<{ __typename: 'PagesBlogItems', title?: string | null, description?: string | null, image?: string | null, cta?: { __typename: 'PagesBlogItemsCta', label: string, href: string } | null } | null> | null } | null, newsletter?: { __typename: 'PagesNewsletter', title?: string | null, description?: string | null, emailPlaceholder?: string | null, button?: { __typename: 'PagesNewsletterButton', label: string, href: string } | null } | null, contact?: { __typename: 'PagesContact', title?: string | null, description?: string | null, highlights?: Array<string | null> | null, form?: { __typename: 'PagesContactForm', name_label?: string | null, lastname_label?: string | null, email_label?: string | null, phone_label?: string | null, role_label?: string | null, role_placeholder?: string | null, message_label?: string | null, terms_label?: string | null, submit_label?: string | null } | null } | null, footer?: { __typename: 'PagesFooter', services_title?: string | null, links?: Array<{ __typename: 'PagesFooterLinks', label: string, href: string } | null> | null } | null } };
+export type PagesQuery = { __typename?: 'Query', pages: { __typename: 'Pages', id: string, lang: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PagesSeo', title: string, description: string } | null, hero?: { __typename: 'PagesHero', title_part1?: string | null, title_part2?: string | null, description?: string | null, background_desktop?: string | null, background_mobile?: string | null, cta?: { __typename: 'PagesHeroCta', label: string, href: string } | null } | null, services?: { __typename: 'PagesServices', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesServicesItems', title?: string | null, description?: string | null, image?: string | null, button?: { __typename: 'PagesServicesItemsButton', label: string, href: string } | null } | null> | null } | null, whoIsItFor?: { __typename: 'PagesWhoIsItFor', title?: string | null, items?: Array<{ __typename: 'PagesWhoIsItForItems', title?: string | null, image?: string | null } | null> | null, process?: { __typename: 'PagesWhoIsItForProcess', title?: string | null, requirements?: Array<string | null> | null, pricing?: { __typename: 'PagesWhoIsItForProcessPricing', title?: string | null, description?: string | null, highlight?: string | null, button?: { __typename: 'PagesWhoIsItForProcessPricingButton', label: string, href: string } | null } | null } | null } | null, steps?: { __typename: 'PagesSteps', title?: string | null, image?: string | null, items?: Array<{ __typename: 'PagesStepsItems', number?: number | null, title?: string | null, description?: string | null } | null> | null } | null, benefits?: { __typename: 'PagesBenefits', title?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, items?: Array<{ __typename: 'PagesBenefitsItems', icon?: string | null, text?: string | null } | null> | null } | null, metrics?: { __typename: 'PagesMetrics', title?: string | null, items?: Array<{ __typename: 'PagesMetricsItems', title?: string | null, value?: string | null } | null> | null } | null, testimonials?: { __typename: 'PagesTestimonials', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesTestimonialsItems', name?: string | null, role?: string | null, text?: string | null, image?: string | null, stars?: number | null } | null> | null } | null, partners?: { __typename: 'PagesPartners', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesPartnersItems', name?: string | null } | null> | null } | null, faq?: { __typename: 'PagesFaq', title?: string | null, items?: Array<{ __typename: 'PagesFaqItems', question?: string | null, answer?: string | null } | null> | null } | null, locations?: { __typename: 'PagesLocations', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesLocationsItems', city?: string | null, address?: string | null, summary?: string | null, seoLabel?: string | null, image?: string | null, cta?: { __typename: 'PagesLocationsItemsCta', label: string, href: string } | null } | null> | null } | null, blog?: { __typename: 'PagesBlog', title?: string | null, subtitle?: string | null, cta?: { __typename: 'PagesBlogCta', label: string, href: string } | null, items?: Array<{ __typename: 'PagesBlogItems', title?: string | null, description?: string | null, image?: string | null, cta?: { __typename: 'PagesBlogItemsCta', label: string, href: string } | null } | null> | null } | null, newsletter?: { __typename: 'PagesNewsletter', title?: string | null, description?: string | null, emailPlaceholder?: string | null, button?: { __typename: 'PagesNewsletterButton', label: string, href: string } | null } | null, contact?: { __typename: 'PagesContact', title?: string | null, description?: string | null, highlights?: Array<string | null> | null, form?: { __typename: 'PagesContactForm', name_label?: string | null, lastname_label?: string | null, email_label?: string | null, phone_label?: string | null, role_label?: string | null, role_placeholder?: string | null, message_label?: string | null, terms_label?: string | null, submit_label?: string | null } | null } | null, footer?: { __typename: 'PagesFooter', services_title?: string | null, links?: Array<{ __typename: 'PagesFooterLinks', label: string, href: string } | null> | null } | null } };
 
 export type PagesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -1203,7 +1266,7 @@ export type PagesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'Pages', id: string, lang: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PagesSeo', title: string, description: string } | null, hero?: { __typename: 'PagesHero', title_part1?: string | null, title_part2?: string | null, description?: string | null, background_desktop?: string | null, background_mobile?: string | null, cta?: { __typename: 'PagesHeroCta', label: string, href: string } | null } | null, services?: { __typename: 'PagesServices', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesServicesItems', title?: string | null, description?: string | null, image?: string | null, button?: { __typename: 'PagesServicesItemsButton', label: string, href: string } | null } | null> | null } | null, whoIsItFor?: { __typename: 'PagesWhoIsItFor', title?: string | null, items?: Array<{ __typename: 'PagesWhoIsItForItems', title?: string | null, image?: string | null } | null> | null } | null, steps?: { __typename: 'PagesSteps', title?: string | null, image?: string | null, items?: Array<{ __typename: 'PagesStepsItems', number?: number | null, title?: string | null, description?: string | null } | null> | null } | null, benefits?: { __typename: 'PagesBenefits', title?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, items?: Array<{ __typename: 'PagesBenefitsItems', text?: string | null } | null> | null } | null, metrics?: { __typename: 'PagesMetrics', title?: string | null, items?: Array<{ __typename: 'PagesMetricsItems', title?: string | null, value?: string | null } | null> | null } | null, testimonials?: { __typename: 'PagesTestimonials', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesTestimonialsItems', name?: string | null, role?: string | null, text?: string | null, image?: string | null, stars?: number | null } | null> | null } | null, partners?: { __typename: 'PagesPartners', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesPartnersItems', name?: string | null } | null> | null } | null, faq?: { __typename: 'PagesFaq', title?: string | null, items?: Array<{ __typename: 'PagesFaqItems', question?: string | null, answer?: string | null } | null> | null } | null, locations?: { __typename: 'PagesLocations', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesLocationsItems', city?: string | null, address?: string | null, summary?: string | null, seoLabel?: string | null, image?: string | null, cta?: { __typename: 'PagesLocationsItemsCta', label: string, href: string } | null } | null> | null } | null, blog?: { __typename: 'PagesBlog', title?: string | null, subtitle?: string | null, cta?: { __typename: 'PagesBlogCta', label: string, href: string } | null, items?: Array<{ __typename: 'PagesBlogItems', title?: string | null, description?: string | null, image?: string | null, cta?: { __typename: 'PagesBlogItemsCta', label: string, href: string } | null } | null> | null } | null, newsletter?: { __typename: 'PagesNewsletter', title?: string | null, description?: string | null, emailPlaceholder?: string | null, button?: { __typename: 'PagesNewsletterButton', label: string, href: string } | null } | null, contact?: { __typename: 'PagesContact', title?: string | null, description?: string | null, highlights?: Array<string | null> | null, form?: { __typename: 'PagesContactForm', name_label?: string | null, lastname_label?: string | null, email_label?: string | null, phone_label?: string | null, role_label?: string | null, role_placeholder?: string | null, message_label?: string | null, terms_label?: string | null, submit_label?: string | null } | null } | null, footer?: { __typename: 'PagesFooter', services_title?: string | null, links?: Array<{ __typename: 'PagesFooterLinks', label: string, href: string } | null> | null } | null } | null } | null> | null } };
+export type PagesConnectionQuery = { __typename?: 'Query', pagesConnection: { __typename?: 'PagesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'PagesConnectionEdges', cursor: string, node?: { __typename: 'Pages', id: string, lang: string, title: string, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, seo?: { __typename: 'PagesSeo', title: string, description: string } | null, hero?: { __typename: 'PagesHero', title_part1?: string | null, title_part2?: string | null, description?: string | null, background_desktop?: string | null, background_mobile?: string | null, cta?: { __typename: 'PagesHeroCta', label: string, href: string } | null } | null, services?: { __typename: 'PagesServices', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesServicesItems', title?: string | null, description?: string | null, image?: string | null, button?: { __typename: 'PagesServicesItemsButton', label: string, href: string } | null } | null> | null } | null, whoIsItFor?: { __typename: 'PagesWhoIsItFor', title?: string | null, items?: Array<{ __typename: 'PagesWhoIsItForItems', title?: string | null, image?: string | null } | null> | null, process?: { __typename: 'PagesWhoIsItForProcess', title?: string | null, requirements?: Array<string | null> | null, pricing?: { __typename: 'PagesWhoIsItForProcessPricing', title?: string | null, description?: string | null, highlight?: string | null, button?: { __typename: 'PagesWhoIsItForProcessPricingButton', label: string, href: string } | null } | null } | null } | null, steps?: { __typename: 'PagesSteps', title?: string | null, image?: string | null, items?: Array<{ __typename: 'PagesStepsItems', number?: number | null, title?: string | null, description?: string | null } | null> | null } | null, benefits?: { __typename: 'PagesBenefits', title?: string | null, description?: string | null, ctaText?: string | null, ctaLink?: string | null, items?: Array<{ __typename: 'PagesBenefitsItems', icon?: string | null, text?: string | null } | null> | null } | null, metrics?: { __typename: 'PagesMetrics', title?: string | null, items?: Array<{ __typename: 'PagesMetricsItems', title?: string | null, value?: string | null } | null> | null } | null, testimonials?: { __typename: 'PagesTestimonials', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesTestimonialsItems', name?: string | null, role?: string | null, text?: string | null, image?: string | null, stars?: number | null } | null> | null } | null, partners?: { __typename: 'PagesPartners', title?: string | null, description?: string | null, items?: Array<{ __typename: 'PagesPartnersItems', name?: string | null } | null> | null } | null, faq?: { __typename: 'PagesFaq', title?: string | null, items?: Array<{ __typename: 'PagesFaqItems', question?: string | null, answer?: string | null } | null> | null } | null, locations?: { __typename: 'PagesLocations', title?: string | null, subtitle?: string | null, items?: Array<{ __typename: 'PagesLocationsItems', city?: string | null, address?: string | null, summary?: string | null, seoLabel?: string | null, image?: string | null, cta?: { __typename: 'PagesLocationsItemsCta', label: string, href: string } | null } | null> | null } | null, blog?: { __typename: 'PagesBlog', title?: string | null, subtitle?: string | null, cta?: { __typename: 'PagesBlogCta', label: string, href: string } | null, items?: Array<{ __typename: 'PagesBlogItems', title?: string | null, description?: string | null, image?: string | null, cta?: { __typename: 'PagesBlogItemsCta', label: string, href: string } | null } | null> | null } | null, newsletter?: { __typename: 'PagesNewsletter', title?: string | null, description?: string | null, emailPlaceholder?: string | null, button?: { __typename: 'PagesNewsletterButton', label: string, href: string } | null } | null, contact?: { __typename: 'PagesContact', title?: string | null, description?: string | null, highlights?: Array<string | null> | null, form?: { __typename: 'PagesContactForm', name_label?: string | null, lastname_label?: string | null, email_label?: string | null, phone_label?: string | null, role_label?: string | null, role_placeholder?: string | null, message_label?: string | null, terms_label?: string | null, submit_label?: string | null } | null } | null, footer?: { __typename: 'PagesFooter', services_title?: string | null, links?: Array<{ __typename: 'PagesFooterLinks', label: string, href: string } | null> | null } | null } | null } | null> | null } };
 
 export type NewsQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
@@ -1290,6 +1353,22 @@ export const PagesPartsFragmentDoc = gql`
       title
       image
     }
+    process {
+      __typename
+      title
+      requirements
+      pricing {
+        __typename
+        title
+        description
+        highlight
+        button {
+          __typename
+          label
+          href
+        }
+      }
+    }
   }
   steps {
     __typename
@@ -1310,6 +1389,7 @@ export const PagesPartsFragmentDoc = gql`
     ctaLink
     items {
       __typename
+      icon
       text
     }
   }

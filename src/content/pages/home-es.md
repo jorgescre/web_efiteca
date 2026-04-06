@@ -52,6 +52,20 @@ whoIsItFor:
       image: /images/imgRectangle804.png
     - title: Compradores que ya tienen vivienda vista
       image: /images/imgRectangle805.png
+  process:
+    title: ¿Cuáles son los requisitos de nuestro proceso?
+    requirements:
+      - Compartir información básica de tu situación.
+      - 'Objetivo claro: compra o mejora.'
+      - Ingresos y estabilidad laboral.
+      - Ahorro aproximado disponible.
+    pricing:
+      title: ¿Cuánto vale?
+      description: 'El diagnóstico inicial es gratuito. Después, el costo depende del nivel de acompañamiento requerido y la complejidad del caso.'
+      highlight: Siempre sabrás el valor antes de avanzar.
+      button:
+        label: Calcular mi hipoteca ahora
+        href: '#calculator'
 steps:
   title: Conoce nuestro paso a paso
   image: /images/box.png
@@ -80,7 +94,8 @@ benefits:
   ctaText: Hablar con un experto
   ctaLink: '#contacto'
   items:
-    - text: Entiendes exactamente lo que estás firmando.
+    - icon: /images/item.icon.png
+      text: Entiendes exactamente lo que estás firmando.
     - text: Tomas decisiones con información clara.
     - text: Reduces tiempos y fricciones del proceso.
     - text: Accedes a condiciones más adecuadas.
@@ -234,3 +249,4 @@ footer:
     - label: Simulador de hipoteca
       href: '#simulator'
 ---
+

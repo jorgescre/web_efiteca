@@ -52,6 +52,20 @@ whoIsItFor:
       image: "/images/imgRectangle804.png"
     - title: "Buyers who already have a home in mind"
       image: "/images/imgRectangle805.png"
+  process:
+    title: What are the requirements for our process?
+    requirements:
+      - Share basic information about your situation.
+      - "Have a clear goal: purchase or improvement."
+      - Show income and job stability.
+      - Have an approximate savings amount available.
+    pricing:
+      title: How much does it cost?
+      description: The initial diagnosis is free. After that, the cost depends on the level of support required and the complexity of the case.
+      highlight: You will always know the price before moving forward.
+      button:
+        label: Calculate my mortgage now
+        href: '#calculator'
 steps:
   title: "Our step-by-step process"
   image: "/images/box.png"
@@ -219,3 +233,4 @@ footer:
     - label: "Mortgage simulator"
       href: "#simulator"
 ---
+

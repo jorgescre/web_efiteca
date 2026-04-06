@@ -132,6 +132,31 @@ export default defineConfig({
                   { type: "string", name: "title", label: "Title" },
                   { type: "image", name: "image", label: "Image" }
                 ]
+              },
+              {
+                type: "object",
+                name: "process",
+                label: "Process panel",
+                fields: [
+                  { type: "string", name: "title", label: "Title" },
+                  {
+                    type: "string",
+                    name: "requirements",
+                    label: "Requirements",
+                    list: true
+                  },
+                  {
+                    type: "object",
+                    name: "pricing",
+                    label: "Pricing card",
+                    fields: [
+                      { type: "string", name: "title", label: "Title" },
+                      { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
+                      { type: "string", name: "highlight", label: "Highlight" },
+                      { type: "object", name: "button", label: "Button", fields: linkFields }
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -174,7 +199,10 @@ export default defineConfig({
                 name: "items",
                 label: "Benefits",
                 list: true,
-                fields: [{ type: "string", name: "text", label: "Text" }]
+                fields: [
+                  { type: "image", name: "icon", label: "Icon" },
+                  { type: "string", name: "text", label: "Text" }
+                ]
               }
             ]
           },

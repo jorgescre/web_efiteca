@@ -138,8 +138,8 @@ function Frame57({ content }: { content: any }) {
   if (!content?.services) return null;
   return (
     <div className="content-stretch flex flex-col gap-[24px] items-start leading-[1.1] not-italic relative shrink-0 text-[#080813] text-center w-full">
-      <p className="font-['Inter:Bold',sans-serif] font-bold relative shrink-0 text-[40px] w-full">{content.services.title}</p>
-      <p className="font-['Trueno:Light',sans-serif] relative shrink-0 text-[18px] w-full">{content.services.description}</p>
+      <p className="font-['Inter:Bold',sans-serif] font-bold relative shrink-0 text-[32px] md:text-[40px] w-full">{content.services.title}</p>
+      <p className="font-['Trueno:Light',sans-serif] relative shrink-0 text-[16px] md:text-[18px] w-full">{content.services.description}</p>
     </div>
   );
 }
@@ -154,7 +154,7 @@ function Frame2({ content }: { content: any }) {
 
 function Frame17({ content }: { content: any }) {
   return (
-    <div className="relative shrink-0 w-[1300px]">
+    <div className="relative shrink-0 w-full max-w-[1300px]">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col items-center relative w-full">
         <Frame2 content={content} />
       </div>
@@ -175,10 +175,10 @@ function Container() {
 function Frame113({ item }: { item: any }) {
   if (!item) return null;
   return (
-    <div className="absolute bg-white content-stretch flex flex-col gap-[24px] h-[165px] items-start justify-center left-[18px] p-[16px] rounded-[16px] top-[298px] w-[287px]">
+    <div className="absolute bg-white content-stretch flex flex-col gap-[18px] md:gap-[24px] items-start justify-center left-[16px] right-[16px] bottom-[16px] p-[16px] rounded-[16px] w-auto">
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[15px] w-[min-content]">{item.description}</p>
-      <a href={item.button?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline group hover:scale-105 transition-transform">
-        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[18px] text-center whitespace-nowrap">
+      <a href={item.button?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline group hover:scale-105 transition-transform flex-wrap">
+        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[16px] md:text-[18px] text-left">
           <p className="leading-[1.1]">{item.button?.label}</p>
         </div>
         <Container />
@@ -214,10 +214,10 @@ function Container1() {
 function Frame114({ item }: { item: any }) {
   if (!item) return null;
   return (
-    <div className="absolute bg-white content-stretch flex flex-col gap-[24px] h-[165px] items-start justify-center left-[18px] p-[16px] rounded-[16px] top-[298px] w-[287px]">
+    <div className="absolute bg-white content-stretch flex flex-col gap-[18px] md:gap-[24px] items-start justify-center left-[16px] right-[16px] bottom-[16px] p-[16px] rounded-[16px] w-auto">
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[15px] w-[min-content]">{item.description}</p>
-      <a href={item.button?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline group hover:scale-105 transition-transform">
-        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[18px] text-center whitespace-nowrap">
+      <a href={item.button?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline group hover:scale-105 transition-transform flex-wrap">
+        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[16px] md:text-[18px] text-left">
           <p className="leading-[1.1]">{item.button?.label}</p>
         </div>
         <Container1 />
@@ -255,10 +255,10 @@ function Container2() {
 function Frame117({ item }: { item: any }) {
   if (!item) return null;
   return (
-    <div className="absolute bg-white content-stretch flex flex-col gap-[24px] h-[165px] items-start justify-center left-[18px] p-[16px] rounded-[16px] top-[298px] w-[287px]">
+    <div className="absolute bg-white content-stretch flex flex-col gap-[18px] md:gap-[24px] items-start justify-center left-[16px] right-[16px] bottom-[16px] p-[16px] rounded-[16px] w-auto">
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[15px] w-[min-content]">{item.description}</p>
-      <a href={item.button?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline group hover:scale-105 transition-transform">
-        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[18px] text-center whitespace-nowrap">
+      <a href={item.button?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline group hover:scale-105 transition-transform flex-wrap">
+        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[16px] md:text-[18px] text-left">
           <p className="leading-[1.1]">{item.button?.label}</p>
         </div>
         <Container2 />
@@ -296,10 +296,10 @@ function Container3() {
 function Frame119({ item }: { item: any }) {
   if (!item) return null;
   return (
-    <div className="absolute bg-white content-stretch flex flex-col gap-[24px] h-[165px] items-start justify-center left-[18px] p-[16px] rounded-[16px] top-[298px] w-[287px]">
+    <div className="absolute bg-white content-stretch flex flex-col gap-[18px] md:gap-[24px] items-start justify-center left-[16px] right-[16px] bottom-[16px] p-[16px] rounded-[16px] w-auto">
       <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[15px] w-[min-content]">{item.description}</p>
-      <a href={item.button?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline group hover:scale-105 transition-transform">
-        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[18px] text-center whitespace-nowrap">
+      <a href={item.button?.href || "#"} className="content-stretch flex gap-[8px] items-center relative shrink-0 no-underline group hover:scale-105 transition-transform flex-wrap">
+        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[#8949ff] text-[16px] md:text-[18px] text-left">
           <p className="leading-[1.1]">{item.button?.label}</p>
         </div>
         <Container3 />
@@ -328,22 +328,22 @@ function Frame115({ content }: { content: any }) {
   if (!content?.services?.items) return null;
   const items = content.services.items;
   return (
-    <div className="relative shrink-0">
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex gap-[24px] items-start relative">
-        <div className="content-stretch flex flex-col gap-[16px] h-[557px] items-start relative shrink-0 w-[323px]" data-name="Component 7">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[28px] w-full">{items[0]?.title}</p>
+    <div className="relative shrink-0 w-full">
+      <div className="bg-clip-padding border-0 border-[transparent] border-solid content-stretch flex flex-col md:flex-row md:flex-wrap gap-[24px] items-start relative w-full">
+        <div className="content-stretch flex flex-col gap-[16px] min-h-[520px] items-start relative shrink-0 w-full md:w-[calc(50%-12px)] xl:w-[323px]" data-name="Component 7">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[24px] md:text-[28px] w-full">{items[0]?.title}</p>
           <Frame111 item={items[0]} />
         </div>
-        <div className="content-stretch flex flex-col gap-[16px] h-[557px] items-start relative shrink-0 w-[323px]" data-name="Component 8">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[28px] w-full">{items[1]?.title}</p>
+        <div className="content-stretch flex flex-col gap-[16px] min-h-[520px] items-start relative shrink-0 w-full md:w-[calc(50%-12px)] xl:w-[323px]" data-name="Component 8">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[24px] md:text-[28px] w-full">{items[1]?.title}</p>
           <Frame112 item={items[1]} />
         </div>
-        <div className="content-stretch flex flex-col gap-[16px] h-[557px] items-start relative shrink-0 w-[323px]" data-name="Component 9">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[28px] w-full">{items[2]?.title}</p>
+        <div className="content-stretch flex flex-col gap-[16px] min-h-[520px] items-start relative shrink-0 w-full md:w-[calc(50%-12px)] xl:w-[323px]" data-name="Component 9">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[24px] md:text-[28px] w-full">{items[2]?.title}</p>
           <Frame116 item={items[2]} />
         </div>
-        <div className="content-stretch flex flex-col gap-[16px] h-[557px] items-start relative shrink-0 w-[323px]" data-name="Component 10">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[28px] w-full">{items[3]?.title}</p>
+        <div className="content-stretch flex flex-col gap-[16px] min-h-[520px] items-start relative shrink-0 w-full md:w-[calc(50%-12px)] xl:w-[323px]" data-name="Component 10">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[24px] md:text-[28px] w-full">{items[3]?.title}</p>
           <Frame118 item={items[3]} />
         </div>
       </div>
@@ -354,15 +354,15 @@ function Frame115({ content }: { content: any }) {
 function Frame18({ content }: { content: any }) {
   if (!content) return null;
   return (
-    <div className="mb-[-60px] relative rounded-[60px] shrink-0 w-full">
+    <div className="mb-[-60px] relative rounded-[32px] md:rounded-[60px] shrink-0 w-full">
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[60px]">
         <div className="absolute inset-0 overflow-hidden rounded-[60px]">
           <img alt="" className="absolute h-[299.1%] left-[-0.14%] max-w-none top-[-166.27%] w-[100.14%]" src={content.hero?.images?.[1]} />
         </div>
-        <div className="absolute bg-[#f7f5f9] inset-0 rounded-[60px]" />
+        <div className="absolute bg-[#f7f5f9] inset-0 rounded-[32px] md:rounded-[60px]" />
       </div>
       <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col gap-[60px] items-center px-[231px] py-[80px] relative w-full">
+        <div className="content-stretch flex flex-col gap-[40px] md:gap-[60px] items-center px-[20px] md:px-[48px] xl:px-[231px] py-[56px] md:py-[80px] relative w-full">
           <Frame17 content={content} />
           <Frame115 content={content} />
         </div>
@@ -457,9 +457,9 @@ function Frame97({ content }: { content: any }) {
   if (!content?.whoIsItFor) return null;
   const items = content.whoIsItFor.items || [];
   return (
-    <div className="content-stretch flex flex-col gap-[30px] items-start relative shrink-0 w-[1280px]">
-      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[40px] text-center w-full">{content.whoIsItFor.title}</p>
-      <div className="content-stretch flex gap-[24px] h-[90px] items-start relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[24px] md:gap-[30px] items-start relative shrink-0 w-full max-w-[1280px]">
+      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[32px] md:text-[40px] text-center w-full">{content.whoIsItFor.title}</p>
+      <div className="content-stretch grid grid-cols-1 sm:grid-cols-2 gap-[16px] md:gap-[24px] items-start relative shrink-0 w-full">
         <BackgroundBorder item={items[0]} />
         <BackgroundBorder item={items[1]} />
         <BackgroundBorder item={items[2]} />
@@ -668,7 +668,7 @@ function Frame99() {
 
 function Frame63() {
   return (
-    <div className="content-stretch flex gap-[32px] items-start relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col lg:flex-row gap-[24px] md:gap-[32px] items-start relative shrink-0 w-full">
       <Frame98 />
       <Frame99 />
     </div>
@@ -688,8 +688,8 @@ function Container5() {
 
 function Container4() {
   return (
-    <div className="content-stretch flex gap-[80px] items-center justify-center py-[40px] relative shrink-0 w-full" data-name="Container">
-      <img alt="" className="h-[481px] object-cover rounded-[24px] shrink-0 w-[452px]" src="/images/box.png" />
+    <div className="content-stretch flex flex-col lg:flex-row gap-[32px] lg:gap-[80px] items-center justify-center py-[24px] md:py-[40px] relative shrink-0 w-full" data-name="Container">
+      <img alt="" className="h-[260px] md:h-[380px] lg:h-[481px] object-cover rounded-[24px] shrink-0 w-full max-w-[452px]" src="/images/box.png" />
       <Container5 />
     </div>
   );
@@ -698,7 +698,7 @@ function Container4() {
 function StaggeredMetricsSection() {
   return (
     <div className="mb-[-2px] relative shrink-0 w-full " data-name="Staggered Metrics Section">
-      <div className="content-stretch flex flex-col items-start px-[240px] py-[80px] relative w-full ">
+      <div className="content-stretch flex flex-col items-start px-[20px] md:px-[48px] xl:px-[240px] py-[56px] md:py-[80px] relative w-full ">
         <Frame62 />
         <Container4 />
       </div>
@@ -709,7 +709,7 @@ function StaggeredMetricsSection() {
 function Frame58() {
   return (
     <div className="content-stretch flex flex-col items-start relative shrink-0 w-full ">
-      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[40px] text-center text-white w-full">Conoce nuestros beneficios</p>
+      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[30px] md:text-[40px] text-center text-white w-full">Conoce nuestros beneficios</p>
     </div>
   );
 }
@@ -724,7 +724,7 @@ function Frame3() {
 
 function Frame19() {
   return (
-    <div className="content-stretch flex flex-col items-center relative shrink-0 w-[1300px]">
+    <div className="content-stretch flex flex-col items-center relative shrink-0 w-full max-w-[1300px]">
       <Frame3 />
     </div>
   );
@@ -971,14 +971,59 @@ function Container15() {
   );
 }
 
-function Container6() {
+function BenefitStripCard({
+  icon,
+  fallbackIcon,
+  text
+}: {
+  icon?: string;
+  fallbackIcon: string;
+  text: string;
+}) {
   return (
-    <div className="content-stretch flex gap-[24px] h-[194px] items-start relative shrink-0 w-[1280px]" data-name="Container">
-      <Container7 />
-      <Container9 />
-      <Container11 />
-      <Container13 />
-      <Container15 />
+    <div className="bg-[#ad81ff] rounded-[24px] md:rounded-[32px] min-h-[210px] w-full px-[20px] py-[28px] md:px-[24px] md:py-[33px] flex flex-col items-center justify-center gap-[20px] md:gap-[24px] text-center">
+      <div className="bg-[#fcc63d] rounded-full size-[64px] flex items-center justify-center shadow-[0px_10px_15px_0px_rgba(252,198,61,0.2),0px_4px_6px_0px_rgba(252,198,61,0.2)]">
+        {icon ? (
+          <img alt="" className="size-[28px] object-contain" src={icon} />
+        ) : (
+          <span className="font-['Inter:Bold',sans-serif] font-bold text-[#080813] text-[28px] leading-none">{fallbackIcon}</span>
+        )}
+      </div>
+      <p className="font-['Inter:Bold',sans-serif] font-bold text-[16px] leading-[1.25] text-white max-w-[240px]">
+        {text}
+      </p>
+    </div>
+  );
+}
+
+function Container6({
+  content,
+  editable
+}: {
+  content: any;
+  editable?: any;
+}) {
+  const cards = (content?.benefits?.items?.length
+    ? content.benefits.items.map((item: any, index: number) => ({
+        icon: item.icon,
+        fallbackIcon: ["!", "i", "%", "+", "*"][index] || "•",
+        text: item.text
+      }))
+    : [
+        { icon: undefined, fallbackIcon: "!", text: "Entiendes exactamente lo que estás firmando." },
+        { icon: undefined, fallbackIcon: "i", text: "Tomas decisiones con información clara." },
+        { icon: undefined, fallbackIcon: "%", text: "Reduces tiempos y fricciones del proceso." },
+        { icon: undefined, fallbackIcon: "+", text: "Accedes a condiciones más adecuadas." },
+        { icon: undefined, fallbackIcon: "*", text: "Llegas a firma con acompañamiento integral." }
+      ]);
+
+  return (
+    <div className="content-stretch grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-[16px] md:gap-[24px] items-stretch relative shrink-0 w-full max-w-[1280px]" data-name="Container">
+      {cards.map((card, index) => (
+        <div key={index} data-tina-field={fieldFor(editable?.benefits?.items?.[index])}>
+          <BenefitStripCard icon={card.icon} fallbackIcon={card.fallbackIcon} text={card.text} />
+        </div>
+      ))}
     </div>
   );
 }
@@ -1277,24 +1322,92 @@ function Frame96() {
   );
 }
 
-function Frame95() {
+function Frame95({
+  content,
+  editable
+}: {
+  content: any;
+  editable?: any;
+}) {
+  const process = content?.whoIsItFor?.process || {
+    title: "¿Cuáles son los requisitos de nuestro proceso?",
+    requirements: [
+      "Compartir información básica de tu situación.",
+      "Objetivo claro: compra o mejora.",
+      "Ingresos y estabilidad laboral.",
+      "Ahorro aproximado disponible."
+    ],
+    pricing: {
+      title: "¿Cuánto vale?",
+      description:
+        "El diagnóstico inicial es gratuito. Después, el costo depende del nivel de acompañamiento requerido y la complejidad del caso.",
+      highlight: "Siempre sabrás el valor antes de avanzar.",
+      button: {
+        label: "Calcular mi hipoteca ahora",
+        href: "#calculator"
+      }
+    }
+  };
+
   return (
-    <div className="relative rounded-[20px] shrink-0 w-full bg-[url('/images/frame7.png')] bg-cover bg-center bg-no-repeat">
+    <div className="relative w-full shrink-0 overflow-hidden rounded-[20px] bg-[url('/images/frame7.png')] bg-cover bg-center bg-no-repeat">
       <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col gap-[40px] items-center px-[230px] py-[80px] relative size-full">
+        <div className="content-stretch relative flex size-full flex-col items-center gap-[32px] px-[20px] py-[48px] md:gap-[40px] md:px-[48px] md:py-[80px] xl:px-[80px]">
           <Frame19 />
-          <Container6 />
-          <Frame96 />
+          <Container6 content={content} editable={editable} />
+          <div className="grid w-full max-w-[1280px] grid-cols-1 gap-[24px] rounded-[28px] bg-[#080813] p-[20px] md:gap-[32px] md:rounded-[40px] md:p-[40px] xl:grid-cols-[minmax(0,1fr)_minmax(360px,480px)] xl:items-center">
+            <div className="flex flex-col gap-[24px] text-white md:gap-[32px]">
+              <p className="font-['Inter:Bold',sans-serif] text-[28px] font-bold leading-[1.1] md:text-[40px]" data-tina-field={fieldFor(editable?.whoIsItFor?.process, "title")}>
+                {process.title}
+              </p>
+              <div className="grid gap-[14px]" data-tina-field={fieldFor(editable?.whoIsItFor?.process, "requirements")}> 
+                {(process.requirements || []).map((item: string, index: number) => (
+                  <div key={index} className="flex items-start gap-[12px] rounded-[18px] bg-[rgba(158,105,255,0.16)] px-[16px] py-[14px]">
+                    <div className="mt-[2px] flex size-[24px] shrink-0 items-center justify-center rounded-full bg-[rgba(158,105,255,0.3)]">
+                      <svg className="size-[16px]" fill="none" preserveAspectRatio="none" viewBox="0 0 18 18">
+                        <path d={svgPaths.pa641000} stroke="var(--stroke-0, #8949FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.25" />
+                        <path d="M6.75 8.25L9 10.5L16.5 3" stroke="var(--stroke-0, #8949FF)" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.25" />
+                      </svg>
+                    </div>
+                    <p className="font-['Inter:Regular',sans-serif] text-[16px] leading-[1.4] md:text-[18px]">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="rounded-[20px] bg-[#8949ff] px-[20px] py-[18px] md:px-[24px] md:py-[20px]">
+                <p className="font-['Inter:Bold',sans-serif] text-[24px] font-bold leading-[1.1] text-white md:text-[28px]" data-tina-field={fieldFor(editable?.whoIsItFor?.process?.pricing, "title")}>
+                  {process.pricing?.title}
+                </p>
+                <p className="mt-[12px] font-['Inter:Regular',sans-serif] text-[16px] leading-[1.5] text-white md:text-[18px]" data-tina-field={fieldFor(editable?.whoIsItFor?.process?.pricing, "description")}>
+                  {process.pricing?.description}
+                </p>
+                <p className="mt-[10px] font-['Inter:Bold',sans-serif] text-[16px] font-bold leading-[1.4] text-white md:text-[18px]" data-tina-field={fieldFor(editable?.whoIsItFor?.process?.pricing, "highlight")}>
+                  {process.pricing?.highlight}
+                </p>
+                <a
+                  href={process.pricing?.button?.href || "#"}
+                  className="mt-[18px] inline-flex w-full md:w-fit rounded-full bg-[#fcc63d] px-[24px] py-[18px] font-['Inter:Bold',sans-serif] text-[16px] font-bold uppercase tracking-[1.6px] text-[#080813] no-underline md:px-[40px]"
+                  data-tina-field={fieldFor(editable?.whoIsItFor?.process?.pricing, "button")}
+                >
+                  {process.pricing?.button?.label}
+                </a>
+              </div>
+            </div>
+            <div className="relative min-h-[280px] overflow-hidden rounded-[24px] md:min-h-[420px]">
+              <img alt="" className="absolute inset-0 h-full w-full object-cover" src="/images/imgRectangle805.png" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-function Frame122() {
+function Frame122({ content, editable }: { content: any; editable?: any }) {
   return (
     <div className="content-stretch flex flex-col items-start mb-[-2px] relative shrink-0 w-full">
-      <Frame95 />
+      <Frame95 content={content} editable={editable} />
     </div>
   );
 }
@@ -1675,12 +1788,12 @@ function Frame86({ content }: { content: any }) {
   return (
     <div className="mb-[-2px] relative shrink-0 w-full">
       <div className="flex flex-col items-center overflow-clip rounded-[inherit] size-full">
-        <div className="content-stretch flex flex-col gap-[40px] items-center px-[230px] py-[80px] relative w-full">
-          <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[572px]">
-            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[40px] text-center w-[min-content]">{content.partners.title}</p>
-            <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[18px] text-center w-[min-content]">{content.partners.description}</p>
+        <div className="content-stretch flex flex-col gap-[32px] md:gap-[40px] items-center px-[20px] md:px-[48px] xl:px-[80px] py-[56px] md:py-[80px] relative w-full max-w-[1460px] mx-auto">
+          <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full max-w-[572px]">
+            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[32px] md:text-[40px] text-center w-[min-content]">{content.partners.title}</p>
+            <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[16px] md:text-[18px] text-center w-[min-content]">{content.partners.description}</p>
           </div>
-          <div className="bg-white content-stretch flex gap-[80px] items-center relative shrink-0 overflow-x-auto no-scrollbar w-full justify-center">
+          <div className="bg-white content-stretch flex gap-[32px] md:gap-[64px] xl:gap-[80px] items-center relative shrink-0 overflow-x-auto no-scrollbar w-full max-w-[1180px] justify-start md:justify-center px-[8px]">
             {content.partners.items?.map((partner: any, idx: number) => (
               <div key={idx} className="h-[28px] relative shrink-0" data-name="span">
                 <p className="font-['Inter:Black',sans-serif] font-black leading-[28px] not-italic text-[#9d9ba8] text-[20px] tracking-[-1px] whitespace-nowrap uppercase">{partner.name}</p>
@@ -1696,9 +1809,9 @@ function Frame86({ content }: { content: any }) {
 function Frame28({ item }: { item: any }) {
   if (!item) return null;
   return (
-    <div className="content-stretch flex flex-col items-center not-italic relative shrink-0">
-      <p className="font-['Inter:Light',sans-serif] font-light leading-none relative shrink-0 text-[#8949ff] text-[150px] lg:text-[199.847px] text-center whitespace-nowrap">{item.value}</p>
-      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full relative shrink-0 text-[#828282] text-[22px] w-[min-content] text-center">{item.title}</p>
+    <div className="content-stretch flex flex-col items-center not-italic relative shrink-0 w-full">
+      <p className="font-['Inter:Light',sans-serif] font-light leading-none relative shrink-0 text-[#8949ff] text-[88px] sm:text-[120px] lg:text-[199.847px] text-center whitespace-nowrap">{item.value}</p>
+      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] relative shrink-0 text-[#828282] text-[16px] sm:text-[20px] md:text-[22px] max-w-[260px] text-center">{item.title}</p>
     </div>
   );
 }
@@ -1706,9 +1819,9 @@ function Frame28({ item }: { item: any }) {
 function Frame29({ item }: { item: any }) {
   if (!item) return null;
   return (
-    <div className="content-stretch flex flex-col font-['Inter:Bold',sans-serif] font-bold gap-[40px] h-full items-start justify-end leading-[1.1] not-italic relative shrink-0 w-[219.667px]">
-      <p className="relative shrink-0 text-[#8949ff] text-[56px] tracking-[1px] whitespace-nowrap">{item.value}</p>
-      <p className="min-w-full relative shrink-0 text-[#9d9ba8] text-[22px] w-[min-content]">{item.title}</p>
+    <div className="content-stretch flex flex-col font-['Inter:Bold',sans-serif] font-bold gap-[12px] md:gap-[24px] h-full items-center justify-end leading-[1.1] not-italic relative shrink-0 w-full max-w-[260px]">
+      <p className="relative shrink-0 text-[#8949ff] text-[52px] sm:text-[56px] tracking-[1px] whitespace-nowrap text-center">{item.value}</p>
+      <p className="relative shrink-0 text-[#9d9ba8] text-[16px] sm:text-[20px] md:text-[22px] text-center">{item.title}</p>
     </div>
   );
 }
@@ -1716,23 +1829,23 @@ function Frame29({ item }: { item: any }) {
 function Frame30({ item }: { item: any }) {
   if (!item) return null;
   return (
-    <div className="content-stretch flex flex-col font-['Inter:Bold',sans-serif] font-bold gap-[40px] h-full items-start justify-end leading-[1.1] not-italic relative shrink-0 w-[219.667px]">
-      <p className="relative shrink-0 text-[#8949ff] text-[56px] tracking-[1px] whitespace-nowrap">{item.value}</p>
-      <p className="min-w-full relative shrink-0 text-[#9d9ba8] text-[22px] w-[min-content]">{item.title}</p>
+    <div className="content-stretch flex flex-col font-['Inter:Bold',sans-serif] font-bold gap-[12px] md:gap-[24px] h-full items-center justify-end leading-[1.1] not-italic relative shrink-0 w-full max-w-[260px]">
+      <p className="relative shrink-0 text-[#8949ff] text-[52px] sm:text-[56px] tracking-[1px] whitespace-nowrap text-center">{item.value}</p>
+      <p className="relative shrink-0 text-[#9d9ba8] text-[16px] sm:text-[20px] md:text-[22px] text-center">{item.title}</p>
     </div>
   );
 }
 
-function Frame5({ content }: { content: any }) {
+function Frame5({ content, editable }: { content: any; editable?: any }) {
   if (!content?.benefits) return null;
   return (
-    <div className="content-stretch flex flex-col gap-[40px] items-center relative shrink-0 w-[572px]">
-      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[40px] text-center w-[min-content]">{content.benefits.title}</p>
-      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[22px] text-center w-[min-content] whitespace-pre-wrap">
+    <div className="content-stretch flex flex-col gap-[24px] md:gap-[40px] items-center relative shrink-0 w-full max-w-[572px]">
+      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[32px] md:text-[40px] text-center w-[min-content]" data-tina-field={fieldFor(editable?.benefits, "title")}>{content.benefits.title}</p>
+      <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[18px] md:text-[22px] text-center w-[min-content] whitespace-pre-wrap" data-tina-field={fieldFor(editable?.benefits, "description")}>
         {content.benefits.description}
       </p>
-      <a href={content.benefits.ctaLink} className="bg-[#8949ff] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0 no-underline hover:scale-105 transition-transform">
-        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[18px] text-center text-white tracking-[1.8px] uppercase whitespace-nowrap">{content.benefits.ctaText}</p>
+      <a href={content.benefits.ctaLink} className="bg-[#8949ff] content-stretch flex items-center justify-center px-[28px] md:px-[40px] py-[16px] md:py-[19px] relative rounded-[33554400px] shrink-0 no-underline hover:scale-105 transition-transform w-full sm:w-auto" data-tina-field={fieldFor(editable?.benefits, "ctaText")}>
+        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.2] md:leading-[27px] not-italic relative shrink-0 text-[16px] md:text-[18px] text-center text-white tracking-[1.8px] uppercase whitespace-normal sm:whitespace-nowrap">{content.benefits.ctaText}</p>
       </a>
     </div>
   );
@@ -1796,7 +1909,7 @@ function Frame84() {
           <img alt="" className="absolute h-[128.5%] left-[-28.56%] max-w-none top-0 w-[238.36%]" src="/images/imgDisenoSinTitulo581.png" />
         </div>
       </div>
-      <Recurso2EfitecaELinea />
+      <div className="hidden xl:block"><Recurso2EfitecaELinea /></div>
     </div>
   );
 }
@@ -2204,12 +2317,12 @@ function Frame83({ content }: { content: any }) {
   const form = content.contact.form || {};
 
   return (
-    <div className="content-stretch flex flex-col gap-[10px] items-center mb-[-2px] py-[80px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[10px] items-center mb-[-2px] py-[56px] md:py-[80px] px-[20px] md:px-0 relative shrink-0 w-full">
       <Container23 />
       <Container24 />
-      <div className="content-stretch flex items-start justify-between relative shrink-0 w-[1279px]" data-name="Container">
-        <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-[412px]" data-name="Text Container">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[40px] w-full">{content.contact.title}</p>
+      <div className="content-stretch flex flex-col lg:flex-row gap-[32px] lg:gap-[48px] items-start justify-between relative shrink-0 w-full max-w-[1279px]" data-name="Container">
+        <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full lg:w-[412px]" data-name="Text Container">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[32px] md:text-[40px] w-full">{content.contact.title}</p>
           <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[15px] w-full">{content.contact.description}</p>
           <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Container">
             {highlights.map((item: string, index: number) => (
@@ -2220,31 +2333,31 @@ function Frame83({ content }: { content: any }) {
                       <CheckCircle4 />
                     </div>
                   </div>
-                  <p className="font-['Inter:Bold',sans-serif] font-bold leading-[16px] not-italic relative text-[#314158] text-[16px] whitespace-nowrap">{item}</p>
+                  <p className="font-['Inter:Bold',sans-serif] font-bold leading-[16px] not-italic relative text-[#314158] text-[15px] md:text-[16px]">{item}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
-        <form className="bg-[#8949ff] content-stretch flex flex-col gap-[24px] items-center justify-center p-[40px] relative rounded-[10px] shrink-0 w-[798px]" data-name="Form">
+        <form className="bg-[#8949ff] content-stretch flex flex-col gap-[24px] items-center justify-center p-[24px] md:p-[40px] relative rounded-[10px] shrink-0 w-full lg:w-[798px]" data-name="Form">
           <div aria-hidden="true" className="absolute border border-[#8949ff] border-solid inset-0 pointer-events-none rounded-[10px]" />
           <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-full" data-name="Form Elements">
-            <div className="content-stretch flex gap-[30px] items-start relative shrink-0 w-full" data-name="Container">
-              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
+            <div className="content-stretch flex flex-col md:flex-row gap-[20px] md:gap-[30px] items-start relative shrink-0 w-full" data-name="Container">
+              <div className="content-stretch flex w-full md:flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
                 <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.name_label}</p>
                 <FormInput name="firstName" placeholder={`Escribe tu ${String(form.name_label || "").toLowerCase()}`} />
               </div>
-              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
+              <div className="content-stretch flex w-full md:flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
                 <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.lastname_label}</p>
                 <FormInput name="lastName" placeholder={`Escribe tu ${String(form.lastname_label || "").toLowerCase()}`} />
               </div>
             </div>
-            <div className="content-stretch flex gap-[30px] items-start relative shrink-0 w-full" data-name="Container">
-              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
+            <div className="content-stretch flex flex-col md:flex-row gap-[20px] md:gap-[30px] items-start relative shrink-0 w-full" data-name="Container">
+              <div className="content-stretch flex w-full md:flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
                 <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.email_label}</p>
                 <FormInput name="email" type="email" placeholder={`Ingresa tu ${String(form.email_label || "").toLowerCase()}`} />
               </div>
-              <div className="content-stretch flex flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
+              <div className="content-stretch flex w-full md:flex-[1_0_0] flex-col gap-[14px] items-start min-h-px min-w-px relative" data-name="Sub Container">
                 <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[16px] text-white w-full">{form.phone_label}</p>
                 <FormInput name="phone" type="tel" placeholder={`Ingresa tu ${String(form.phone_label || "").toLowerCase()}`} />
               </div>
@@ -2258,13 +2371,13 @@ function Frame83({ content }: { content: any }) {
               <FormTextarea name="message" placeholder={`Escribe tu ${String(form.message_label || "").toLowerCase()}`} />
             </div>
           </div>
-          <div className="content-stretch flex gap-[50px] items-center justify-center relative shrink-0 w-full" data-name="Container">
-            <label className="content-stretch flex flex-[1_0_0] gap-[10px] items-center min-h-px min-w-px relative cursor-pointer" data-name="Check Box">
+          <div className="content-stretch flex flex-col md:flex-row gap-[20px] md:gap-[50px] items-start md:items-center justify-center relative shrink-0 w-full" data-name="Container">
+            <label className="content-stretch flex w-full md:flex-[1_0_0] gap-[10px] items-start md:items-center min-h-px min-w-px relative cursor-pointer" data-name="Check Box">
               <input name="terms" type="checkbox" className="size-[18px] accent-[#fcc63d]" />
               <span className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-[#d9d9d9] text-[12px]">{form.terms_label}</span>
             </label>
-            <button type="submit" className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0">
-              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">{form.submit_label}</p>
+            <button type="submit" className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[28px] md:px-[40px] py-[16px] md:py-[19px] relative rounded-[33554400px] shrink-0 w-full md:w-auto">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.2] md:leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[16px] md:text-[18px] text-center tracking-[1.8px] uppercase whitespace-normal md:whitespace-nowrap">{form.submit_label}</p>
             </button>
           </div>
         </form>
@@ -2424,25 +2537,25 @@ function Frame22({ content }: { content: any }) {
   if (!content?.blog) return null;
 
   return (
-    <div className="bg-[#080813] content-stretch flex flex-col items-center mb-[-2px] py-[80px] relative shrink-0 w-[1920px]">
+    <div className="bg-[#080813] content-stretch flex flex-col items-center mb-[-2px] py-[56px] md:py-[80px] relative shrink-0 w-full">
       <div className="relative shrink-0 w-full" data-name="Section">
         <div className="flex flex-col items-center size-full">
-          <div className="content-stretch flex flex-col gap-[40px] items-center px-[240px] relative w-full">
+          <div className="content-stretch flex flex-col gap-[32px] md:gap-[40px] items-center px-[20px] md:px-[48px] xl:px-[240px] relative w-full">
             <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Container">
-              <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[40px] text-center text-white w-full">
+              <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[32px] md:text-[40px] text-center text-white w-full">
                 <p className="leading-[1.1]">{content.blog.title}</p>
               </div>
             </div>
-            <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[18px] text-center text-white whitespace-nowrap">
+            <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[16px] md:text-[18px] text-center text-white w-full max-w-[840px]">
               <p className="leading-[1.1]">{content.blog.subtitle}</p>
             </div>
-            <div className="content-stretch flex gap-[32px] items-start justify-center relative shrink-0 w-full" data-name="Container">
+            <div className="content-stretch grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[24px] md:gap-[32px] items-start justify-center relative shrink-0 w-full" data-name="Container">
               {content.blog.items?.map((item: any, index: number) => (
-                <div key={index} className="content-stretch flex flex-col gap-[20px] h-[508px] items-start relative shrink-0 w-[458.667px]" data-name="Blog card">
-                  <div className="h-[320px] relative rounded-[24px] w-full">
+                <div key={index} className="content-stretch flex flex-col gap-[20px] min-h-[440px] items-start relative shrink-0 w-full" data-name="Blog card">
+                  <div className="h-[240px] md:h-[280px] xl:h-[320px] relative rounded-[24px] w-full">
                     <img alt={item.title} className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={item.image} />
                   </div>
-                  <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[28px] text-white w-[min-content]">
+                  <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[24px] md:text-[28px] text-white w-[min-content]">
                     <p className="leading-[1.1]">{item.title}</p>
                   </div>
                   <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#b7b7b7] text-[16px] w-[min-content]">
@@ -2457,8 +2570,8 @@ function Frame22({ content }: { content: any }) {
                 </div>
               ))}
             </div>
-            <a href={content.blog.cta?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0 no-underline">
-              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">{content.blog.cta?.label}</p>
+            <a href={content.blog.cta?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[28px] md:px-[40px] py-[16px] md:py-[19px] relative rounded-[33554400px] shrink-0 no-underline w-full sm:w-auto">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.2] md:leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[16px] md:text-[18px] text-center tracking-[1.8px] uppercase whitespace-normal sm:whitespace-nowrap">{content.blog.cta?.label}</p>
             </a>
           </div>
         </div>
@@ -2800,16 +2913,16 @@ function Frame51({ content }: { content: any }) {
   return (
     <div className="bg-white mb-[-2px] relative shrink-0 w-full">
       <div className="flex flex-col items-center size-full">
-        <div className="content-stretch flex flex-col gap-[40px] items-center px-[230px] py-[80px] relative w-full">
-          <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#080813] text-[40px] text-center w-[min-content]">
+        <div className="content-stretch flex flex-col gap-[32px] md:gap-[40px] items-center px-[20px] md:px-[48px] xl:px-[230px] py-[56px] md:py-[80px] relative w-full">
+          <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#080813] text-[32px] md:text-[40px] text-center w-[min-content]">
             <p className="leading-[1.1]">{content.locations.title}</p>
           </div>
-          <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#080813] text-[18px] text-center whitespace-nowrap">
+          <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] not-italic relative shrink-0 text-[#080813] text-[16px] md:text-[18px] text-center w-full max-w-[840px]">
             <p className="leading-[1.1]">{content.locations.subtitle}</p>
           </div>
-          <div className="content-stretch flex items-start justify-between relative shrink-0 w-[1440px]">
+          <div className="content-stretch grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[24px] items-start justify-between relative shrink-0 w-full max-w-[1440px]">
             {(content.locations.items || []).slice(0, 4).map((item: any, index: number) => (
-              <div key={index} className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-[330px]" data-name="Ubicaciones card">
+              <div key={index} className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full" data-name="Ubicaciones card">
                 <div className="bg-[#8949ff] content-stretch flex items-center justify-center px-[16px] py-[2px] relative rounded-[20px] shrink-0">
                   <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white whitespace-nowrap">
                     <p className="leading-[1.1]">{item.city}</p>
@@ -3027,27 +3140,27 @@ function Frame52({ content }: { content: any }) {
   if (!content?.faq) return null;
 
   return (
-    <div className="bg-[#ecddee] content-stretch flex flex-col items-center mb-[-2px] px-[230px] py-[80px] relative shrink-0 w-[1920px]">
+    <div className="bg-[#ecddee] content-stretch flex flex-col items-center mb-[-2px] px-[20px] md:px-[48px] xl:px-[230px] py-[56px] md:py-[80px] relative shrink-0 w-full">
       <div className="content-stretch flex flex-col gap-[40px] items-center relative shrink-0 w-full" data-name="Container">
         <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
           <div className="content-stretch flex flex-col items-start relative shrink-0 w-full" data-name="Text Container">
-            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[40px] text-center w-full">{content.faq.title}</p>
+            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] not-italic relative shrink-0 text-[#080813] text-[32px] md:text-[40px] text-center w-full">{content.faq.title}</p>
           </div>
         </div>
-        <Accordion.Root type="single" collapsible className="w-[787px] flex flex-col gap-[16px] items-start justify-center relative shrink-0">
+        <Accordion.Root type="single" collapsible className="w-full max-w-[787px] flex flex-col gap-[16px] items-start justify-center relative shrink-0">
           {content.faq.items?.map((item: any, index: number) => (
             <Accordion.Item key={index} value={`item-${index + 1}`} className="w-full">
               <Accordion.Trigger className="w-full text-left focus:outline-none">
-                <div className="bg-[#8949ff] content-stretch flex flex-col items-center justify-center px-[40px] py-[16px] relative rounded-[10px] shrink-0 w-full" data-name="FAQ">
+                <div className="bg-[#8949ff] content-stretch flex flex-col items-center justify-center px-[20px] md:px-[40px] py-[16px] relative rounded-[10px] shrink-0 w-full" data-name="FAQ">
                   <div aria-hidden="true" className="absolute border border-[#8949ff] border-solid inset-0 pointer-events-none rounded-[10px]" />
-                  <div className="content-stretch flex gap-[40px] items-center relative shrink-0 w-full">
-                    <p className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-[18px] text-left text-white">{item.question}</p>
+                  <div className="content-stretch flex gap-[16px] md:gap-[40px] items-center relative shrink-0 w-full">
+                    <p className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-[16px] md:text-[18px] text-left text-white">{item.question}</p>
                     <Frame23 />
                   </div>
                 </div>
               </Accordion.Trigger>
               <Accordion.Content className="w-full bg-[#f7f5f9] rounded-b-[10px] mt-[-8px] overflow-hidden data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95">
-                <div className="p-[30px] font-['Inter:Regular',sans-serif] text-[18px] text-[#080813] leading-[1.4]">
+                <div className="p-[20px] md:p-[30px] font-['Inter:Regular',sans-serif] text-[16px] md:text-[18px] text-[#080813] leading-[1.4]">
                   {item.answer}
                 </div>
               </Accordion.Content>
@@ -3389,34 +3502,34 @@ function Frame60({ content }: { content: any }) {
   }, [emblaApi]);
 
   return (
-    <div className="content-stretch flex flex-col gap-[40px] items-center mb-[-2px] py-[80px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[32px] md:gap-[40px] items-center mb-[-2px] py-[56px] md:py-[80px] px-[20px] md:px-0 relative shrink-0 w-full">
       <div className="relative shrink-0 w-full">
         <div className="flex flex-col items-center size-full">
-          <div className="content-stretch flex flex-col gap-[40px] items-center leading-[0] not-italic pr-[230px] relative text-[#080813] text-center w-full">
-            <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center min-w-full relative shrink-0 text-[40px] w-[min-content]">
+          <div className="content-stretch flex flex-col gap-[20px] md:gap-[40px] items-center leading-[0] not-italic pr-0 relative text-[#080813] text-center w-full">
+            <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center min-w-full relative shrink-0 text-[32px] md:text-[40px] w-[min-content]">
               <p className="leading-[1.1]">Asesoría hipotecaria en las principales ciudades de España</p>
             </div>
-            <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative shrink-0 text-[18px] whitespace-nowrap">
+            <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative shrink-0 text-[16px] md:text-[18px] w-full max-w-[860px]">
               <p className="leading-[1.1]">{content.locations.subtitle}</p>
             </div>
           </div>
         </div>
       </div>
       <div className="content-stretch flex flex-col gap-[20px] w-full">
-        <div className="h-[204px] relative shrink-0 w-full overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-[40px] items-start h-full">
+        <div className="h-[400px] md:h-[204px] relative shrink-0 w-full overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-[16px] md:gap-[40px] items-start h-full">
             {cards.map((item: any, index: number) => (
-              <div key={index} className={`flex-[0_0_auto] min-w-0 bg-[#ecddee] flex flex-col gap-[16px] h-full items-start justify-center pr-[20px] relative rounded-[24px] shrink-0 ${index === 0 ? "ml-[230px]" : ""}`} data-name="SEO local card">
-                <div className="content-stretch flex flex-[1_0_0] gap-[16px] items-start min-h-px min-w-px relative">
-                  <div className="flex h-full items-center justify-center relative shrink-0">
-                    <div className="h-full relative rounded-[24px] w-[306.5px]">
+              <div key={index} className={`flex-[0_0_90%] md:flex-[0_0_auto] min-w-0 bg-[#ecddee] flex flex-col md:flex-row gap-[16px] h-full items-start justify-center p-[16px] md:pr-[20px] relative rounded-[24px] shrink-0 ${index === 0 ? "md:ml-[230px]" : ""}`} data-name="SEO local card">
+                <div className="content-stretch flex flex-col md:flex-row flex-[1_0_0] gap-[16px] items-start min-h-px min-w-px relative">
+                  <div className="flex h-[140px] md:h-full w-full md:w-auto items-center justify-center relative shrink-0">
+                    <div className="h-full relative rounded-[24px] w-full md:w-[306.5px]">
                       <img alt={item.city} className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={item.image} />
                     </div>
                   </div>
-                  <div className="h-full relative shrink-0">
+                  <div className="h-full relative shrink-0 flex-1">
                     <div className="flex flex-col justify-center size-full">
-                      <div className="content-stretch flex flex-col gap-[12px] h-full items-start justify-center py-[20px] relative">
-                        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#8949ff] text-[28px] w-[min-content]">
+                      <div className="content-stretch flex flex-col gap-[12px] h-full items-start justify-center py-[8px] md:py-[20px] relative">
+                        <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#8949ff] text-[24px] md:text-[28px] w-[min-content]">
                           <p className="leading-[1.1]">{item.city}</p>
                         </div>
                         <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[#080813] text-[15px] w-[min-content]">
@@ -3507,8 +3620,8 @@ function Frame73() {
 
 function Frame71() {
   return (
-    <div className="content-stretch flex flex-col gap-[40px] items-start relative shrink-0">
-      <div className="h-[79.206px] overflow-clip relative shrink-0 w-[332.818px]" data-name="Logo blanco">
+    <div className="content-stretch flex flex-col gap-[24px] md:gap-[40px] items-center md:items-start relative shrink-0">
+      <div className="h-[56px] md:h-[79.206px] overflow-clip relative shrink-0 w-[236px] md:w-[332.818px]" data-name="Logo blanco">
         <Capa1 />
       </div>
       <p className="font-['Trueno:Light',sans-serif] leading-[1.2] min-w-full not-italic relative shrink-0 text-[16px] text-white w-[min-content]"></p>
@@ -3519,17 +3632,17 @@ function Frame71() {
 
 function Frame66() {
   return (
-    <div className="content-stretch flex flex-col font-['Inter:Regular',sans-serif] font-normal gap-[22px] items-start relative shrink-0 text-[16px] text-white w-full">
-      <p className="relative shrink-0 w-full">Soluciones de hipoteca</p>
-      <p className="relative shrink-0 w-full">Simulador de hipoteca</p>
+    <div className="content-stretch flex flex-col font-['Inter:Regular',sans-serif] font-normal gap-[18px] md:gap-[22px] items-center md:items-start relative shrink-0 text-[16px] text-white w-full">
+      <p className="relative shrink-0 w-full text-center md:text-left">Soluciones de hipoteca</p>
+      <p className="relative shrink-0 w-full text-center md:text-left">Simulador de hipoteca</p>
     </div>
   );
 }
 
 function Frame70() {
   return (
-    <div className="content-stretch flex flex-col gap-[40px] items-start leading-[1.1] not-italic relative shrink-0 w-[138px]">
-      <p className="font-['Inter:Bold',sans-serif] font-bold relative shrink-0 text-[#8949ff] text-[22px] w-full">Servicios</p>
+    <div className="content-stretch flex flex-col gap-[20px] md:gap-[40px] items-center md:items-start leading-[1.1] not-italic relative shrink-0 w-full md:w-[138px]">
+      <p className="font-['Inter:Bold',sans-serif] font-bold relative shrink-0 text-[#8949ff] text-[22px] w-full text-center md:text-left">Servicios</p>
       <Frame66 />
     </div>
   );
@@ -3537,18 +3650,18 @@ function Frame70() {
 
 function Frame67() {
   return (
-    <div className="content-stretch flex flex-col font-['Inter:Regular',sans-serif] font-normal gap-[22px] items-start relative shrink-0 text-[16px] text-white w-full">
-      <p className="relative shrink-0 w-full">Sobre nosotros</p>
-      <p className="relative shrink-0 w-full">Contacto</p>
-      <p className="relative shrink-0 w-full">Blog</p>
+    <div className="content-stretch flex flex-col font-['Inter:Regular',sans-serif] font-normal gap-[18px] md:gap-[22px] items-center md:items-start relative shrink-0 text-[16px] text-white w-full">
+      <p className="relative shrink-0 w-full text-center md:text-left">Sobre nosotros</p>
+      <p className="relative shrink-0 w-full text-center md:text-left">Contacto</p>
+      <p className="relative shrink-0 w-full text-center md:text-left">Blog</p>
     </div>
   );
 }
 
 function Frame68() {
   return (
-    <div className="content-stretch flex flex-col gap-[40px] items-start leading-[1.1] not-italic relative shrink-0 w-[138px]">
-      <p className="font-['Inter:Bold',sans-serif] font-bold relative shrink-0 text-[#8949ff] text-[22px] w-full">Empresa</p>
+    <div className="content-stretch flex flex-col gap-[20px] md:gap-[40px] items-center md:items-start leading-[1.1] not-italic relative shrink-0 w-full md:w-[138px]">
+      <p className="font-['Inter:Bold',sans-serif] font-bold relative shrink-0 text-[#8949ff] text-[22px] w-full text-center md:text-left">Empresa</p>
       <Frame67 />
     </div>
   );
@@ -3556,10 +3669,10 @@ function Frame68() {
 
 function Frame69() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] h-[180px] items-start relative shrink-0">
-      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full not-italic relative shrink-0 text-[#8949ff] text-[22px] w-[min-content]">Simulador</p>
-      <div className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0">
-        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">Ver diagnóstico</p>
+    <div className="content-stretch flex flex-col gap-[20px] md:gap-[24px] items-center md:items-start relative shrink-0 w-full md:w-auto">
+      <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full not-italic relative shrink-0 text-[#8949ff] text-[22px] w-[min-content] text-center md:text-left">Simulador</p>
+      <div className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[28px] md:px-[40px] py-[16px] md:py-[19px] relative rounded-[33554400px] shrink-0 w-full sm:w-auto">
+        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.2] md:leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[16px] md:text-[18px] text-center tracking-[1.8px] uppercase whitespace-normal md:whitespace-nowrap">Ver diagnóstico</p>
       </div>
     </div>
   );
@@ -3567,7 +3680,7 @@ function Frame69() {
 
 function Frame72() {
   return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col md:flex-row gap-[32px] md:gap-[24px] items-center md:items-start justify-between relative shrink-0 w-full text-center md:text-left">
       <Frame71 />
       <Frame70 />
       <Frame68 />
@@ -3633,24 +3746,95 @@ function Container51() {
 }
 
 export function FigmaHeader() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="bg-white flex justify-between h-[80px] items-center px-[40px] pointer-events-auto sticky top-0 w-full z-50 shadow-sm" data-name="div">
-      <Img />
-      <Frame136 />
-      <Container51 />
+    <div className="bg-white pointer-events-auto sticky top-0 w-full z-50 shadow-sm" data-name="div">
+      <div className="flex justify-between h-[80px] items-center px-[20px] md:px-[40px] w-full">
+        <Img />
+        <div className="hidden md:block">
+          <Frame136 />
+        </div>
+        <div className="hidden md:block">
+          <Container51 />
+        </div>
+        <button
+          type="button"
+          className="md:hidden flex flex-col justify-center items-center gap-[5px] size-[44px]"
+          aria-label="Abrir menú"
+          aria-expanded={isOpen}
+          onClick={() => setIsOpen((value) => !value)}
+        >
+          <span className={`block h-[2px] w-[22px] bg-[#080813] transition-transform duration-300 ${isOpen ? "translate-y-[7px] rotate-45" : ""}`} />
+          <span className={`block h-[2px] w-[22px] bg-[#080813] transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`} />
+          <span className={`block h-[2px] w-[22px] bg-[#080813] transition-transform duration-300 ${isOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
+        </button>
+      </div>
+      {isOpen ? (
+        <div className="md:hidden border-t border-[#e5e7eb] px-[20px] py-[20px]">
+          <div className="flex flex-col gap-[18px] text-[#62748e] text-[16px] font-['Inter:Bold',sans-serif] font-bold">
+            <a href="#" className="no-underline text-inherit" onClick={() => setIsOpen(false)}>Soluciones de vivienda</a>
+            <a href="#" className="no-underline text-inherit" onClick={() => setIsOpen(false)}>Simulador de hipoteca</a>
+            <a href="#" className="no-underline text-inherit" onClick={() => setIsOpen(false)}>Sobre nosotros</a>
+            <a href="#" className="no-underline text-inherit" onClick={() => setIsOpen(false)}>Blog</a>
+            <a href="#" className="no-underline text-inherit" onClick={() => setIsOpen(false)}>Contacto</a>
+            <div className="pt-[8px]">
+              <Container51 />
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
 
-function Frame49({ content }: { content: any }) {
+function Frame49({ content, editable }: { content: any; editable?: any }) {
   if (!content?.metrics) return null;
   const items = content.metrics.items || [];
   return (
-    <div className="content-stretch flex flex-col items-center gap-[60px] w-full">
-      <div className="content-stretch flex gap-[80px] items-center justify-center w-full">
-        {items[0] && <Frame28 item={items[0]} />}
-        {items[1] && <Frame29 item={items[1]} />}
-        {items[2] && <Frame30 item={items[2]} />}
+    <div className="w-full max-w-[1180px] mx-auto flex flex-col gap-[28px] md:gap-[36px]">
+      <p className="font-['Inter:Bold',sans-serif] font-bold text-[#080813] text-[32px] md:text-[40px] leading-[1.1] text-left w-full" data-tina-field={fieldFor(editable?.metrics, "title")}>
+        {content.metrics.title || "Cifras de valor"}
+      </p>
+      <div className="w-full flex flex-col md:flex-row md:items-end md:justify-between gap-[28px] md:gap-[0px]">
+        <div className="w-full md:flex-[0_0_54%] md:pr-[28px]">
+          {items[0] && (
+            <div className="flex flex-col items-start text-left">
+              <p className="font-['Inter:Light',sans-serif] font-light leading-none text-[#8949ff] text-[88px] sm:text-[120px] lg:text-[160px] xl:text-[199.847px] whitespace-nowrap" data-tina-field={fieldFor(editable?.metrics?.items?.[0], "value")}>
+                {items[0].value}
+              </p>
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.05] text-[#828282] text-[16px] sm:text-[18px] md:text-[20px] max-w-[320px]" data-tina-field={fieldFor(editable?.metrics?.items?.[0], "title")}>
+                {items[0].title}
+              </p>
+            </div>
+          )}
+        </div>
+        <div className="hidden md:block w-px self-stretch bg-[#d6d2de]" />
+        <div className="w-full md:flex-[0_0_20%] md:px-[28px]">
+          {items[1] && (
+            <div className="flex flex-col items-start text-left md:pt-[6px]">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-none text-[#8949ff] text-[52px] md:text-[56px] xl:text-[64px] whitespace-nowrap" data-tina-field={fieldFor(editable?.metrics?.items?.[1], "value")}>
+                {items[1].value}
+              </p>
+              <p className="mt-[14px] font-['Inter:Bold',sans-serif] font-bold leading-[1.05] text-[#9d9ba8] text-[16px] sm:text-[18px] md:text-[20px] max-w-[220px]" data-tina-field={fieldFor(editable?.metrics?.items?.[1], "title")}>
+                {items[1].title}
+              </p>
+            </div>
+          )}
+        </div>
+        <div className="hidden md:block w-px self-stretch bg-[#d6d2de]" />
+        <div className="w-full md:flex-[0_0_20%] md:pl-[28px]">
+          {items[2] && (
+            <div className="flex flex-col items-start text-left md:pt-[6px]">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-none text-[#8949ff] text-[52px] md:text-[56px] xl:text-[64px] whitespace-nowrap" data-tina-field={fieldFor(editable?.metrics?.items?.[2], "value")}>
+                {items[2].value}
+              </p>
+              <p className="mt-[14px] font-['Inter:Bold',sans-serif] font-bold leading-[1.05] text-[#9d9ba8] text-[16px] sm:text-[18px] md:text-[20px] max-w-[220px]" data-tina-field={fieldFor(editable?.metrics?.items?.[2], "title")}>
+                {items[2].title}
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -3674,15 +3858,15 @@ export default function Home({
   return (
     <div className="bg-white content-stretch flex flex-col items-center pb-[2px] relative size-full overflow-hidden" data-name="Home">
       <style>{`
-        button, .bg-[#8949ff], .bg-[#fcc63d], .cursor-pointer, [role="button"] {
+        button, a[href][class*="rounded-full"], a[href][class*="rounded-["], .bg-[#8949ff], .bg-[#fcc63d], .cursor-pointer, [role="button"] {
           transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         }
-        button:hover, .bg-[#8949ff]:hover, .bg-[#fcc63d]:hover, .cursor-pointer:hover, [role="button"]:hover {
+        button:hover, a[href][class*="rounded-full"]:hover, a[href][class*="rounded-["]:hover, .bg-[#8949ff]:hover, .bg-[#fcc63d]:hover, .cursor-pointer:hover, [role="button"]:hover {
           transform: scale(1.05);
           filter: brightness(1.15);
           box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2) !important;
         }
-        button:active, .bg-[#8949ff]:active, .bg-[#fcc63d]:active, .cursor-pointer:active, [role="button"]:active {
+        button:active, a[href][class*="rounded-full"]:active, a[href][class*="rounded-["]:active, .bg-[#8949ff]:active, .bg-[#fcc63d]:active, .cursor-pointer:active, [role="button"]:active {
           transform: scale(0.95);
         }
       `}</style>
@@ -3692,11 +3876,11 @@ export default function Home({
       <div className="w-full" data-tina-field={fieldFor(tinaPage, "services")}>
         <Frame18 content={page} />
       </div>
-      <div className="w-full" data-tina-field={fieldFor(tinaPage, "metrics")}>
+      <div className="w-full" data-tina-field={fieldFor(tinaPage, "steps")}> 
         <StaggeredMetricsSection content={page} />
       </div>
       <div className="w-full" data-tina-field={fieldFor(tinaPage, "whoIsItFor")}>
-        <Frame122 content={page} />
+        <Frame122 content={page} editable={tinaPage} />
       </div>
       <div className="w-full" data-tina-field={fieldFor(tinaPage, "testimonials")}>
         <TestimonialsSection content={page} />
@@ -3704,11 +3888,11 @@ export default function Home({
       <div className="w-full" data-tina-field={fieldFor(tinaPage, "partners")}>
         <Frame86 content={page} />
       </div>
-      <div className="bg-white content-stretch flex flex-col items-center mb-[-2px] px-[250px] py-[80px] relative shrink-0 w-[1920px]" data-name="cifras">
-        <Frame49 content={page} />
+      <div className="bg-white content-stretch flex flex-col items-center mb-[-2px] px-[20px] md:px-[48px] xl:px-[250px] py-[56px] md:py-[80px] relative shrink-0 w-full" data-name="cifras" data-tina-field={fieldFor(tinaPage, "metrics")}> 
+        <Frame49 content={page} editable={tinaPage} />
       </div>
       <div className="w-full" data-tina-field={fieldFor(tinaPage, "benefits")}>
-        <BenefitsSection content={page} />
+        <BenefitsSection content={page} editable={tinaPage} />
       </div>
       <div className="w-full" data-tina-field={fieldFor(tinaPage, "contact")}>
         <Frame83 content={page} />
@@ -3725,7 +3909,7 @@ export default function Home({
       <div className="w-full" data-tina-field={fieldFor(tinaPage, "faq")}>
         <Frame52 content={page} />
       </div>
-      <div className="w-full" data-tina-field={fieldFor(tinaPage, "locations")}>
+      <div className="w-full">
         <Frame60 content={page} />
       </div>
       
@@ -3737,7 +3921,7 @@ function HeroSection({ content }: { content: any }) {
   if (!content?.hero) return null;
 
   return (
-    <section className="mb-[-60px] relative shrink-0 w-full min-h-[847px] overflow-hidden">
+    <section className="mb-[-60px] relative shrink-0 w-full min-h-[680px] md:min-h-[847px] overflow-hidden">
       <img
         alt=""
         className="absolute inset-0 max-w-none object-cover pointer-events-none size-full hidden md:block"
@@ -3748,17 +3932,17 @@ function HeroSection({ content }: { content: any }) {
         className="absolute inset-0 max-w-none object-cover pointer-events-none size-full md:hidden"
         src={content.hero.background_mobile || content.hero.background_desktop}
       />
-      <div className="relative w-full max-w-[1460px] min-h-[847px] mx-auto px-[24px] md:px-[48px] xl:px-[80px] py-[80px] flex items-center">
+      <div className="relative w-full max-w-[1460px] min-h-[680px] md:min-h-[847px] mx-auto px-[20px] md:px-[48px] xl:px-[80px] py-[56px] md:py-[80px] flex items-center">
         <div className="content-stretch flex flex-col gap-[40px] items-start justify-center relative w-full max-w-[688px] z-10">
-          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[0] min-w-full not-italic relative shrink-0 text-[56px] text-white tracking-[1px] w-[min-content] pr-[145px]">
+          <p className="font-['Inter:Bold',sans-serif] font-bold leading-[0] min-w-full not-italic relative shrink-0 text-[36px] md:text-[56px] text-white tracking-[1px] w-[min-content] pr-0 md:pr-[145px]">
             <span className="leading-[1.1] text-[#fcc63d]">{content.hero.title_part1}</span>
             <span className="leading-[1.1]">{content.hero.title_part2}</span>
           </p>
-          <p className="font-['Trueno:Light',sans-serif] leading-[1.1] min-w-full not-italic relative shrink-0 text-[18px] text-white w-[min-content] pr-[243px]">
+          <p className="font-['Trueno:Light',sans-serif] leading-[1.1] min-w-full not-italic relative shrink-0 text-[16px] md:text-[18px] text-white w-[min-content] pr-0 md:pr-[243px]">
             {content.hero.description}
           </p>
-          <a href={content.hero.cta?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0 hover:scale-105 active:scale-95 transition-transform no-underline">
-            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">
+          <a href={content.hero.cta?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[24px] md:px-[40px] py-[16px] md:py-[19px] relative rounded-[33554400px] shrink-0 hover:scale-105 active:scale-95 transition-transform no-underline w-full sm:w-auto">
+            <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.2] md:leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[16px] md:text-[18px] text-center tracking-[1.8px] uppercase whitespace-normal sm:whitespace-nowrap">
               {content.hero.cta?.label}
             </p>
           </a>
@@ -3863,29 +4047,29 @@ function TestimonialsSection({ content }: { content: any }) {
   );
 }
 
-function BenefitsSection({ content }: { content: any }) {
+function BenefitsSection({ content, editable }: { content: any; editable?: any }) {
   if (!content?.benefits) return null;
 
   return (
     <section className="bg-[#f7f5f9] mb-[-2px] relative shrink-0 w-full">
-      <div className="w-full max-w-[1460px] mx-auto px-[24px] md:px-[48px] xl:px-[80px] py-[80px]">
-        <div className="bg-[#fcc63d] content-stretch flex flex-col gap-[10px] items-center justify-center relative rounded-[60px] shrink-0 w-full overflow-visible">
-          <div className="w-full max-w-[1320px] mx-auto content-stretch flex gap-[48px] items-stretch justify-between relative px-0 py-0">
-            <div className="flex-[0_0_50%] min-h-px min-w-px relative px-[72px] py-[70px]">
-              <div className="content-stretch flex flex-col items-center relative w-full h-full justify-center">
-                <Frame5 content={content} />
-              </div>
-            </div>
-            <div className="relative rounded-br-[60px] rounded-tr-[60px] shrink-0 w-[791px] max-w-[50%] h-[407px] self-end overflow-hidden" data-name="Diseño sin título (57) 1">
-              <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-br-[60px] rounded-tr-[60px] size-full" src="/images/imgDisenoSinTitulo571.png" />
+      <div className="w-full max-w-[1460px] mx-auto px-[20px] md:px-[48px] xl:px-[80px] py-[56px] md:py-[80px]">
+        <div className="bg-[#fcc63d] relative rounded-[32px] md:rounded-[60px] w-full overflow-hidden xl:overflow-visible">
+          <div className="relative z-10 w-full px-[24px] md:px-[72px] pt-[32px] md:pt-[70px] pb-[24px] md:pb-[70px] lg:pr-[50%] min-h-[280px] md:min-h-[360px] lg:min-h-[447px] flex items-center">
+            <div className="w-full max-w-[520px]">
+              <Frame5 content={content} editable={editable} />
             </div>
           </div>
-          <div className="absolute h-[491px] left-[52%] top-[-84px] w-[397px] pointer-events-none z-10" data-name="Diseño sin título (58) 1">
+          <div className="relative w-full min-h-[280px] md:min-h-[360px] lg:absolute lg:inset-y-0 lg:right-0 lg:w-[50%] overflow-hidden rounded-b-[32px] lg:rounded-b-none lg:rounded-r-[60px]" data-name="Diseño sin título (57) 1">
+            <img alt="" className="absolute inset-0 block h-full w-full object-cover pointer-events-none" src="/images/imgDisenoSinTitulo571.png" />
+          </div>
+          <div className="absolute hidden xl:block bottom-0 right-[13%] h-[540px] w-[430px] pointer-events-none z-10" data-name="Diseño sin título (58) 1">
             <div className="absolute bg-clip-padding border-0 border-[transparent] border-solid inset-0 overflow-hidden">
               <img alt="" className="absolute h-[128.5%] left-[-28.56%] max-w-none top-0 w-[238.36%]" src="/images/imgDisenoSinTitulo581.png" />
             </div>
           </div>
-          <Recurso2EfitecaELinea />
+          <div className="hidden xl:block absolute inset-0 pointer-events-none">
+            <Recurso2EfitecaELinea />
+          </div>
         </div>
       </div>
     </section>
@@ -3897,10 +4081,10 @@ function NewsletterSection({ content }: { content: any }) {
 
   return (
     <section className="mb-[-2px] overflow-clip relative shrink-0 w-full bg-[url('/images/frame7.png')] bg-cover bg-center bg-no-repeat">
-      <div className="w-full max-w-[1460px] mx-auto px-[24px] md:px-[48px] xl:px-[80px] py-[80px] relative">
-        <div className="content-stretch flex gap-[80px] items-center justify-center relative shrink-0 w-full">
-          <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-[495px]">
-            <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[40px] text-white w-[min-content]">
+      <div className="w-full max-w-[1460px] mx-auto px-[20px] md:px-[48px] xl:px-[80px] py-[56px] md:py-[80px] relative">
+        <div className="content-stretch flex flex-col lg:flex-row gap-[32px] lg:gap-[80px] items-center justify-center relative shrink-0 w-full">
+          <div className="content-stretch flex flex-col gap-[24px] md:gap-[32px] items-start relative shrink-0 w-full lg:w-[495px]">
+            <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[0] min-w-full not-italic relative shrink-0 text-[32px] md:text-[40px] text-white w-[min-content]">
               <p className="leading-[1.1]">{content.newsletter.title}</p>
             </div>
             <div className="flex flex-col font-['Manrope:Regular',sans-serif] font-normal justify-center leading-[0] min-w-full relative shrink-0 text-[16px] text-white w-[min-content]">
@@ -3912,11 +4096,13 @@ function NewsletterSection({ content }: { content: any }) {
               </div>
               <div aria-hidden="true" className="absolute border border-[#dbdcde] border-solid inset-0 pointer-events-none rounded-[8px]" />
             </div>
-            <a href={content.newsletter.button?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[40px] py-[19px] relative rounded-[33554400px] shrink-0 no-underline">
-              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[18px] text-center tracking-[1.8px] uppercase whitespace-nowrap">{content.newsletter.button?.label}</p>
+            <a href={content.newsletter.button?.href || "#"} className="bg-[#fcc63d] content-stretch flex items-center justify-center px-[28px] md:px-[40px] py-[16px] md:py-[19px] relative rounded-[33554400px] shrink-0 no-underline w-full sm:w-auto">
+              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.2] md:leading-[27px] not-italic relative shrink-0 text-[#0f172b] text-[16px] md:text-[18px] text-center tracking-[1.8px] uppercase whitespace-normal sm:whitespace-nowrap">{content.newsletter.button?.label}</p>
             </a>
           </div>
-          <Recurso1EfitecaCasa />
+          <div className="hidden lg:block">
+            <Recurso1EfitecaCasa />
+          </div>
         </div>
       </div>
     </section>
@@ -3953,9 +4139,9 @@ function CarouselDots({
 
 export function FigmaFooter() {
   return (
-    <footer className="bg-[#080813] relative overflow-hidden px-[20px] sm:px-[60px] md:px-[120px] lg:px-[240px] py-[80px] md:py-[120px] w-full" data-name="Footer">
+    <footer className="bg-[#080813] relative overflow-hidden px-[20px] sm:px-[60px] md:px-[120px] lg:px-[240px] py-[80px] md:py-[120px] w-full text-center md:text-left" data-name="Footer">
       
-        <div className="absolute left-[1445px] size-[806px] top-[79px]">
+        <div className="absolute hidden md:block left-[1445px] size-[806px] top-[79px]">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 806 806">
             <circle cx="403" cy="403" fill="url(#footer_radial_1)" id="Ellipse 2" r="403" />
             <defs>
@@ -3967,14 +4153,14 @@ export function FigmaFooter() {
           </svg>
         </div>
         <Frame72 />
-        <div className="h-0 mt-[80px] mb-[60px] relative shrink-0 w-full">
+        <div className="h-0 mt-[56px] md:mt-[80px] mb-[40px] md:mb-[60px] relative shrink-0 w-full">
           <div className="absolute inset-[-1px_0]">
             <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 2">
               <path d="M1440 1H0" id="Vector 453" stroke="var(--stroke-0, #828282)" strokeWidth="2" />
             </svg>
           </div>
         </div>
-        <div className="absolute left-[1680px] size-[532px] top-[62px]">
+        <div className="absolute hidden md:block left-[1680px] size-[532px] top-[62px]">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 532 532">
             <circle cx="266" cy="266" fill="url(#footer_radial_2)" id="Ellipse 1" r="266" />
             <defs>
@@ -3989,3 +4175,8 @@ export function FigmaFooter() {
     </footer>
   );
 }
+
+
+
+
+

@@ -75,6 +75,19 @@ if (import.meta.env.DEV) {
             title
             image
           }
+          process {
+            title
+            requirements
+            pricing {
+              title
+              description
+              highlight
+              button {
+                label
+                href
+              }
+            }
+          }
         }
         steps {
           title
@@ -91,6 +104,7 @@ if (import.meta.env.DEV) {
           ctaText
           ctaLink
           items {
+            icon
             text
           }
         }

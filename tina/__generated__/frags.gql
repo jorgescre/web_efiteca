@@ -44,6 +44,22 @@ fragment PagesParts on Pages {
       title
       image
     }
+    process {
+      __typename
+      title
+      requirements
+      pricing {
+        __typename
+        title
+        description
+        highlight
+        button {
+          __typename
+          label
+          href
+        }
+      }
+    }
   }
   steps {
     __typename
@@ -64,6 +80,7 @@ fragment PagesParts on Pages {
     ctaLink
     items {
       __typename
+      icon
       text
     }
   }

@@ -64,7 +64,17 @@ const pages = defineCollection({
       items: z.array(z.object({
         title: z.string(),
         image: z.string()
-      }))
+      })),
+      process: z.object({
+        title: z.string(),
+        requirements: z.array(z.string()),
+        pricing: z.object({
+          title: z.string(),
+          description: z.string(),
+          highlight: z.string(),
+          button: buttonSchema
+        })
+      }).optional()
     }).optional(),
     steps: z.object({
       title: z.string(),
@@ -81,6 +91,7 @@ const pages = defineCollection({
       ctaText: z.string().optional(),
       ctaLink: z.string().optional(),
       items: z.array(z.object({
+        icon: z.string().optional(),
         text: z.string()
       }))
     }).optional(),

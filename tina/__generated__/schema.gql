@@ -135,9 +135,28 @@ type PagesWhoIsItForItems {
   image: String
 }
 
+type PagesWhoIsItForProcessPricingButton {
+  label: String!
+  href: String!
+}
+
+type PagesWhoIsItForProcessPricing {
+  title: String
+  description: String
+  highlight: String
+  button: PagesWhoIsItForProcessPricingButton
+}
+
+type PagesWhoIsItForProcess {
+  title: String
+  requirements: [String]
+  pricing: PagesWhoIsItForProcessPricing
+}
+
 type PagesWhoIsItFor {
   title: String
   items: [PagesWhoIsItForItems]
+  process: PagesWhoIsItForProcess
 }
 
 type PagesStepsItems {
@@ -153,6 +172,7 @@ type PagesSteps {
 }
 
 type PagesBenefitsItems {
+  icon: String
   text: String
 }
 
@@ -373,9 +393,28 @@ input PagesWhoIsItForItemsFilter {
   image: ImageFilter
 }
 
+input PagesWhoIsItForProcessPricingButtonFilter {
+  label: StringFilter
+  href: StringFilter
+}
+
+input PagesWhoIsItForProcessPricingFilter {
+  title: StringFilter
+  description: StringFilter
+  highlight: StringFilter
+  button: PagesWhoIsItForProcessPricingButtonFilter
+}
+
+input PagesWhoIsItForProcessFilter {
+  title: StringFilter
+  requirements: StringFilter
+  pricing: PagesWhoIsItForProcessPricingFilter
+}
+
 input PagesWhoIsItForFilter {
   title: StringFilter
   items: PagesWhoIsItForItemsFilter
+  process: PagesWhoIsItForProcessFilter
 }
 
 input NumberFilter {
@@ -401,6 +440,7 @@ input PagesStepsFilter {
 }
 
 input PagesBenefitsItemsFilter {
+  icon: ImageFilter
   text: StringFilter
 }
 
@@ -749,9 +789,28 @@ input PagesWhoIsItForItemsMutation {
   image: String
 }
 
+input PagesWhoIsItForProcessPricingButtonMutation {
+  label: String
+  href: String
+}
+
+input PagesWhoIsItForProcessPricingMutation {
+  title: String
+  description: String
+  highlight: String
+  button: PagesWhoIsItForProcessPricingButtonMutation
+}
+
+input PagesWhoIsItForProcessMutation {
+  title: String
+  requirements: [String]
+  pricing: PagesWhoIsItForProcessPricingMutation
+}
+
 input PagesWhoIsItForMutation {
   title: String
   items: [PagesWhoIsItForItemsMutation]
+  process: PagesWhoIsItForProcessMutation
 }
 
 input PagesStepsItemsMutation {
@@ -767,6 +826,7 @@ input PagesStepsMutation {
 }
 
 input PagesBenefitsItemsMutation {
+  icon: String
   text: String
 }
 
