@@ -16,9 +16,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.0",
-    "@astrojs/vercel": "^8.0.0",
-    "astro": "^5.0.0",
+    "@astrojs/mdx": "^5.0.3",
+    "@astrojs/vercel": "^10.0.4",
+    "astro": "^6.1.5",
     "zod": "^3.24.0"
   },
   "devDependencies": {
