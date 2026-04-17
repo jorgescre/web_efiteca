@@ -9318,11 +9318,11 @@ function Frame83({ content }: { content: any }) {
 
 
 
-              <input name="termás" type="checkbox" className="size-[18px] accent-[#fcc63d]" />
+              <input name="terms" type="checkbox" className="size-[18px] accent-[#fcc63d]" />
 
 
 
-              <span className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-[#d9d9d9] text-[12px]">{form.termás_label}</span>
+              <span className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-white text-[12px]">{form.terms_label}</span>
 
 
 
