@@ -8950,7 +8950,7 @@ function CheckBox() {
 
 
 
-      <p className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-[#d9d9d9] text-[12px]">Acepto los términos y condiciones</p>
+      <p className="flex-[1_0_0] font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-h-px min-w-px not-italic relative text-white text-[12px]">Acepto los términos y condiciones</p>
 
 
 
