@@ -16,7 +16,12 @@ export const GET: APIRoute = async () => {
       absoluteUrl(`/${locale.code}/soluciones-vivienda/`),
       absoluteUrl(`/${locale.code}/simulador-hipoteca/`),
       absoluteUrl(`/${locale.code}/sobre-nosotros/`),
-      absoluteUrl(`/${locale.code}/contacto/`)
+      absoluteUrl(`/${locale.code}/contacto/`),
+      absoluteUrl(`/${locale.code}/aviso-legal/`),
+      absoluteUrl(`/${locale.code}/proteccion-de-datos/`),
+      absoluteUrl(`/${locale.code}/politica-de-cookies/`),
+      absoluteUrl(`/${locale.code}/canal-etico/`),
+      absoluteUrl(`/${locale.code}/nueva-reclamacion/`)
     ]),
     ...MARKETS.flatMap((market) =>
       market.languages.map((lang) => absoluteUrl(`/${lang}/${market.slug}/`))

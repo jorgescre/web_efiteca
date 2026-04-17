@@ -1,0 +1,34 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ReactLegalPage } from "@/components/legal/ReactLegalPage";
+import { LOCALES, type Lang } from "@/data/locales";
+import { buildLanguageAlternates } from "@/lib/seo/meta";
+import { getEntry, render } from "astro:content";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({
+    params: { lang: locale.code }
+  }));
+}
+
+const lang = Astro.params.lang as Lang;
+const entry = await getEntry("pages", `proteccion-de-datos-${lang}`);
+
+if (!entry) {
+  return Astro.redirect(`/${lang}/404`);
+}
+
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  lang={lang}
+  title={entry.data.seo.title}
+  description={entry.data.seo.description}
+  path={`/${lang}/proteccion-de-datos/`}
+  alternates={buildLanguageAlternates("/proteccion-de-datos/")}
+>
+  <ReactLegalPage title={entry.data.title} client:idle>
+    <Content />
+  </ReactLegalPage>
+</BaseLayout>

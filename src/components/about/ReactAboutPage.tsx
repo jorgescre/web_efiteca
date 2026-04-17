@@ -1,6 +1,5 @@
-﻿import { LocationsShowcaseSection } from "@/components/shared/LocationsShowcase";
-import React, { useCallback, useEffect, useState } from "react";
-import useEmblaCarousel from "embla-carousel-react";
+import { LocationsShowcaseSection } from "@/components/shared/LocationsShowcase";
+import React from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { TestimonialsSection } from "@/components/home/ReactHome";
 
@@ -75,55 +74,6 @@ function MailIcon({ className = "h-[16px] w-[16px]" }: { className?: string }) {
   );
 }
 
-function brandClass(name: string) {
-  const normalized = name.toLowerCase();
-  if (normalized.includes("santander")) return "text-[#ec1c24]";
-  if (normalized.includes("ibercaja")) return "text-[#d62f2f]";
-  if (normalized.includes("laboral")) return "text-[#8b215d]";
-  if (normalized.includes("kutxa")) return "text-[#8b215d]";
-  if (normalized.includes("unicaja")) return "text-[#008d4c]";
-  if (normalized.includes("caixa")) return "text-[#0b4ea2]";
-  if (normalized.includes("sabadell")) return "text-[#1f3b82]";
-  if (normalized.includes("bbva")) return "text-[#0f4c81]";
-  if (normalized.includes("ing")) return "text-[#f26b21]";
-  if (normalized.includes("bankinter")) return "text-[#f15a24]";
-  return "text-[#8949ff]";
-}
-
-function CarouselDots({
-  count,
-  selectedIndex,
-  onDotClick
-}: {
-  count: number;
-  selectedIndex: number;
-  onDotClick: (index: number) => void;
-}) {
-  return (
-    <div className="flex items-center justify-center gap-[10px]">
-      {Array.from({ length: count }).map((_, index) => (
-        <button
-          key={index}
-          type="button"
-          onClick={() => onDotClick(index)}
-          aria-label={`Ir a la diapositiva ${index + 1}`}
-          className={`transition-all duration-300 ${
-            selectedIndex === index
-              ? "h-[9px] w-[34px] rounded-full bg-[#8949ff]"
-              : "h-[9px] w-[9px] rounded-full bg-[#d8d2e3]"
-          }`}
-        />
-      ))}
-    </div>
-  );
-}
-
-function renderStars(count = 5) {
-  return Array.from({ length: count }).map((_, index) => <span key={index}>â˜…</span>);
-}
-
-void renderStars;
-
 function FormField({
   label,
   placeholder,
@@ -162,7 +112,7 @@ function AboutHeroSection({ content, editable }: { content: any; editable?: any 
   if (!hero) return null;
 
   return (
-    <section className="relative overflow-hidden bg-[#7c42f3] px-[20px] py-[72px] md:px-[48px] md:py-[108px] xl:px-[230px]">
+    <section className="relative overflow-hidden bg-[#7c42f3] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]">
       {hero.texture ? (
         <img
           src={hero.texture}
@@ -180,7 +130,7 @@ function AboutHeroSection({ content, editable }: { content: any; editable?: any 
           data-tina-field={fieldFor(editable?.aboutHero, "outlineImage")}
         />
       ) : null}
-      <div className="relative z-10 mx-auto flex min-h-[520px] max-w-[1460px] items-center md:min-h-[672px]">
+      <div className="relative z-10 mx-auto flex min-h-[420px] max-w-[1460px] items-center justify-start md:min-h-[560px]">
         <div className="max-w-[620px]">
           <div className="inline-flex items-center gap-[12px] rounded-full border border-[#c993ff] bg-[rgba(255,255,255,0.1)] px-[16px] py-[8px]">
             <span className="h-[8px] w-[8px] rounded-full bg-white/80"></span>
@@ -194,12 +144,12 @@ function AboutHeroSection({ content, editable }: { content: any; editable?: any 
               {hero.highlight}
             </span>
           </h1>
-          <p className="mt-[24px] max-w-[620px] text-[16px] leading-[1.1] text-white" data-tina-field={fieldFor(editable?.aboutHero, "description")}>
+          <p className="mt-[24px] max-w-[620px] text-[16px] leading-[1.5] text-white" data-tina-field={fieldFor(editable?.aboutHero, "description")}>
             {hero.description}
           </p>
           <a
             href={hero.cta?.href || "#contacto-sobre-nosotros"}
-            className="mt-[32px] inline-flex items-center justify-center rounded-full bg-[#fcc63d] px-[32px] py-[16px] text-[14px] font-bold uppercase tracking-[1.8px] text-[#101828] no-underline shadow-[0px_10px_15px_rgba(252,198,61,0.1),0px_4px_6px_rgba(252,198,61,0.2)] md:text-[18px]"
+            className="mt-[32px] inline-flex items-center justify-center rounded-full bg-[#fcc63d] px-[32px] py-[16px] text-[14px] font-bold uppercase tracking-[1.8px] text-[#101828] no-underline shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)] md:text-[18px]"
             data-tina-field={fieldFor(editable?.aboutHero?.cta, "label")}
           >
             {hero.cta?.label}
@@ -215,13 +165,13 @@ function TrajectorySection({ content, editable }: { content: any; editable?: any
   if (!trajectory) return null;
 
   return (
-    <section className="bg-white px-[20px] py-[56px] md:px-[48px] md:py-[80px] xl:px-[312px]" data-tina-field={fieldFor(editable, "trajectory")}>
-      <div className="mx-auto grid max-w-[1296px] grid-cols-1 items-stretch gap-[32px] xl:grid-cols-2 xl:gap-[80px]">
-        <div className="flex flex-col justify-center py-0 xl:py-[80px]">
+    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "trajectory")}>
+      <div className="mx-auto grid max-w-[1460px] grid-cols-1 items-stretch gap-[32px] xl:grid-cols-2 xl:gap-[80px]">
+        <div className="flex flex-col justify-center py-0 xl:py-[40px]">
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#101828] md:text-[40px]" data-tina-field={fieldFor(editable?.trajectory, "title")}>
             {trajectory.title}
           </h2>
-          <p className="mt-[32px] whitespace-pre-line text-[16px] leading-[1.1] text-[#101828]" data-tina-field={fieldFor(editable?.trajectory, "description")}>
+          <p className="mt-[20px] text-[16px] leading-[1.5] text-[#101828]" data-tina-field={fieldFor(editable?.trajectory, "description")}>
             {trajectory.description}
           </p>
           <div className="mt-[24px] max-w-[540px] border-l-[3px] border-[#8949ff] bg-white pl-[18px] pr-[8px] py-[6px]">
@@ -256,8 +206,8 @@ function PurposeSection({ content, editable }: { content: any; editable?: any })
   if (!section) return null;
 
   return (
-    <section className="bg-white px-[20px] py-[56px] md:px-[48px] md:py-[80px] xl:px-[312px]" data-tina-field={fieldFor(editable, "purposeSection")}>
-      <div className="mx-auto grid max-w-[1296px] grid-cols-1 items-stretch gap-[32px] xl:grid-cols-2 xl:gap-[80px]">
+    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "purposeSection")}>
+      <div className="mx-auto grid max-w-[1460px] grid-cols-1 items-stretch gap-[32px] xl:grid-cols-2 xl:gap-[80px]">
         <div className="relative order-2 min-h-[420px] overflow-hidden rounded-[40px] xl:order-1">
           <img
             src={section.image}
@@ -266,11 +216,11 @@ function PurposeSection({ content, editable }: { content: any; editable?: any })
             data-tina-field={fieldFor(editable?.purposeSection, "image")}
           />
         </div>
-        <div className="order-1 flex flex-col justify-center py-0 xl:order-2 xl:py-[40px]">
+        <div className="order-1 flex flex-col justify-center py-0 xl:order-2">
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#101828] md:text-[40px]" data-tina-field={fieldFor(editable?.purposeSection, "title")}>
             {section.title}
           </h2>
-          <p className="mt-[32px] whitespace-pre-line text-[16px] leading-[1.1] text-[#101828]" data-tina-field={fieldFor(editable?.purposeSection, "description")}>
+          <p className="mt-[20px] text-[16px] leading-[1.5] text-[#101828]" data-tina-field={fieldFor(editable?.purposeSection, "description")}>
             {section.description}
           </p>
           <div className="mt-[24px] rounded-[16px] bg-[rgba(137,73,255,0.1)] p-[24px]">
@@ -295,75 +245,58 @@ function PurposeSection({ content, editable }: { content: any; editable?: any })
 function PartnersSection({ content, editable }: { content: any; editable?: any }) {
   const partners = content?.partners;
   const items = partners?.items || [];
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: "start",
-    containScroll: false,
-    slidesToScroll: 1
-  });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [snapCount, setSnapCount] = useState(0);
   if (!partners) return null;
-
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setSnapCount(emblaApi.scrollSnapList().length);
-  }, [emblaApi]);
-
-  useEffect(() => {
-    if (!emblaApi || items.length <= 1) return;
-
-    onSelect();
-    emblaApi.on("select", onSelect);
-    emblaApi.on("reInit", onSelect);
-
-    const autoScroll = window.setInterval(() => {
-      emblaApi.scrollNext();
-    }, 3500);
-
-    return () => {
-      window.clearInterval(autoScroll);
-    };
-  }, [emblaApi, items.length, onSelect]);
-
-  const scrollTo = useCallback(
-    (index: number) => {
-      if (emblaApi) emblaApi.scrollTo(index);
-    },
-    [emblaApi]
-  );
+  const marqueeItems = items.length > 0 ? [...items, ...items] : [];
 
   return (
-    <section className="bg-[#f9fafb] px-[20px] py-[56px] md:px-[48px] md:py-[80px] xl:px-[230px]" data-tina-field={fieldFor(editable, "partners")}>
-      <div className="mx-auto flex max-w-[1460px] flex-col items-center gap-[24px]">
-        <div className="w-full text-center">
+    <section className="bg-white" data-tina-field={fieldFor(editable, "partners")}>
+      <div className="relative mx-auto flex w-full max-w-[1460px] flex-col items-center gap-[24px] px-[20px] py-[40px] md:gap-[32px] md:px-[40px] md:py-[72px] xl:px-[64px] 2xl:px-[80px]">
+        <div className="relative flex w-full max-w-[760px] flex-col items-center gap-[16px] text-center">
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#080813] md:text-[40px]" data-tina-field={fieldFor(editable?.partners, "title")}>
             {partners.title}
           </h2>
-          <p className="mx-auto mt-[16px] max-w-[940px] text-[16px] leading-[1.15] text-[#080813] md:text-[18px]" data-tina-field={fieldFor(editable?.partners, "description")}>
+          <p className="text-[16px] leading-[1.2] text-[#080813] md:text-[18px]" data-tina-field={fieldFor(editable?.partners, "description")}>
             {partners.description}
           </p>
         </div>
-        <div className="flex w-full max-w-[1240px] flex-col items-center gap-[24px]">
-          <div className="w-full overflow-hidden" ref={emblaRef}>
-            <div className="flex">
-              {items.map((item: any, index: number) => (
+
+        <div className="relative w-full overflow-hidden">
+          <style>{`
+            @keyframes about-partners-marquee {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+          `}</style>
+          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-[40px] bg-gradient-to-r from-white to-transparent md:w-[72px]" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-[40px] bg-gradient-to-l from-white to-transparent md:w-[72px]" />
+
+          <div
+            className="flex w-max items-center gap-[14px] md:gap-[20px] xl:gap-[28px]"
+            style={{ animation: "about-partners-marquee 28s linear infinite" }}
+          >
+            {marqueeItems.map((item: any, index: number) => {
+              const itemField = items.length > 0 ? editable?.partners?.items?.[index % items.length] : undefined;
+
+              return (
                 <div
                   key={`${item.name}-${index}`}
-                  className="flex-[0_0_50%] px-[14px] md:flex-[0_0_33.333%] lg:flex-[0_0_25%] xl:flex-[0_0_20%]"
-                  data-tina-field={fieldFor(editable?.partners?.items?.[index], "name")}
+                  className="flex h-[72px] w-[160px] shrink-0 items-center justify-center rounded-[18px] border border-[#ece7f5] bg-white px-[18px] md:h-[84px] md:w-[190px] md:rounded-[22px] md:px-[24px]"
+                  data-tina-field={fieldFor(itemField, "name")}
                 >
-                  <div className="flex h-[68px] items-center justify-center">
-                    <span className={`text-center text-[22px] font-black uppercase leading-none tracking-[-0.8px] md:text-[24px] ${brandClass(item.name)}`}>
-                      {item.name}
-                    </span>
-                  </div>
+                  {item.image ? (
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="max-h-[28px] w-auto max-w-full object-contain md:max-h-[34px]"
+                      data-tina-field={fieldFor(itemField, "image")}
+                    />
+                  ) : (
+                    <span className="text-center text-[18px] font-bold text-[#8949ff]">{item.name}</span>
+                  )}
                 </div>
-              ))}
-            </div>
+              );
+            })}
           </div>
-          {snapCount > 1 ? <CarouselDots count={snapCount} selectedIndex={selectedIndex} onDotClick={scrollTo} /> : null}
         </div>
       </div>
     </section>
@@ -375,14 +308,14 @@ function CertificationsSection({ content, editable }: { content: any; editable?:
   if (!certifications) return null;
 
   return (
-    <section className="bg-[#fcfaf7] px-[20px] pb-[56px] md:px-[48px] md:pb-[80px] xl:px-[230px]" data-tina-field={fieldFor(editable, "certifications")}>
-      <div className="mx-auto max-w-[1460px] rounded-[20px] border border-[#ece7f4] bg-white px-[24px] py-[28px] shadow-[0px_10px_30px_rgba(16,24,40,0.05)] md:px-[48px] md:py-[32px]">
+    <section className="bg-[#fcfaf7] px-[20px] pb-[56px] md:px-[40px] md:pb-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "certifications")}>
+      <div className="mx-auto max-w-[1460px] rounded-[20px] border border-[#ece7f4] bg-white px-[24px] py-[28px] shadow-[0px_10px_30px_rgba(16,24,40,0.05)] md:px-[40px] md:py-[40px]">
         <div className="grid grid-cols-1 items-center gap-[28px] lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-[40px]">
           <div>
             <h2 className="text-[28px] font-bold leading-[1.1] text-[#080813] md:text-[32px]" data-tina-field={fieldFor(editable?.certifications, "title")}>
               {certifications.title}
             </h2>
-            <p className="mt-[12px] max-w-[760px] text-[14px] leading-[1.15] text-[#6a7282] md:text-[15px]" data-tina-field={fieldFor(editable?.certifications, "description")}>
+            <p className="mt-[12px] max-w-[760px] text-[15px] leading-[1.5] text-[#6a7282]" data-tina-field={fieldFor(editable?.certifications, "description")}>
               {certifications.description}
             </p>
           </div>
@@ -408,7 +341,7 @@ function RecognitionsSection({ content, editable }: { content: any; editable?: a
   if (!recognitions && !companyInfo) return null;
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#4f3bf9_0%,#3f2ab6_100%)] px-[20px] py-[56px] text-white md:px-[48px] md:py-[80px] xl:px-[230px]">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#4f3bf9_0%,#3f2ab6_100%)] px-[20px] py-[56px] text-white md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]">
       {recognitions?.texture ? (
         <img
           src={recognitions.texture}
@@ -424,7 +357,7 @@ function RecognitionsSection({ content, editable }: { content: any; editable?: a
               <h2 className="text-[28px] font-bold leading-[1.1] md:text-[40px]" data-tina-field={fieldFor(editable?.recognitions, "title")}>
                 {recognitions.title}
               </h2>
-              <p className="mt-[18px] whitespace-pre-line text-[15px] leading-[1.15] text-white/90 md:text-[16px]" data-tina-field={fieldFor(editable?.recognitions, "description")}>
+              <p className="mt-[14px] text-[16px] leading-[1.5] text-white/90" data-tina-field={fieldFor(editable?.recognitions, "description")}>
                 {recognitions.description}
               </p>
             </div>
@@ -461,7 +394,7 @@ function RecognitionsSection({ content, editable }: { content: any; editable?: a
                         <div className="mt-[2px] flex h-[24px] w-[24px] items-center justify-center rounded-full bg-[rgba(158,105,255,0.3)] text-white">
                           <CheckIcon className="h-[16px] w-[16px]" />
                         </div>
-                        <p className="text-[16px] leading-[1.15] text-white md:text-[18px]" data-tina-field={fieldFor(editable?.companyInfo, "items")}>{item}</p>
+                        <p className="text-[16px] leading-[1.5] text-white" data-tina-field={fieldFor(editable?.companyInfo, "items")}>{item}</p>
                       </div>
                     ))}
                   </div>
@@ -503,11 +436,11 @@ export function ContactSection({ content, editable, sectionId = "contacto-sobre-
   if (!contact) return null;
 
   return (
-    <section id={sectionId} className="bg-[#f9fafb] px-[20px] py-[56px] md:px-[48px] md:py-[80px] xl:px-[230px]" data-tina-field={fieldFor(editable, "contact")}>
+    <section id={sectionId} className="bg-[#f9fafb] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "contact")}>
       <div className="mx-auto grid max-w-[1460px] grid-cols-1 gap-[32px] lg:grid-cols-[1fr_798px] lg:items-center">
         <div>
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#080813] md:text-[40px]" data-tina-field={fieldFor(editable?.contact, "title")}>{contact.title}</h2>
-          <p className="mt-[20px] text-[15px] leading-[1.15] text-[#080813]" data-tina-field={fieldFor(editable?.contact, "description")}>{contact.description}</p>
+          <p className="mt-[20px] text-[16px] leading-[1.5] text-[#080813]" data-tina-field={fieldFor(editable?.contact, "description")}>{contact.description}</p>
           <div className="mt-[24px] space-y-[16px]" data-tina-field={fieldFor(editable?.contact, "highlights")}>
             {(contact.highlights || []).map((highlight: string, index: number) => (
               <div key={`${highlight}-${index}`} className="flex items-center gap-[12px]">
@@ -553,7 +486,7 @@ export function ContactSection({ content, editable, sectionId = "contacto-sobre-
               <input type="checkbox" className="h-[24px] w-[24px] rounded-[4px] border border-[#9d9ba8] bg-[#ecddee]" />
               <span className="text-[12px] font-bold text-[#d9d9d9]">{contact.form?.terms_label}</span>
             </label>
-            <button type="button" className="inline-flex items-center justify-center rounded-full bg-[#fcc63d] px-[40px] py-[19px] text-[18px] font-bold uppercase tracking-[1.8px] text-[#0f172b]" data-tina-field={fieldFor(editable?.contact?.form, "submit_label")}>
+            <button type="button" className="inline-flex items-center justify-center rounded-full bg-[#fcc63d] px-[40px] py-[19px] text-[18px] font-bold uppercase tracking-[1.8px] text-[#0f172b] shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)]" data-tina-field={fieldFor(editable?.contact?.form, "submit_label")}>
               {contact.form?.submit_label}
             </button>
           </div>

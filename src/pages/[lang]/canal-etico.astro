@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ReactLegalPage } from "@/components/legal/ReactLegalPage";
+import { LOCALES, type Lang } from "@/data/locales";
+import { buildLanguageAlternates } from "@/lib/seo/meta";
+import { getEntry, render } from "astro:content";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({
+    params: { lang: locale.code }
+  }));
+}
+
+const lang = Astro.params.lang as Lang;
+const entry = await getEntry("pages", `canal-etico-${lang}`);
+
+if (!entry) {
+  return Astro.redirect(`/${lang}/404`);
+}
+
+const { Content } = await render(entry);
+---
+
+<BaseLayout
+  lang={lang}
+  title={entry.data.seo.title}
+  description={entry.data.seo.description}
+  path={`/${lang}/canal-etico/`}
+  alternates={buildLanguageAlternates("/canal-etico/")}
+>
+  <div class="bg-[#f1f2f4]">
+    <ReactLegalPage title={entry.data.title} client:idle>
+      <Content />
+    </ReactLegalPage>
+
+    <!-- CTA hacia Nueva Reclamación -->
+    <div class="mx-auto max-w-[900px] px-5 md:px-10 pb-24">
+      <div
+        class="rounded-[2rem] p-10 md:p-14 text-center relative overflow-hidden"
+        style="background: linear-gradient(135deg, #4f3bf9 0%, #8948ff 45%, #7a49ff 100%);"
+      >
+        <!-- Glow decoration -->
+        <div
+          class="absolute top-0 right-0 w-64 h-64 rounded-full pointer-events-none"
+          style="background: radial-gradient(circle, rgba(252,198,61,0.25), transparent 70%); transform: translate(30%, -30%);"
+        ></div>
+
+        <div class="relative z-10">
+          <p class="text-xs font-bold uppercase tracking-[0.22em] text-white/50 mb-3">Canal Ético · Efiteca</p>
+          <h2
+            class="text-2xl md:text-3xl font-bold text-white mb-4"
+            style="font-family: Inter, sans-serif; line-height: 1.15;"
+          >
+            ¿Tienes una queja o reclamación?
+          </h2>
+          <p class="text-white/70 mb-8 max-w-md mx-auto leading-relaxed">
+            Accede al formulario oficial y envíanos tu caso. Recibirás acuse de recibo en
+            <strong class="text-white">5 días hábiles</strong> y resolución en máximo <strong class="text-white">1 mes</strong>.
+          </p>
+          <a
+            href={`/${lang}/nueva-reclamacion/`}
+            class="inline-block px-10 py-4 font-bold rounded-full transition-all hover:-translate-y-1 text-base uppercase tracking-wider"
+            style="background-color: #fcc63d; color: #0f172b; box-shadow: 0 25px 50px 0px rgba(252,198,61,0.35); font-family: Inter, sans-serif; letter-spacing: 0.06em;"
+          >
+            Nueva Reclamación →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

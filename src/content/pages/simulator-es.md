@@ -1,4 +1,4 @@
-﻿---
+---
 
 
 
@@ -42,7 +42,7 @@ simulator:
 
 
 
-  noteTitle: Importante
+  noteTitle: ""
 
 
 
@@ -135,31 +135,12 @@ requirementsBanner:
 
 
   title: "¿Cuáles son los requisitos de nuestro proceso?"
-
-
-
   items:
-
-
-
-    - Estarás pagando hipoteca si la puedes costear.
-
-
-
-    - Cuota hipotecaria razonable.
-
-
-
-    - Ingresos y estabilidad laboral.
-
-
-
-    - Ahorro disponible.
-
-
-
-  image: /images/contact-intro.jpg
-
+    - "Compartir información básica de tu situación."
+    - "Objetivo claro (compra o mejora)."
+    - "Ingresos y estabilidad laboral."
+    - "Ahorro aproximado disponible."
+  image: /images/requisitos-del-proceso.png
 
 
   button:
@@ -218,15 +199,15 @@ testimonials:
 
 
 
-      role: "Local Guide Â· 40 opiniones Â· 11 fotos"
+      role: "Local Guide · 40 opiniones · 11 fotos"
 
 
 
-      text: "No pensé que pudiera conseguir una hipoteca fija sin volver a empezar de cero. Me ayudaron a entender mi caso al detalle y tomar decisiones con mucha más seguridad."
+      text: "Gran experiencia con Andrés. Un profesional muy serio que estudia tu caso al milímetro. Nos ha dado mucha seguridad tener su visión realista sobre nuestros números y opciones de hipoteca. Trato cercano y muy claro. 100% recomendable"
 
 
 
-      image: /images/imgEllipse5.png
+      image: /images/testimonials/guillermo.png
 
 
 
@@ -242,11 +223,11 @@ testimonials:
 
 
 
-      text: "La experiencia con el equipo fue muy positiva. Recibí­ claridad, seguimiento y una ruta concreta para avanzar sin perder tiempo."
+      text: "Sin duda la experiencia con el equipo de Efiteca ha sido 100% satisfactoria\n\nAndres es un profesional que se implica y sin duda pone toda la carne en el asador en cada operación\n\nSu intermediación ha sido fundamental en todos los sentidos ya que ha facilitado todas las gestiones de manera rápida, eficaz y con solvencia contrastada.\n\nSin duda lo recomiendo al 100% 👏🏻👏🏻"
 
 
 
-      image: /images/imgFrame1272638189.png
+      image: /images/testimonials/pablo-orozco-espada.png
 
 
 
@@ -258,15 +239,15 @@ testimonials:
 
 
 
-      role: "Local Guide Â· 89 opiniones Â· 164 fotos"
+      role: "Cliente desde 2022"
 
 
 
-      text: "Se implicaron muchí­simo durante todo el proceso. Llegamos a firma con menos fricción y entendiendo perfectamente cada paso."
+      text: "Mi experiencia ha sido de más de cinco estrellas, Andrés gran profesional y excelente persona, llegando a gestionar más allá de su responsabilidad.\n\nSólo puedo agradecer el trato recibido y la humanidad mostrada por él.\n\nNos hemos sentido acompañados y perfectamente asesorados.\n\nEstaremos siempre muy agradecidos por toda la gestión realizada.\n\nMuchísimas gracias Andrés.\n\nPor supuesto que lo recomiendo."
 
 
 
-      image: /images/blog1.png
+      image: /images/testimonials/loly-zazo.png
 
 
 
@@ -350,15 +331,7 @@ contact:
 
 
 
-  scheduleText: |-
-
-
-
-    Lunes a jueves 10 a. m. a 6 p. m.
-
-
-
-    Viernes de 10 a. m. a 5 p. m.
+  scheduleText: "Lunes a jueves 10 a. m. a 6 p. m.\nViernes de 10 a. m. a 5 p. m."
 
 
 
@@ -486,15 +459,15 @@ faq:
 
 
 
-      answer: "No. Es una estimación inicial para ayudarte a orientarte. La viabilidad real depende del análisis completo de tu perfil."
+      answer: "No. El resultado es una estimación orientativa basada en los datos que introduces, como ingresos, ahorro y plazo. Sirve para darte una referencia inicial, pero no sustituye el análisis completo que realiza una entidad financiera. La viabilidad real depende de factores adicionales como estabilidad laboral, historial crediticio, ratios y políticas internas de cada banco."
 
 
 
-    - question: "¿que tan precisa es la cuota estimada?"
+    - question: "¿Qué tan precisa es la cuota estimada?"
 
 
 
-      answer: "La herramienta toma referencias razonables, pero la cuota final puede cambiar según el banco, el tipo de producto y tu situación concreta."
+      answer: "La cuota estimada se calcula mediante fórmulas financieras estándar y ofrece una aproximación coherente con los datos introducidos. Sin embargo, no contempla todos los matices que evalúan las entidades, como scoring interno, vinculaciones o condiciones específicas. Por eso es útil como punto de partida, pero siempre debe validarse con un análisis más detallado antes de tomar decisiones."
 
 
 
@@ -502,7 +475,7 @@ faq:
 
 
 
-      answer: "Sí­. Puede ayudarte a entender cuánto podrí­as asumir antes de decidir que vivienda buscar."
+      answer: "Sí. De hecho, utilizar el simulador antes de tener una vivienda identificada puede ayudarte a buscar con mayor seguridad. Te permite entender cuánto podrías asumir según tu perfil actual y evitar expectativas poco realistas. Con esa información, podrás enfocar mejor tu búsqueda y negociar con mayor claridad cuando encuentres una propiedad adecuada."
 
 
 
@@ -510,15 +483,15 @@ faq:
 
 
 
-      answer: "No todos. Sirve para una primera estimación. En el diagnóstico te explicamos costes y estructura con más detalle."
+      answer: "La estimación puede contemplar supuestos generales, pero no sustituye el cálculo personalizado de gastos asociados a una operación concreta. Elementos como tasación, notaría, registro o impuestos pueden variar según la ubicación y el perfil. Por eso es recomendable interpretar el resultado dentro de un análisis completo que tenga en cuenta todos los costes reales."
 
 
 
-    - question: "¿que hago después de simular?"
+    - question: "¿Qué hago después de simular?"
 
 
 
-      answer: "Déjanos tus datos y un experto revisará tu caso contigo para validar viabilidad, condiciones y siguiente paso."
+      answer: "Después de obtener tu resultado, el siguiente paso recomendado es validarlo con un diagnóstico breve. En esa conversación analizamos si la cuota estimada es sostenible, qué bancos podrían encajar con tu perfil y qué ajustes podrían mejorar tu viabilidad. Así pasas de una cifra orientativa a una estrategia concreta y realista."
 
 
 

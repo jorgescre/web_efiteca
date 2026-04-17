@@ -4,6 +4,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { type Lang } from "@/data/locales";
 import { absoluteUrl } from "@/lib/seo/meta";
 import { formatDate } from "@/lib/utils/format";
+import { ReactBlogPost } from "@/components/blog/ReactBlogPost";
 
 export async function getStaticPaths() {
   const entries = await getCollection("news");
@@ -22,6 +23,16 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const lang = Astro.params.lang as Lang;
 const { Content } = await render(entry);
+
+// Related posts logic
+const allNews = await getCollection("news", ({ data }) => data.lang === lang && data.title !== entry.data.title);
+const relatedPosts = allNews.slice(0, 3).map(p => ({
+  slug: p.slug,
+  title: p.data.title,
+  excerpt: p.data.excerpt,
+  lang: p.data.lang,
+  image: undefined // news schema has no image field; ReactBlogPost shows emoji fallback
+}));
 
 const alternates = [
   {
@@ -42,14 +53,14 @@ const alternates = [
   path={`/${lang}/news/${entry.slug}/`}
   alternates={alternates}
 >
-  <article class="mx-auto max-w-4xl px-6 py-16 md:py-24">
-    <p class="text-xs uppercase tracking-[0.2em] text-coral">{entry.data.category}</p>
-    <h1 class="mt-4 font-display text-5xl leading-tight text-ink">{entry.data.title}</h1>
-    <p class="mt-6 text-sm text-ink/50">{formatDate(entry.data.publishedAt, lang)}</p>
-    <p class="mt-8 text-lg leading-8 text-ink/70">{entry.data.excerpt}</p>
-
-    <div class="prose prose-lg mt-12 max-w-none prose-headings:font-display prose-headings:text-ink prose-p:text-ink/75">
-      <Content />
-    </div>
-  </article>
+  <ReactBlogPost 
+    client:load 
+    title={entry.data.title}
+    category={entry.data.category}
+    publishedAt={formatDate(entry.data.publishedAt, lang)}
+    excerpt={entry.data.excerpt}
+    relatedPosts={relatedPosts}
+  >
+    <Content />
+  </ReactBlogPost>
 </BaseLayout>

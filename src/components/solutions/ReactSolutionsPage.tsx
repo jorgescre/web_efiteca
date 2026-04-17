@@ -870,39 +870,20 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-      <img
+      <div className="md:hidden w-full h-[240px] relative overflow-hidden">
+        <img
+          src={hero.background_mobile || hero.background_desktop}
+          alt=""
+          className="h-full w-full object-cover"
+          data-tina-field={fieldFor(editable?.hero, "background_mobile")}
+        />
+      </div>
 
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,19,0.18)_0%,rgba(8,8,19,0)_55%)] hidden md:block" />
 
+      <div className="relative mx-auto flex flex-col md:flex-row min-h-0 md:min-h-[803px] w-full max-w-[1460px] items-center px-0 md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-0 md:py-[56px]">
 
-        src={hero.background_mobile || hero.background_desktop}
-
-
-
-        alt=""
-
-
-
-        className="absolute inset-0 h-full w-full object-cover md:hidden"
-
-
-
-        data-tina-field={fieldFor(editable?.hero, "background_mobile")}
-
-
-
-      />
-
-
-
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,19,0.18)_0%,rgba(8,8,19,0)_55%)]" />
-
-
-
-      <div className="relative mx-auto flex min-h-[720px] w-full max-w-[1460px] items-center px-[20px] py-[56px] md:min-h-[803px] md:px-[40px] xl:px-[64px] 2xl:px-[80px]">
-
-
-
-        <div className="w-full max-w-[680px] rounded-[20px] bg-[linear-gradient(180deg,#ad81ff_0%,#8949ff_58%,#2b2148_100%)] p-[24px] shadow-[0px_24px_60px_rgba(137,73,255,0.28)] md:p-[40px]">
+        <div className="w-full max-w-none md:max-w-[680px] rounded-none md:rounded-[20px] bg-[linear-gradient(180deg,#ad81ff_0%,#8949ff_58%,#2b2148_100%)] p-[24px] shadow-[0px_24px_60px_rgba(137,73,255,0.28)] md:p-[40px]">
 
 
 
@@ -2082,7 +2063,7 @@ function ActionCtaSection({ content, editable }: { content: any; editable?: any 
 
 
 
-      className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]"
+      className="bg-white px-[20px] py-0 md:px-[40px] md:py-0 xl:px-[64px] 2xl:px-[80px]"
 
 
 
@@ -2242,7 +2223,14 @@ function ComparisonSection({ content, editable }: { content: any; editable?: any
 
 
 
-        <h2 className="text-center text-[28px] font-bold leading-[1.1] text-white md:text-[40px]" data-tina-field={fieldFor(editable?.comparison, "title")}>{comparison.title}</h2>
+        <h2 className="text-center text-[28px] font-bold leading-[1.1] text-white md:text-[40px]" data-tina-field={fieldFor(editable?.comparison, "title")}>
+          {comparison.title?.includes("Efiteca") ? (
+            <>
+              <span className="text-[#fcc63d]">Efiteca</span>
+              {comparison.title.replace("Efiteca", "")}
+            </>
+          ) : comparison.title}
+        </h2>
 
 
 
@@ -2370,7 +2358,7 @@ function ComparisonSection({ content, editable }: { content: any; editable?: any
 
 
 
-function TestimonialsMetricsSection({ content, editable }: { content: any; editable?: any }) {
+export function TestimonialsMetricsSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
@@ -2470,9 +2458,7 @@ function TestimonialsMetricsSection({ content, editable }: { content: any; edita
 
 
 
-            <div className="w-full max-w-[1180px] md:hidden">
-
-
+            <div className="w-full md:hidden">
 
               <div className="overflow-hidden">
 
@@ -2682,9 +2668,7 @@ function TestimonialsMetricsSection({ content, editable }: { content: any; edita
 
 
 
-            <div className="hidden w-full max-w-[1180px] grid-cols-2 gap-[20px] md:grid xl:grid-cols-3">
-
-
+            <div className="hidden w-full grid-cols-2 gap-[20px] md:grid xl:grid-cols-3">
 
               {testimonialItemás.map((item: any, index: number) => (
 

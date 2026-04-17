@@ -14542,7 +14542,12 @@ function getHeaderNavigation() {
 
 
 
-    contact: `${prefix}/contacto/`
+    contact: `${prefix}/contacto/`,
+    avisoLegal: `${prefix}/aviso-legal/`,
+    proteccionDatos: `${prefix}/proteccion-de-datos/`,
+    politicaCookies: `${prefix}/politica-de-cookies/`,
+    canalEtico: `${prefix}/canal-etico/`,
+    nuevaReclamacion: `${prefix}/nueva-reclamacion/`
 
 
 
@@ -14622,7 +14627,7 @@ function Img() {
 
 
 
-function Frame136() {
+function Frame136({ currentPath }: { currentPath?: string }) {
 
 
 
@@ -14670,23 +14675,18 @@ function Frame136() {
 
 
 
-        {items.map((item) => (
-
-
-
-          <a key={item.href} className={HEADER_NAV_LINK_CLASS} href={item.href}>
-
-
-
-            {item.label}
-
-
-
-          </a>
-
-
-
-        ))}
+        {items.map((item) => {
+          const isActive = currentPath === item.href || (currentPath === "/" && item.href === "/es/");
+          return (
+            <a 
+              key={item.href} 
+              className={`${HEADER_NAV_LINK_CLASS} ${isActive ? "bg-[#f7f3ff] text-[#4f3bf9]" : ""}`} 
+              href={item.href}
+            >
+              {item.label}
+            </a>
+          );
+        })}
 
 
 
@@ -14843,37 +14843,15 @@ function Container51() {
 
 
 function MobileMenuLink({
-
-
-
   href,
-
-
-
   label,
-
-
-
-  onClick
-
-
-
+  onClick,
+  currentPath
 }: {
-
-
-
   href: string;
-
-
-
   label: string;
-
-
-
   onClick: () => void;
-
-
-
+  currentPath?: string;
 }) {
 
 
@@ -14883,29 +14861,15 @@ function MobileMenuLink({
 
 
     <a
-
-
-
       href={href}
-
-
-
-      className="rounded-full px-[14px] py-[10px] text-[16px] font-['Inter:Bold',sans-serif] font-bold text-[#62748e] no-underline transition-colors duration-200 hover:bg-[#f7f3ff] hover:text-[#4f3bf9] focus-visible:bg-[#f7f3ff] focus-visible:text-[#4f3bf9]"
-
-
-
+      className={`rounded-full px-[14px] py-[10px] text-[16px] font-['Inter:Bold',sans-serif] font-bold no-underline transition-colors duration-200 hover:bg-[#f7f3ff] hover:text-[#4f3bf9] focus-visible:bg-[#f7f3ff] focus-visible:text-[#4f3bf9] ${
+        currentPath === href || (currentPath === "/" && href === "/es/") 
+          ? "bg-[#f7f3ff] text-[#4f3bf9]" 
+          : "text-[#62748e]"
+      }`}
       onClick={onClick}
-
-
-
     >
-
-
-
       {label}
-
-
-
     </a>
 
 
@@ -14918,7 +14882,7 @@ function MobileMenuLink({
 
 
 
-export function FigmaHeader() {
+export function FigmaHeader({ currentPath }: { currentPath?: string }) {
 
 
 
@@ -14978,7 +14942,7 @@ export function FigmaHeader() {
 
 
 
-          <Frame136 />
+          <Frame136 currentPath={currentPath} />
 
 
 
@@ -15066,7 +15030,7 @@ export function FigmaHeader() {
 
 
 
-                <MobileMenuLink key={item.href} href={item.href} label={item.label} onClick={() => setIsOpen(false)} />
+                <MobileMenuLink key={item.href} href={item.href} label={item.label} currentPath={currentPath} onClick={() => setIsOpen(false)} />
 
 
 
@@ -15850,7 +15814,7 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-      <div className="relative w-full max-w-[1460px] mx-auto flex flex-col xl:flex-row xl:items-center min-h-[766px] md:min-h-[847px] z-10 pt-[40px] md:pt-[60px] xl:pt-0 3xl:overflow-visible">
+      <div className="relative w-full max-w-[1460px] mx-auto flex flex-col xl:flex-row xl:items-center min-h-0 md:min-h-[847px] z-10 pt-[30px] xl:pt-0 3xl:overflow-visible">
 
 
 
@@ -15858,11 +15822,11 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-        <div className="relative w-full h-[360px] md:h-[450px] xl:absolute xl:inset-0 xl:w-full xl:h-full z-[20] pointer-events-none flex justify-center xl:justify-end items-end">
+        <div className="relative w-full h-[320px] md:h-[450px] xl:absolute xl:inset-0 xl:w-full xl:h-full z-[20] pointer-events-none flex justify-center xl:justify-end items-start md:items-end">
 
 
 
-          <img src="/images/hero-familia-mobile.png" className="w-[85%] h-auto md:hidden relative top-[36px] object-contain object-bottom drop-shadow-xl" alt="" />
+          <img src="/images/hero-familia-mobile.png" className="w-[85%] h-auto md:hidden relative top-0 object-contain object-top drop-shadow-xl" alt="" />
 
 
 
@@ -15882,11 +15846,11 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-        <div className="relative w-full px-[20px] pb-[80px] pt-[19px] md:px-[48px] xl:px-[80px] md:pb-[80px] md:pt-[19px] z-[10] mt-0 flex flex-col justify-center pointer-events-none">
+        <div className="relative w-full px-[20px] pb-[140px] pt-0 md:px-[48px] xl:px-[80px] md:pb-[80px] md:pt-[19px] z-[30] xl:z-[10] mt-[-120px] md:mt-0 flex flex-col justify-center pointer-events-none">
 
 
 
-          <div className="bg-[linear-gradient(163deg,#8949FF_0%,#4F3BF9_100%)] rounded-[32px] p-[32px] pt-[40px] md:p-[56px] flex flex-col gap-[24px] md:gap-[40px] w-full lg:max-w-[800px] xl:max-w-[688px] mx-auto xl:mx-0 relative shadow-[0px_20px_50px_rgba(79,59,249,0.3)] pointer-events-auto mt-[10px] md:mt-0">
+          <div className="bg-[linear-gradient(163deg,#8949FF_0%,#4F3BF9_100%)] rounded-[32px] p-[32px] pt-[20px] md:p-[56px] flex flex-col gap-[24px] md:gap-[40px] w-full lg:max-w-[800px] xl:max-w-[688px] mx-auto xl:mx-0 relative shadow-[0px_20px_50px_rgba(79,59,249,0.3)] pointer-events-auto mt-0 md:mt-0">
 
 
 
@@ -17350,7 +17314,12 @@ export function FigmaFooter() {
 
 
 
-        <p className="leading-[1.1] relative shrink-0 text-[#bec5d2] text-[12px] md:text-right">Protección de Datos | Canal Ético y Reclamaciones | Aviso Legal</p>
+        <p className="leading-[1.1] relative shrink-0 text-[#bec5d2] text-[12px] md:text-right">
+          <a href={links.proteccionDatos} className="hover:text-white transition-colors">Protección de Datos</a> | 
+          <a href={links.canalEtico} className="hover:text-white transition-colors mx-2">Canal Ético y Reclamaciones</a> | 
+          <a href={links.avisoLegal} className="hover:text-white transition-colors">Aviso Legal</a> |
+          <a href={links.politicaCookies} className="hover:text-white transition-colors ml-2">Política de Cookies</a>
+        </p>
 
 
 

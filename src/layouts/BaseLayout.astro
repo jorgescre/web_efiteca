@@ -34,7 +34,7 @@ const { lang, title, description, path, alternates = [], image, noindex = false 
 
   <body class="antialiased">
     <div class="site-shell">
-      <FigmaHeader client:load />
+      <FigmaHeader currentPath={path} client:load />
       <main class="site-main">
         <slot />
       </main>
