@@ -1206,7 +1206,7 @@ function ServicesSection({ content, editable }: { content: any; editable?: any }
 
 
 
-    "Recibe informaciíƒÂ³n",
+    "Recibe información",
 
 
 

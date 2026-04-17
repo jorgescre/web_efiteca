@@ -126,7 +126,7 @@ export function LocationsShowcaseSection({ content, editable }: { content: any; 
 
             
 
-            <div className="flex flex-col gap-[24px] md:flex-row md:items-center md:justify-between relative z-10">
+            <div className="flex flex-col gap-[24px] relative z-10">
 
               <div className="flex flex-col gap-[12px]">
 
@@ -136,7 +136,7 @@ export function LocationsShowcaseSection({ content, editable }: { content: any; 
 
                 </h3>
 
-                <p className="text-[16px] leading-[1.4] text-white/80 md:text-[18px] max-w-[340px]">
+                <p className="text-[16px] leading-[1.4] text-white/80 md:text-[18px] max-w-none">
 
                   {ctaDescription}
 
@@ -144,7 +144,7 @@ export function LocationsShowcaseSection({ content, editable }: { content: any; 
 
               </div>
 
-              <a href="#contacto" className={`${MAIN_BUTTON_CLASS} shrink-0 w-full md:w-auto`}>
+              <a href="#contacto" className={`${MAIN_BUTTON_CLASS} shrink-0 w-full`}>
 
                 <span className={MAIN_BUTTON_TEXT_CLASS}>{ctaButtonLabel}</span>
 
