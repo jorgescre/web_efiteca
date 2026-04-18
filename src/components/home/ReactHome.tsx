@@ -1610,7 +1610,7 @@ function BackgroundBorder({ item, editableItem }: { item: any; editableItem?: an
 
 
 
-    <div className="bg-[#f7f5f9] flex-[1_0_0] h-full min-h-[112px] min-w-px relative rounded-[12px]" data-name="Background+Border">
+    <div className="bg-[#f7f5f9] flex-[1_0_0] h-full min-h-[171px] min-w-px relative rounded-[12px]" data-name="Background+Border">
 
 
 
@@ -1622,11 +1622,11 @@ function BackgroundBorder({ item, editableItem }: { item: any; editableItem?: an
 
 
 
-        <div className="content-stretch flex gap-[12px] items-center p-[10px] md:p-[12px] relative size-full">
+        <div className="content-stretch flex gap-[12px] items-center p-[8px] relative size-full">
 
 
 
-          <div className="relative h-[74px] w-[106px] shrink-0 overflow-hidden rounded-[4px]" data-tina-field={fieldFor(editableItem, "image")}>
+          <div className="relative h-[155px] w-[106px] shrink-0 overflow-hidden rounded-[4px]" data-tina-field={fieldFor(editableItem, "image")}>
 
 
 
@@ -1890,7 +1890,7 @@ function Frame97({ content, editable }: { content: any; editable?: any }) {
 
 
 
-    <div className="content-stretch flex flex-col gap-[28px] md:gap-[36px] items-start relative shrink-0 w-full max-w-[1420px] mx-auto">
+    <div className="content-stretch flex flex-col gap-[28px] md:gap-[36px] items-start relative shrink-0 w-full">
 
 
 
@@ -1942,7 +1942,7 @@ function Frame62({ content, editable }: { content: any; editable?: any }) {
 
 
 
-    <div className="content-stretch flex flex-col gap-[40px] items-start py-[48px] md:py-[56px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[40px] items-start pt-[48px] md:pt-[56px] pb-0 relative shrink-0 w-full">
 
 
 
@@ -2762,6 +2762,13 @@ function Container5({ content }: { content: any }) {
 
 
 
+const HOW_IT_WORKS_ICONS = [
+  "/images/icono-nos-cuentas-tu-caso.png",
+  "/images/icono-Analizamos-que-bancos.png",
+  "/images/icono-te-mostramos-opciones.png",
+  "/images/icono-coordinamos-el-proceso.png",
+];
+
 function HowItWorksSection({ content, editable }: { content: any; editable?: any }) {
 
 
@@ -2782,7 +2789,7 @@ function HowItWorksSection({ content, editable }: { content: any; editable?: any
 
 
 
-      <div className="content-stretch flex flex-col gap-[40px] items-center px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] relative w-full">
+      <div className="content-stretch flex flex-col gap-[40px] items-center relative w-full">
 
 
 
@@ -2802,7 +2809,7 @@ function HowItWorksSection({ content, editable }: { content: any; editable?: any
 
 
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[28px] md:gap-[40px] w-full max-w-[1296px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[28px] md:gap-[40px] w-full">
 
 
 
@@ -2810,7 +2817,7 @@ function HowItWorksSection({ content, editable }: { content: any; editable?: any
 
 
 
-            <div key={index} className="content-stretch flex flex-col items-center text-center gap-[16px] relative" data-tina-field={fieldFor(editable?.howItWorks?.items?.[index], "title")}>
+            <div key={index} className="content-stretch flex flex-col items-center text-center gap-[12px] relative" data-tina-field={fieldFor(editable?.howItWorks?.items?.[index], "title")}>
 
 
 
@@ -2818,11 +2825,15 @@ function HowItWorksSection({ content, editable }: { content: any; editable?: any
 
 
 
-                <p className="font-['Inter:Bold',sans-serif] font-bold text-[22px] text-white">{index + 1}</p>
+                <img src={HOW_IT_WORKS_ICONS[index]} alt="" className="size-[22px] object-contain" />
 
 
 
               </div>
+
+
+
+              <p className="font-['Inter:Bold',sans-serif] font-bold text-[#8949ff] text-[13px] tracking-[0.05em]">{item.number}</p>
 
 
 
@@ -2902,7 +2913,7 @@ function ActionCtaSection({ content }: { content: any }) {
 
 
 
-    <section className="bg-white content-stretch flex flex-col items-center px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-[56px] md:py-[80px] relative shrink-0 w-full">
+    <section className="bg-white content-stretch flex flex-col items-center px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] pt-0 pb-[56px] md:pb-[80px] relative shrink-0 w-full">
 
 
 
@@ -2970,7 +2981,7 @@ export function StepTimelineSection({ content, editable }: { content: any; edita
 
 
 
-    <section className="bg-white border-y border-white content-stretch flex flex-col items-center px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-[56px] md:py-[80px] relative shrink-0 w-full">
+    <section className="bg-white border-y border-white content-stretch flex flex-col items-center px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] py-[56px] md:py-[80px] relative shrink-0 w-full">
 
 
 
@@ -3118,7 +3129,7 @@ function StaggeredMetricsSection({ content, editable }: { content: any; editable
 
 
 
-      <div className="content-stretch flex flex-col items-start px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-[56px] md:py-[80px] relative w-full ">
+      <div className="content-stretch flex flex-col items-start px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] pt-[56px] md:pt-[80px] pb-0 relative w-full ">
 
 
 
@@ -4294,7 +4305,7 @@ function Container6({
 
 
 
-    <div className="relative grid w-full max-w-[1120px] grid-cols-2 gap-[12px] items-stretch md:grid-cols-3 md:gap-[16px] xl:grid-cols-5" data-name="Container">
+    <div className="relative grid w-full grid-cols-2 gap-[12px] items-stretch md:grid-cols-3 md:gap-[16px] xl:grid-cols-5" data-name="Container">
 
 
 
@@ -5526,7 +5537,7 @@ function Frame95({
 
 
 
-    <div className="flex w-full shrink-0 flex-col items-center gap-[20px] overflow-hidden rounded-[32px] bg-[url('/images/frame7.png')] bg-cover bg-center bg-no-repeat px-[18px] py-[34px] md:gap-[24px] md:rounded-[40px] md:px-[40px] md:py-[44px] xl:gap-[28px] xl:px-[56px] xl:py-[52px]">
+    <div className="flex w-full shrink-0 flex-col items-center gap-[20px] overflow-hidden rounded-[32px] bg-[url('/images/frame7.png')] bg-cover bg-center bg-no-repeat px-[18px] py-[34px] md:gap-[24px] md:rounded-[40px] md:px-[40px] md:py-[44px] xl:gap-[28px] xl:px-[160px] xl:py-[80px]">
 
 
 
@@ -5538,7 +5549,7 @@ function Frame95({
 
 
 
-      <div className="grid w-full max-w-[1120px] grid-cols-1 gap-[22px] rounded-[28px] bg-[radial-gradient(circle_at_78%_72%,rgba(126,86,255,0.28),rgba(8,8,19,0.98)_34%)] p-[20px] md:gap-[28px] md:rounded-[32px] md:p-[24px] xl:grid-cols-[minmax(0,1fr)_380px] xl:items-center xl:px-[24px] xl:py-[20px]">
+      <div className="grid w-full grid-cols-1 gap-[22px] rounded-[28px] bg-[radial-gradient(circle_at_78%_72%,rgba(126,86,255,0.28),rgba(8,8,19,0.98)_34%)] p-[20px] md:gap-[28px] md:rounded-[32px] md:p-[24px] xl:grid-cols-[minmax(0,1fr)_380px] xl:items-center xl:px-[24px] xl:py-[20px]">
 
 
 
@@ -7102,7 +7113,7 @@ function Frame86({ content }: { content: any }) {
 
 
 
-        <div className="content-stretch mx-auto flex w-full max-w-[1460px] flex-col items-center gap-[24px] px-[20px] py-[40px] md:gap-[32px] md:px-[40px] md:py-[72px] xl:px-[64px] 2xl:px-[80px] relative">
+        <div className="content-stretch flex w-full flex-col items-center gap-[24px] px-[20px] pt-[40px] pb-0 md:gap-[32px] md:px-[40px] md:pt-[80px] xl:px-[160px] 2xl:px-[160px] relative">
 
 
 
@@ -7358,15 +7369,15 @@ function Frame5({ content, editable }: { content: any; editable?: any }) {
 
 
 
-      <div className="content-stretch flex flex-col gap-[24px] md:gap-[40px] items-center lg:items-start relative shrink-0 w-full max-w-[572px]">
+      <div className="content-stretch flex flex-col gap-[16px] items-center relative shrink-0 w-full max-w-[572px]">
 
 
 
-        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[32px] md:text-[40px] text-center lg:text-left w-[min-content]" data-tina-field={fieldFor(editable?.benefits, "title")}>{content.benefits.title}</p>
+        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[28px] md:text-[36px] text-center w-full" data-tina-field={fieldFor(editable?.benefits, "title")}>{content.benefits.title}</p>
 
 
 
-        <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.1] min-w-full not-italic relative shrink-0 text-[#080813] text-[18px] md:text-[22px] text-center lg:text-left w-[min-content] whitespace-pre-wrap" data-tina-field={fieldFor(editable?.benefits, "description")}>
+        <p className="font-['Inter:Regular',sans-serif] font-normal leading-[1.2] min-w-full not-italic relative shrink-0 text-[#080813] text-[16px] md:text-[18px] text-center w-full whitespace-pre-wrap" data-tina-field={fieldFor(editable?.benefits, "description")}>
 
 
 
@@ -9094,7 +9105,7 @@ function Frame83({ content }: { content: any }) {
 
 
 
-      <div id="contacto" className="bg-white content-stretch isolate flex flex-col gap-[10px] items-center mb-[-2px] overflow-hidden py-[56px] md:py-[80px] px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] relative shrink-0 w-full">
+      <div id="contacto" className="bg-white content-stretch isolate flex flex-col gap-[10px] items-center mb-[-2px] overflow-hidden py-[56px] md:py-[80px] px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] relative shrink-0 w-full">
 
 
 
@@ -9106,7 +9117,7 @@ function Frame83({ content }: { content: any }) {
 
 
 
-        <div className="content-stretch grid grid-cols-1 xl:grid-cols-[minmax(280px,412px)_minmax(0,1fr)] gap-[32px] xl:gap-[56px] items-start relative shrink-0 w-full max-w-[1460px] z-10" data-name="Container">
+        <div className="content-stretch grid grid-cols-1 xl:grid-cols-[minmax(280px,412px)_minmax(0,1fr)] gap-[32px] xl:gap-[56px] items-start relative shrink-0 w-full z-10" data-name="Container">
 
 
 
@@ -9918,7 +9929,7 @@ function Section() {
 
 
 
-function Frame22({ content, latestNews }: { content: any; latestNews?: Array<{ title: string; description: string; href: string }> }) {
+function Frame22({ content, latestNews }: { content: any; latestNews?: Array<{ title: string; description: string; image?: string | null; href: string }> }) {
 
 
 
@@ -9946,7 +9957,7 @@ function Frame22({ content, latestNews }: { content: any; latestNews?: Array<{ t
 
 
 
-        image: fallábackItemás[index]?.image || fallábackItemás[0]?.image,
+        image: entry.image || fallábackItemás[index]?.image || fallábackItemás[0]?.image,
 
 
 
@@ -9978,7 +9989,7 @@ function Frame22({ content, latestNews }: { content: any; latestNews?: Array<{ t
 
 
 
-      <div className="bg-[#080813] content-stretch flex flex-col items-center mb-[-2px] py-[56px] md:py-[80px] relative shrink-0 w-full">
+      <div className="bg-[#080813] content-stretch flex flex-col items-center relative shrink-0 w-full">
 
 
 
@@ -9990,7 +10001,7 @@ function Frame22({ content, latestNews }: { content: any; latestNews?: Array<{ t
 
 
 
-            <div className="content-stretch mx-auto flex max-w-[1460px] flex-col gap-[32px] md:gap-[40px] items-center px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] relative w-full">
+            <div className="content-stretch flex flex-col gap-[32px] md:gap-[40px] items-center px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] py-[40px] md:py-[80px] relative w-full">
 
 
 
@@ -12254,11 +12265,11 @@ export function FaqSection({ content, editable, backgroundColor = "#ecddee" }: {
 
 
 
-    <section className="content-stretch flex flex-col items-center mb-[-2px] px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-[56px] md:py-[80px] relative shrink-0 w-full bg-[#f9fafb]" style={{ backgroundColor: "#f9fafb" }} data-tina-field={fieldFor(editable, "faq")}>
+    <section className="content-stretch flex flex-col items-center mb-[-2px] px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] py-[56px] md:py-[80px] relative shrink-0 w-full bg-[#f9fafb]" style={{ backgroundColor: "#f9fafb" }} data-tina-field={fieldFor(editable, "faq")}>
 
 
 
-      <div className="content-stretch mx-auto flex max-w-[1296px] flex-col gap-[40px] items-center relative shrink-0 w-full" data-name="Container">
+      <div className="content-stretch flex flex-col gap-[40px] items-center relative shrink-0 w-full" data-name="Container">
 
 
 
@@ -13566,123 +13577,19 @@ export function Frame60({ content, editable }: { content: any; editable?: any })
 
 
 
-  const cards = [
+  const cards = (content.locations.items || []).map((item: any) => ({
 
+    city: item.city,
 
+    summary: item.summary,
 
-    {
+    seoLabel: item.seoLabel,
 
+    image: item.image,
 
+    cta: { href: item.cta?.href || "#" }
 
-      city: "Sevilla",
-
-
-
-      summary: "Te ayudamos a conseguir o mejorar tu hipoteca en Sevilla con acompa\u00f1amiento experto, an\u00e1lisis personalizado y coordinaci\u00f3n integral para llegar a firma sin sorpresas ni retrasos innecesarios.",
-
-
-
-      seoLabel: "Asesor\u00eda hipotecaria en Sevilla",
-
-
-
-      image: "/images/locations/sevilla.png",
-
-
-
-      cta: { href: "#map-sevilla" }
-
-
-
-    },
-
-
-
-    {
-
-
-
-      city: "Madrid",
-
-
-
-      summary: "Si buscas comprar vivienda o mejorar tu hipoteca en Madrid, te guiamos con opciones claras y acompa\u00f1amiento completo hasta la firma final.",
-
-
-
-      seoLabel: "Asesor\u00eda hipotecaria en Madrid",
-
-
-
-      image: "/images/locations/madrid.png",
-
-
-
-      cta: { href: "#map-madrid" }
-
-
-
-    },
-
-
-
-    {
-
-
-
-      city: "Barcelona",
-
-
-
-      summary: "En Barcelona, contamos con una oficina presencial donde analizamos tu perfil hipotecario para encontrar la mejor ruta posible. Comparamos opciones reales y coordinamos el proceso hasta que llegues a la firma de manera correcta.",
-
-
-
-      seoLabel: "Asesor\u00eda hipotecaria en Barcelona",
-
-
-
-      image: "/images/locations/barcelona.png",
-
-
-
-      cta: { href: "#map-barcelona" }
-
-
-
-    },
-
-
-
-    {
-
-
-
-      city: "Valencia",
-
-
-
-      summary: "Te ayudamos a conseguir o mejorar tu hipoteca en Valencia con un proceso claro, opciones comparadas y acompa\u00f1amiento experto desde el diagn\u00f3stico hasta la firma.",
-
-
-
-      seoLabel: "Asesor\u00eda hipotecaria en Valencia",
-
-
-
-      image: "/images/locations/valencia.png",
-
-
-
-      cta: { href: "#map-valencia" }
-
-
-
-    }
-
-
-
-  ];
+  }));
 
 
 
@@ -13790,7 +13697,7 @@ export function Frame60({ content, editable }: { content: any; editable?: any })
 
 
 
-    <div className="content-stretch flex flex-col gap-[32px] md:gap-[40px] items-center mb-[-2px] py-[56px] md:py-[80px] px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] relative shrink-0 w-full">
+    <div className="content-stretch flex flex-col gap-[32px] md:gap-[40px] items-center mb-[-2px] py-[56px] md:py-[80px] px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] relative shrink-0 w-full">
 
 
 
@@ -13802,7 +13709,7 @@ export function Frame60({ content, editable }: { content: any; editable?: any })
 
 
 
-          <div className="content-stretch mx-auto flex max-w-[1460px] flex-col gap-[20px] md:gap-[40px] items-center leading-[0] not-italic pr-0 relative text-[#080813] text-center w-full">
+          <div className="content-stretch flex flex-col gap-[20px] md:gap-[40px] items-center leading-[0] not-italic pr-0 relative text-[#080813] text-center w-full">
 
 
 
@@ -13842,7 +13749,7 @@ export function Frame60({ content, editable }: { content: any; editable?: any })
 
 
 
-      <div className="content-stretch mx-auto flex max-w-[1460px] flex-col gap-[20px] w-full">
+      <div className="content-stretch flex flex-col gap-[20px] w-full">
 
 
 
@@ -14111,137 +14018,55 @@ function Capa1() {
 
 
 function Frame73() {
-
-
-
   return (
+    <div className="content-stretch flex gap-[20px] items-center relative shrink-0 flex-wrap">
 
-
-
-    <div className="content-stretch flex gap-[24px] items-start relative shrink-0">
-
-
-
-      <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Whatsapp">
-
-
-
-        <div className="absolute inset-[8.33%_8.75%_8.33%_8.33%]" data-name="icon">
-
-
-
+      <a href="https://wa.link/rmtjml" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="overflow-clip relative shrink-0 size-[24px] hover:opacity-80 transition-opacity">
+        <div className="absolute inset-[8.33%_8.75%_8.33%_8.33%]">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 19.9 20.0001">
-
-
-
-            <path d={svgPaths.p30848300} fill="var(--fill-0, #FCC63D)" id="icon" />
-
-
-
+            <path d={svgPaths.p30848300} fill="#FCC63D" />
           </svg>
-
-
-
         </div>
+      </a>
 
-
-
-      </div>
-
-
-
-      <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Linkedin">
-
-
-
-        <div className="-translate-x-1/2 absolute aspect-[18/18] bottom-[12.5%] left-1/2 top-[12.5%]" data-name="Vector">
-
-
-
+      <a href="http://www.linkedin.com/company/efiteca/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="overflow-clip relative shrink-0 size-[24px] hover:opacity-80 transition-opacity">
+        <div className="-translate-x-1/2 absolute aspect-[18/18] bottom-[12.5%] left-1/2 top-[12.5%]">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 18 18">
-
-
-
-            <path d={svgPaths.p34481000} fill="var(--fill-0, #FCC63D)" id="Vector" />
-
-
-
+            <path d={svgPaths.p34481000} fill="#FCC63D" />
           </svg>
-
-
-
         </div>
+      </a>
 
-
-
-      </div>
-
-
-
-      <div className="overflow-clip relative shrink-0 size-[24px]" data-name="Instagram">
-
-
-
-        <div className="-translate-y-1/2 absolute aspect-[20/20] left-[8.33%] right-[8.33%] top-1/2" data-name="Vector">
-
-
-
+      <a href="https://www.instagram.com/efiteca/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="overflow-clip relative shrink-0 size-[24px] hover:opacity-80 transition-opacity">
+        <div className="-translate-y-1/2 absolute aspect-[20/20] left-[8.33%] right-[8.33%] top-1/2">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
-
-
-
-            <path d={svgPaths.p124a2170} fill="var(--fill-0, #FCC63D)" id="Vector" />
-
-
-
+            <path d={svgPaths.p124a2170} fill="#FCC63D" />
           </svg>
-
-
-
         </div>
+      </a>
 
-
-
-      </div>
-
-
-
-      <div className="overflow-clip relative shrink-0 size-[24px]" data-name="facebook">
-
-
-
-        <div className="-translate-y-1/2 absolute aspect-[20/19.950000762939453] left-[8.33%] right-[8.33%] top-[calc(50%-0.02px)]" data-name="Vector">
-
-
-
+      <a href="https://www.facebook.com/profile.php?id=61557920292266" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="overflow-clip relative shrink-0 size-[24px] hover:opacity-80 transition-opacity">
+        <div className="-translate-y-1/2 absolute aspect-[20/19.95] left-[8.33%] right-[8.33%] top-[calc(50%-0.02px)]">
           <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 19.95">
-
-
-
-            <path d={svgPaths.paeb5680} fill="var(--fill-0, #FCC63D)" id="Vector" />
-
-
-
+            <path d={svgPaths.paeb5680} fill="#FCC63D" />
           </svg>
-
-
-
         </div>
+      </a>
 
+      <a href="https://www.tiktok.com/@efiteca" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="relative shrink-0 size-[24px] hover:opacity-80 transition-opacity flex items-center justify-center">
+        <svg viewBox="0 0 24 24" className="size-[22px]" fill="#FCC63D">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.79a8.18 8.18 0 0 0 4.78 1.52V6.86a4.85 4.85 0 0 1-1.01-.17z"/>
+        </svg>
+      </a>
 
-
-      </div>
-
-
+      <a href="https://www.youtube.com/@Efiteca" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="relative shrink-0 size-[24px] hover:opacity-80 transition-opacity flex items-center justify-center">
+        <svg viewBox="0 0 24 24" className="size-[22px]" fill="#FCC63D">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
 
     </div>
-
-
-
   );
-
-
-
 }
 
 
@@ -14559,7 +14384,7 @@ function getHeaderNavigation() {
 
 
 
-const HEADER_GUTTER_CLASSES = "px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px]";
+const HEADER_GUTTER_CLASSES = "px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px]";
 
 
 
@@ -14930,7 +14755,7 @@ export function FigmaHeader({ currentPath }: { currentPath?: string }) {
 
 
 
-      <div className={`mx-auto flex h-[88px] w-full max-w-[1460px] items-center justify-between ${HEADER_GUTTER_CLASSES}`}>
+      <div className={`flex h-[88px] w-full items-center justify-between ${HEADER_GUTTER_CLASSES}`}>
 
 
 
@@ -15018,7 +14843,7 @@ export function FigmaHeader({ currentPath }: { currentPath?: string }) {
 
 
 
-          <div className={`mx-auto w-full max-w-[1460px] py-[20px] ${HEADER_GUTTER_CLASSES}`}>
+          <div className={`w-full py-[20px] ${HEADER_GUTTER_CLASSES}`}>
 
 
 
@@ -15094,7 +14919,7 @@ function Frame49({ content, editable }: { content: any; editable?: any }) {
 
 
 
-    <div className="bg-[#0f172b] content-stretch flex flex-col gap-[18px] md:gap-0 md:flex-row isolate items-center md:items-center justify-center overflow-hidden px-[24px] py-[28px] md:px-[56px] md:py-[48px] xl:px-[72px] xl:py-[56px] relative rounded-[32px] md:rounded-[60px] shrink-0 w-full max-w-[1460px]">
+    <div className="bg-[#0f172b] content-stretch flex flex-col gap-[18px] md:gap-0 md:flex-row isolate items-center md:items-center justify-center overflow-hidden px-[24px] py-[28px] md:px-[56px] md:py-[48px] xl:px-[72px] xl:py-[56px] relative rounded-[32px] md:rounded-[60px] shrink-0 w-full">
 
 
 
@@ -15318,11 +15143,11 @@ function AboutSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-    <section id="sobre-nosotros" className="bg-white content-stretch flex flex-col items-start px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] pt-[56px] pb-[88px] md:py-[80px] relative shrink-0 w-full z-10">
+    <section id="sobre-nosotros" className="bg-white content-stretch flex flex-col items-start px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] pt-[56px] md:pt-[80px] pb-0 relative shrink-0 w-full z-10">
 
 
 
-      <div className="content-stretch mx-auto grid max-w-[1460px] grid-cols-1 gap-[32px] md:gap-[72px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-center lg:gap-[96px] relative shrink-0 w-full">
+      <div className="content-stretch grid grid-cols-1 gap-[32px] md:gap-[72px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-center lg:gap-[96px] relative shrink-0 w-full">
 
 
 
@@ -15442,7 +15267,7 @@ export default function Home({
 
 
 
-  latestNews?: Array<{ title: string; description: string; href: string }>;
+  latestNews?: Array<{ title: string; description: string; image?: string | null; href: string }>;
 
 
 
@@ -15642,7 +15467,7 @@ export default function Home({
 
 
 
-      <div className="bg-white content-stretch flex flex-col items-center mb-[-2px] px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-[56px] md:py-[80px] relative shrink-0 w-full" data-name="cifras" data-tina-field={fieldFor(tinaPage, "metrics")}> 
+      <div className="bg-white content-stretch flex flex-col items-center mb-[-2px] px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] py-[56px] md:py-[80px] relative shrink-0 w-full" data-name="cifras" data-tina-field={fieldFor(tinaPage, "metrics")}> 
 
 
 
@@ -15678,15 +15503,6 @@ export default function Home({
 
 
 
-      <div className="w-full" data-tina-field={fieldFor(tinaPage, "guides")}>
-
-
-
-        <GuidesSection content={page} editable={tinaPage} />
-
-
-
-      </div>
 
 
 
@@ -15998,6 +15814,8 @@ export function TestimonialsSection({ content, editable }: { content: any; edita
 
 
 
+  const GOOGLE_REVIEWS_URL = "https://www.google.com/search?q=efiteca#lrd=0x12a4a36361809249:0x7dacaebfd27bc034,1,,,,";
+
   const renderTestimonialCard = (item: any, idx: number) => (
 
 
@@ -16006,59 +15824,12 @@ export function TestimonialsSection({ content, editable }: { content: any; edita
 
 
 
-      <article className="flex min-h-[320px] w-full flex-col justify-between rounded-[32px] border border-[#d9d9d9] bg-white px-[24px] py-[24px] md:min-h-[340px] md:px-[32px] md:py-[32px] xl:rounded-[40px] xl:px-[36px] xl:py-[34px]">
+      <article className="flex w-full flex-col gap-[16px] rounded-[20px] border border-[#e5e7eb] bg-white px-[20px] py-[20px] md:px-[24px] md:py-[24px]">
 
 
 
-        <div className="flex flex-col gap-[20px] md:gap-[24px]">
-
-
-
-          <div className="flex gap-[10px] text-[20px] leading-none text-[#fcc63d]">
-
-
-
-            {renderStars(item.stars || 5)}
-
-
-
-          </div>
-
-
-
-          <p
-
-
-
-            className="overflow-hidden font-['Inter:Bold',sans-serif] text-[18px] font-bold leading-[1.1] text-[#364153] md:text-[20px] xl:text-[22px]"
-
-
-
-            style={{ display: "-webkit-box", WebkitLineClamp: 6, WebkitBoxOrient: "vertical" }}
-
-
-
-            data-tina-field={fieldFor(editable?.testimonials?.items?.[idx], "text")}
-
-
-
-          >
-
-
-
-            {item.text}
-
-
-
-          </p>
-
-
-
-        </div>
-
-
-
-        <div className="flex items-center gap-[12px] pt-[20px]">
+        {/* Header: avatar + nombre + tiempo + Google */}
+        <div className="flex items-center gap-[12px]">
 
 
 
@@ -16074,7 +15845,7 @@ export function TestimonialsSection({ content, editable }: { content: any; edita
 
 
 
-            className="size-[46px] shrink-0 rounded-full object-cover bg-[#f2eff7]"
+            className="size-[44px] shrink-0 rounded-full object-cover bg-[#f2eff7]"
 
 
 
@@ -16086,31 +15857,39 @@ export function TestimonialsSection({ content, editable }: { content: any; edita
 
 
 
-          <div className="flex min-w-0 flex-col">
+          <div className="flex min-w-0 flex-col gap-[2px]">
 
 
 
-            <p className="font-['Inter:Bold',sans-serif] text-[16px] font-bold leading-[1.1] text-[#101828]" data-tina-field={fieldFor(editable?.testimonials?.items?.[idx], "name")}>
+            <div className="flex items-center gap-[6px]">
 
 
 
-              {item.name}
+              <p className="font-['Inter:Bold',sans-serif] text-[15px] font-bold leading-none text-[#101828]" data-tina-field={fieldFor(editable?.testimonials?.items?.[idx], "name")}>{item.name}</p>
 
 
 
-            </p>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" /><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#fff" /></svg>
 
 
 
-            <p className="font-['Inter:Regular',sans-serif] text-[14px] leading-[1.2] text-[#6a7282] md:text-[15px]" data-tina-field={fieldFor(editable?.testimonials?.items?.[idx], "role")}>
+            </div>
 
 
 
-              {item.role}
+            <div className="flex items-center gap-[4px]">
 
 
 
-            </p>
+              <p className="font-['Inter:Regular',sans-serif] text-[12px] text-[#6a7282]" data-tina-field={fieldFor(editable?.testimonials?.items?.[idx], "role")}>{item.role} · activado</p>
+
+
+
+              <svg width="36" height="12" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/><path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/><path d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.03 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/></svg>
+
+
+
+            </div>
 
 
 
@@ -16119,6 +15898,81 @@ export function TestimonialsSection({ content, editable }: { content: any; edita
 
 
         </div>
+
+
+
+        {/* Estrellas */}
+        <div className="flex gap-[4px] text-[18px] leading-none text-[#fcc63d]">
+
+
+
+          {renderStars(item.stars || 5)}
+
+
+
+        </div>
+
+
+
+        {/* Texto truncado */}
+        <p
+
+
+
+          className="overflow-hidden font-['Inter:Regular',sans-serif] text-[14px] leading-[1.5] text-[#374151] md:text-[15px]"
+
+
+
+          style={{ display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}
+
+
+
+          data-tina-field={fieldFor(editable?.testimonials?.items?.[idx], "text")}
+
+
+
+        >
+
+
+
+          {item.text}
+
+
+
+        </p>
+
+
+
+        {/* Leer más */}
+        <a
+
+
+
+          href={GOOGLE_REVIEWS_URL}
+
+
+
+          target="_blank"
+
+
+
+          rel="noopener noreferrer"
+
+
+
+          className="font-['Inter:Bold',sans-serif] text-[14px] font-semibold text-[#4285F4] hover:underline"
+
+
+
+        >
+
+
+
+          Leer más
+
+
+
+        </a>
 
 
 
@@ -16158,7 +16012,7 @@ export function TestimonialsSection({ content, editable }: { content: any; edita
 
 
 
-      <div className="mx-auto flex w-full max-w-[1460px] flex-col items-center gap-[40px] px-[20px] py-[56px] md:gap-[48px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]">
+      <div className="flex w-full flex-col items-center gap-[40px] px-[20px] py-[80px] md:gap-[48px] md:px-[40px] xl:px-[160px] 2xl:px-[160px]">
 
 
 
@@ -16234,7 +16088,7 @@ export function TestimonialsSection({ content, editable }: { content: any; edita
 
 
 
-        <div className="hidden w-full max-w-[1180px] grid-cols-2 gap-[20px] md:grid xl:grid-cols-3">
+        <div className="hidden w-full grid-cols-2 gap-[20px] md:grid xl:grid-cols-3">
 
 
 
@@ -16666,23 +16520,24 @@ function BenefitsSection({ content, editable }: { content: any; editable?: any }
 
 
 
-    <section className="bg-[#f7f5f9] mb-[-2px] relative shrink-0 w-full pt-[40px] xl:pt-[80px]">
+    <section className="bg-[#f7f5f9] mb-[-2px] relative shrink-0 w-full">
 
 
 
-      <div className="w-full max-w-[1460px] mx-auto px-[20px] md:px-[40px] 2xl:px-[80px] pb-[40px] md:pb-[60px] xl:pb-[80px] pt-0">
+      <div className="w-full px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] py-[40px] md:py-[80px]">
 
 
 
-        <div className="w-full flex flex-col xl:flex-row xl:items-end xl:justify-center">
+        <div className="w-full flex flex-col xl:flex-row xl:items-end">
 
 
 
-          <div className="bg-[#fcc63d] w-full xl:w-[640px] px-[24px] md:px-[72px] py-[40px] md:py-[70px] flex items-center justify-center xl:justify-start order-2 xl:order-1 relative shadow-xl xl:shadow-none rounded-b-[32px] md:rounded-b-[60px] xl:rounded-b-none xl:rounded-l-[60px] xl:h-[384px]">
+          {/* Cuadro amarillo — texto */}
+          <div className="bg-[#fcc63d] w-full xl:w-[50%] px-[24px] md:px-[48px] py-[40px] md:py-[50px] flex items-center justify-center order-2 xl:order-1 rounded-b-[32px] md:rounded-b-[60px] xl:rounded-l-[60px] xl:rounded-r-none xl:h-[384px]">
 
 
 
-            <div className="w-full content-stretch flex flex-col gap-[24px] md:gap-[40px] items-center xl:items-start relative shrink-0 h-full">
+            <div className="w-full flex flex-col gap-[20px] items-center justify-center h-full">
 
 
 
@@ -16698,19 +16553,16 @@ function BenefitsSection({ content, editable }: { content: any; editable?: any }
 
 
 
-          <div className="w-full xl:w-[640px] flex-shrink-0 relative order-1 xl:order-2 shadow-xl xl:shadow-none rounded-t-[32px] md:rounded-t-[60px] xl:rounded-none xl:rounded-tr-[60px] xl:rounded-br-[60px] overflow-hidden xl:h-[468px]">
+          {/* Imagen derecha — chica sobresale arriba */}
+          <div className="w-full xl:w-[50%] flex-shrink-0 relative order-1 xl:order-2 overflow-visible rounded-t-[32px] md:rounded-t-[60px] xl:rounded-tl-none xl:rounded-bl-none xl:rounded-tr-[60px] xl:rounded-br-[60px] min-h-[260px] md:min-h-[360px] xl:h-[384px]">
 
 
 
-             <img src="/images/Persona-imagen-banner-mobile.png" className="w-full h-auto block md:hidden object-cover object-bottom" alt="" />
+            <img src="/images/Banner-fondo-amarillo.jpg" className="absolute inset-0 w-full h-full object-cover rounded-t-[32px] md:rounded-t-[60px] xl:rounded-tl-none xl:rounded-tr-[60px] xl:rounded-br-[60px] xl:rounded-bl-none" alt="" />
 
 
 
-             <img src="/images/Persona-imagen-banner-tablet.png" className="hidden md:block xl:hidden w-full h-auto object-cover object-bottom" alt="" />
-
-
-
-             <img src="/images/Persona-imagen-banner-desktop.png" className="hidden xl:block w-full h-[468px] object-cover object-right xl:rounded-tr-[60px] xl:rounded-br-[60px]" alt="" />
+            <img src="/images/Persona-banner-fondo-amarillo.png" className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[115%] object-contain object-bottom" alt="" />
 
 
 
@@ -16754,11 +16606,11 @@ function NewsletterSection({ content }: { content: any }) {
 
 
 
-        <div className="w-full max-w-[1460px] mx-auto px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-[56px] md:py-[80px] relative">
+        <div className="w-full px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] py-[56px] md:py-[80px] relative">
 
 
 
-          <div className="content-stretch flex flex-col md:flex-row gap-[32px] lg:gap-[80px] items-center justify-center relative shrink-0 w-full">
+          <div className="content-stretch flex flex-col md:flex-row gap-[32px] lg:gap-[80px] items-center justify-between relative shrink-0 w-full">
 
 
 
@@ -16790,39 +16642,28 @@ function NewsletterSection({ content }: { content: any }) {
 
 
 
-              <div className="bg-[#f4f5f9] h-[46px] relative rounded-[8px] shrink-0 w-full" data-name="Full name">
+              <form
+                className="flex flex-col gap-[16px] w-full"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  window.open("https://drive.google.com/file/d/1bCD_7SUQfZ8ZQQB8kE_r69nbkGwSSML-/view?usp=sharing", "_blank", "noopener,noreferrer");
+                }}
+              >
 
+                <input
+                  type="email"
+                  required
+                  placeholder={content.newsletter.emailPlaceholder || "Email"}
+                  className="bg-[#f4f5f9] border border-[#dbdcde] h-[46px] rounded-[8px] w-full px-[15px] font-['Inter:Regular',sans-serif] text-[16px] text-[#0b0b13] placeholder-[#9d9ba8] outline-none focus:border-[#8949ff] transition-colors"
+                />
 
+                <button type="submit" className={`${MAIN_BUTTON_CLASS} shrink-0 w-full sm:w-auto`}>
 
-                <div className="overflow-clip relative rounded-[inherit] size-full">
+                  <p className={MAIN_BUTTON_TEXT_CLASS}>Suscribirme y Descargar</p>
 
+                </button>
 
-
-                  <p className="absolute font-['Inter:Regular',sans-serif] font-normal leading-[1.1] left-[15px] not-italic text-[#9d9ba8] text-[18px] top-[calc(50%-10px)] whitespace-nowrap">{content.newsletter.emailPlaceholder || "Email"}</p>
-
-
-
-                </div>
-
-
-
-                <div aria-hidden="true" className="absolute border border-[#dbdcde] border-solid inset-0 pointer-events-none rounded-[8px]" />
-
-
-
-              </div>
-
-
-
-              <a href={content.newsletter.button?.href || "#"} className={`${MAIN_BUTTON_CLASS} shrink-0 w-full sm:w-auto`}>
-
-
-
-                <p className={MAIN_BUTTON_TEXT_CLASS}>Suscribirme y Descargar</p>
-
-
-
-              </a>
+              </form>
 
 
 
@@ -16982,7 +16823,7 @@ export function FigmaFooter() {
 
 
 
-    <footer className="bg-[#080813] content-stretch flex flex-col gap-[40px] items-center overflow-hidden px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-[80px] md:py-[120px] relative w-full text-left" data-name="Footer">
+    <footer className="bg-[#080813] content-stretch flex flex-col gap-[40px] items-center overflow-hidden px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px] py-[80px] relative w-full text-left" data-name="Footer">
 
 
 
@@ -17074,7 +16915,7 @@ export function FigmaFooter() {
 
 
 
-        <div className="content-stretch grid grid-cols-1 gap-[40px] items-start relative shrink-0 w-full max-w-[1460px] md:grid-cols-[468px_minmax(0,1fr)_minmax(0,1fr)_minmax(260px,1fr)] md:gap-[49px]">
+        <div className="content-stretch grid grid-cols-1 gap-[40px] items-start relative shrink-0 w-full md:grid-cols-[468px_minmax(0,1fr)_minmax(0,1fr)_minmax(260px,1fr)] md:gap-[49px]">
 
 
 
@@ -17118,7 +16959,7 @@ export function FigmaFooter() {
 
 
 
-            className="h-[60.096px] object-contain relative shrink-0 w-[255px]"
+            className="h-[80px] object-contain relative shrink-0 w-auto"
 
 
 
@@ -17278,7 +17119,7 @@ export function FigmaFooter() {
 
 
 
-        <div className="h-0 relative shrink-0 w-full max-w-[1460px]">
+        <div className="h-0 relative shrink-0 w-full">
 
 
 
@@ -17306,7 +17147,7 @@ export function FigmaFooter() {
 
 
 
-        <div className="content-stretch flex flex-col gap-[16px] font-['Inter:Regular',sans-serif] font-normal items-start justify-between not-italic relative shrink-0 w-full max-w-[1460px] md:flex-row md:gap-[40px]">
+        <div className="content-stretch flex flex-col gap-[16px] font-['Inter:Regular',sans-serif] font-normal items-start justify-between not-italic relative shrink-0 w-full md:flex-row md:gap-[40px]">
 
 
 
@@ -17314,11 +17155,14 @@ export function FigmaFooter() {
 
 
 
-        <p className="leading-[1.1] relative shrink-0 text-[#bec5d2] text-[12px] md:text-right">
-          <a href={links.proteccionDatos} className="hover:text-white transition-colors">Protección de Datos</a> | 
-          <a href={links.canalEtico} className="hover:text-white transition-colors mx-2">Canal Ético y Reclamaciones</a> | 
-          <a href={links.avisoLegal} className="hover:text-white transition-colors">Aviso Legal</a> |
-          <a href={links.politicaCookies} className="hover:text-white transition-colors ml-2">Política de Cookies</a>
+        <p className="leading-[1.1] relative shrink-0 text-[#bec5d2] text-[12px] md:text-right flex flex-wrap gap-x-[8px] gap-y-[4px] items-center md:justify-end">
+          <a href={links.proteccionDatos} className="hover:text-white transition-colors">Protección de Datos</a>
+          <span className="text-[#bec5d2]">|</span>
+          <a href={links.canalEtico} className="hover:text-white transition-colors">Canal Ético y Reclamaciones</a>
+          <span className="text-[#bec5d2]">|</span>
+          <a href={links.avisoLegal} className="hover:text-white transition-colors">Aviso Legal</a>
+          <span className="text-[#bec5d2]">|</span>
+          <a href={links.politicaCookies} className="hover:text-white transition-colors">Política de Cookies</a>
         </p>
 
 

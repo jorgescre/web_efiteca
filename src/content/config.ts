@@ -12,6 +12,7 @@ const news = defineCollection({
     market: z.string().optional(),
     title: z.string().min(10).max(80),
     excerpt: z.string().min(80).max(220),
+    image: z.string().optional(),
     publishedAt: z.string().date(),
     updatedAt: z.string().date().optional(),
     category: z.enum(["corporate", "market", "insight"]),

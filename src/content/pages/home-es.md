@@ -26,7 +26,7 @@ hero:
 
     label: Agenda tu diagnóstico en 3 minutos
 
-    href: '#diagnosis'
+    href: '/es/contacto/'
 
 services:
 
@@ -46,7 +46,7 @@ services:
 
         label: Hablar con un experto
 
-        href: '#expert'
+        href: '/es/contacto/'
 
     - title: Busca nueva hipoteca
 
@@ -56,9 +56,9 @@ services:
 
       button:
 
-        label: quiero una nueva hipoteca
+        label: Quiero una nueva hipoteca
 
-        href: '#new-mortgage'
+        href: '/es/contacto/'
 
     - title: Mejora tu hipoteca
 
@@ -70,7 +70,7 @@ services:
 
         label: Evaluar mejora
 
-        href: '#improve-mortgage'
+        href: '/es/contacto/'
 
     - title: Calcula la hipoteca
 
@@ -82,7 +82,7 @@ services:
 
         label: Usar calculadora
 
-        href: '#calculator'
+        href: '/es/simulador-hipoteca/'
 
 whoIsItFor:
 
@@ -134,7 +134,7 @@ whoIsItFor:
 
         label: Calcular mi hipoteca ahora
 
-        href: '#calculator'
+        href: '/es/simulador-hipoteca/'
 
 howItWorks:
 
@@ -146,7 +146,7 @@ howItWorks:
 
     label: AGENDA TU DIAGNÓSTICO GRATUITO
 
-    href: '#diagnosis'
+    href: '/es/contacto/'
 
   items:
 
@@ -235,7 +235,7 @@ actionCta:
 
     label: Contactar asesor
 
-    href: '#diagnosis'
+    href: '/es/contacto/'
 
 benefits:
 
@@ -245,7 +245,8 @@ benefits:
 
   ctaText: Contacta a un experto hipotecario
 
-  ctaLink: '#contacto'
+  ctaLink: '/es/contacto/'
+
 
   items:
 
@@ -329,7 +330,7 @@ testimonials:
 
     - name: Guillermo
 
-      role: "Local_Guide·40_opiniones·11_fotos"
+      role: "hace 1 mes"
 
       text: "Gran experiencia con Andrés. Un profesional muy serio que estudia tu caso al milímetro. Nos ha dado mucha seguridad tener su visión realista sobre nuestros números y opciones de hipoteca. Trato cercano y muy claro. 100% recomendable"
 
@@ -339,9 +340,9 @@ testimonials:
 
     - name: Pablo Orozco Espada
 
-      role: 5 opiniones
+      role: "hace 2 meses"
 
-      text: "Sin duda la experiencia con el equipo de Efiteca ha sido 100% satisfactoria\n\nAndres es un profesional que se implica y sin duda pone toda la carne en el asador en cada operación\n\nSu intermediación ha sido fundamental en todos los sentidos ya que ha facilitado todas las gestiones de manera rápida, eficaz y con solvencia contrastada .\n\nSin duda lo recomiendo al 100% 👏🏻👏🏻"
+      text: "Sin duda la experiencia con el equipo de Efiteca ha sido 100% satisfactoria. Andres es un profesional que se implica y sin duda pone toda la carne en el asador en cada operación. Su intermediación ha sido fundamental en todos los sentidos ya que ha facilitado todas las gestiones de manera rápida, eficaz y con solvencia contrastada. Sin duda lo recomiendo al 100%"
 
       image: /images/testimonials/pablo-orozco-espada.png
 
@@ -349,9 +350,9 @@ testimonials:
 
     - name: Loly zazo
 
-      role: Cliente desde 2022
+      role: "hace 3 meses"
 
-      text: "Mi experiencia ha sido de más de cinco estrellas, Andrés gran profesional y excelente persona, llegando a gestionar más allá de su responsabilidad.\nSólo puedo agradecer el trato recibido y la humanidad mostrada por el.\nNos hemos sentido acompañados y perfectamente asesorados.\nEstaremos siempre muy agradecidos por toda la gestión realizada.\nMuchísimas gracias Andrés\nPor supuesto que lo recomiendo."
+      text: "Mi experiencia ha sido de más de cinco estrellas, Andrés gran profesional y excelente persona, llegando a gestionar más allá de su responsabilidad. Sólo puedo agradecer el trato recibido y la humanidad mostrada por el. Nos hemos sentido acompañados y perfectamente asesorados. Estaremos siempre muy agradecidos por toda la gestión realizada. Muchísimas gracias Andrés. Por supuesto que lo recomiendo."
 
       image: /images/testimonials/loly-zazo.png
 
@@ -378,7 +379,7 @@ about:
 
     label: Conoce al equipo
 
-    href: '#equipo'
+    href: '/es/sobre-nosotros/'
 
 partners:
 
@@ -476,7 +477,7 @@ locations:
 
         label: Ver en mapa
 
-        href: '#map-barcelona'
+        href: '/es/contacto/'
 
     - city: Madrid
 
@@ -492,7 +493,7 @@ locations:
 
         label: Ver en mapa
 
-        href: '#map-madrid'
+        href: '/es/contacto/'
 
     - city: Valencia
 
@@ -508,7 +509,7 @@ locations:
 
         label: Ver en mapa
 
-        href: '#map-valencia'
+        href: '/es/contacto/'
 
     - city: Marbella
 
@@ -524,7 +525,23 @@ locations:
 
         label: Ver en mapa
 
-        href: '#map-marbella'
+        href: '/es/contacto/'
+
+    - city: Málaga
+
+      address: ''
+
+      summary: 'Te ayudamos a conseguir o mejorar tu hipoteca en Málaga con un proceso claro, opciones comparadas y acompañamiento experto desde el diagnóstico hasta la firma.'
+
+      seoLabel: Asesoría hipotecaria en Málaga
+
+      image: /images/locations/malaga.png
+
+      cta:
+
+        label: Ver en mapa
+
+        href: '/es/contacto/'
 
 blog:
 
@@ -534,9 +551,9 @@ blog:
 
   cta:
 
-    label: CALCULAR MI HIPOTECA AHORA
+    label: Ver todos los artículos
 
-    href: '#calculator'
+    href: '/es/news/'
 
   items:
 
