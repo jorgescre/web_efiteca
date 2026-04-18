@@ -52,9 +52,9 @@ export function LocationsShowcaseSection({ content, editable }: { content: any; 
 
   const title = locationsShowcase?.title || "Conoce nuestras ubicaciones";
 
-  const description = locationsShowcase?.description || "Atendemos de forma digital con acompañamiento personalizado durante todo el proceso.";
+  const description = locationsShowcase?.description || "Atendemos de forma digital en toda España con acompañamiento personalizado durante todo el proceso.";
 
-  const address = "Calle cartagena 245, planta 3 puerta e, 08025, barcelona";
+  const address = "Calle Cartagena 245, Planta 3 Puerta E, 08025, Barcelona";
 
   
 
@@ -68,9 +68,9 @@ export function LocationsShowcaseSection({ content, editable }: { content: any; 
 
   return (
 
-    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]">
+    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]">
 
-      <div className="mx-auto grid max-w-[1460px] grid-cols-1 gap-[40px] lg:grid-cols-[1fr_minmax(0,1.2fr)] xl:grid-cols-[1fr_minmax(0,1.4fr)] items-stretch">
+      <div className="grid w-full grid-cols-1 gap-[40px] lg:grid-cols-[1fr_minmax(0,1.2fr)] xl:grid-cols-[1fr_minmax(0,1.4fr)] items-stretch">
 
         <div className="flex flex-col gap-[32px]">
 

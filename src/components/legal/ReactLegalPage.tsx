@@ -5,64 +5,46 @@ interface ReactLegalPageProps {
   children: React.ReactNode;
 }
 
-/**
- * ReactLegalPage — Wrapper de contenido legal Premium.
- * client:idle para hidratar con prioridad baja (HTML ya renderizado en SSR).
- * Usa los colores de marca (#8948ff, #080813) y la tipografía Inter del UI KIT.
- */
 export const ReactLegalPage: React.FC<ReactLegalPageProps> = ({ title, children }) => {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#f1f2f4' }}>
-      {/* Hero Section — usa gradiente de marca del UI KIT */}
-      <section
-        className="relative pt-32 pb-20 overflow-hidden"
-        style={{
-          background:
-            'radial-gradient(circle at top left, rgba(137,72,255,0.12), transparent 30%), radial-gradient(circle at top right, rgba(137,72,255,0.08), transparent 25%), #080813',
-        }}
-      >
-        {/* Grid decoration */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-          }}
-        />
-        <div className="mx-auto max-w-[1460px] px-5 md:px-10 xl:px-16 2xl:px-20 relative z-10 text-center">
-          <p className="text-xs uppercase tracking-[0.22em] text-[#8948ff] font-bold mb-4">
-            Efiteca · Legal
-          </p>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6" style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.1 }}>
+    <div className="min-h-screen bg-[#f9f6f3]">
+      <a href="https://wa.link/rmtjml" target="_blank" rel="noopener noreferrer" className="fixed bottom-[24px] right-[24px] z-40 inline-flex items-center gap-[8px] rounded-full bg-[#25d366] px-[20px] py-[12px] text-[15px] font-bold text-white no-underline shadow-[0px_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-[2px]">
+        <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]" aria-hidden="true"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 13.66 3.45 15.22 4.23 16.56L3 21L7.58 19.8C8.9 20.58 10.4 21 12 21Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M9 8.8C9 12.07 11.74 14.8 15 14.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /><path d="M14.2 11.4L15.9 10.9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+        WhatsApp
+      </a>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-[#7c42f3] px-[20px] py-[72px] md:px-[40px] md:py-[110px] xl:px-[160px] 2xl:px-[160px]">
+        <img src="/images/about-hero-texture.png" alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_24%_112%,rgba(8,8,19,0.42),transparent_34%)]" />
+        <img src="/images/about-hero-outline.svg" alt="" className="pointer-events-none absolute bottom-[-232px] right-[-300px] hidden w-[900px] max-w-none opacity-80 lg:block xl:bottom-[-280px] xl:right-[-220px] xl:w-[1040px]" />
+        <div className="relative z-10 mx-auto max-w-[1460px] text-center">
+          <div className="inline-flex items-center gap-[10px] rounded-full border border-[#c993ff] bg-white/10 px-[16px] py-[8px] mb-[24px]">
+            <span className="h-[8px] w-[8px] rounded-full bg-[#fcc63d]" />
+            <span className="text-[12px] font-bold leading-[1.1] text-[#fcc63d] uppercase tracking-[0.18em]">Efiteca · Legal</span>
+          </div>
+          <h1 className="text-[38px] md:text-[56px] font-bold text-white leading-[1.05] mb-[24px]">
             {title}
           </h1>
-          <div className="w-20 h-1 mx-auto rounded-full" style={{ backgroundColor: '#fcc63d' }} />
+          <div className="w-[64px] h-[4px] mx-auto rounded-full bg-[#fcc63d]" />
         </div>
       </section>
 
-      {/* Content Card */}
-      <section className="py-16 md:py-24">
-        <div className="mx-auto max-w-[900px] px-5 md:px-10">
-          <div
-            className="rounded-[2rem] p-8 md:p-14"
-            style={{
-              backgroundColor: '#ffffff',
-              boxShadow: '0 18px 60px rgba(16,23,20,0.08)',
-            }}
-          >
-            <article className="prose prose-slate prose-lg max-w-none
-              prose-headings:font-bold prose-headings:text-[#0b0b13]
-              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-              prose-p:text-[#0b0b13]/75 prose-p:leading-relaxed
-              prose-li:text-[#0b0b13]/75
-              prose-strong:text-[#0b0b13] prose-strong:font-bold
-              prose-a:text-[#8948ff] prose-a:no-underline hover:prose-a:underline
-              prose-table:border-collapse prose-th:bg-[#f1f2f4] prose-th:p-3 prose-td:p-3 prose-td:border prose-td:border-[#e0e0e0]
-              prose-code:bg-[#f1f2f4] prose-code:px-2 prose-code:py-0.5 prose-code:rounded prose-code:text-[#8948ff] prose-code:font-normal prose-code:before:content-none prose-code:after:content-none">
-              {children}
-            </article>
-          </div>
+      {/* Content */}
+      <section className="px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]">
+        <div className="w-full rounded-[32px] bg-white px-[28px] py-[40px] md:px-[56px] md:py-[64px] shadow-[0_18px_60px_rgba(16,24,40,0.07)]">
+          <article className="prose prose-slate prose-lg max-w-none
+            prose-headings:font-bold prose-headings:text-[#101828]
+            prose-h2:text-[24px] prose-h2:mt-[40px] prose-h2:mb-[16px]
+            prose-h3:text-[18px] prose-h3:mt-[28px] prose-h3:mb-[12px]
+            prose-p:text-[#374151] prose-p:leading-[1.7]
+            prose-li:text-[#374151]
+            prose-strong:text-[#101828] prose-strong:font-bold
+            prose-a:text-[#7c42f3] prose-a:no-underline hover:prose-a:underline
+            prose-table:border-collapse prose-th:bg-[#f9f6f3] prose-th:p-3 prose-td:p-3 prose-td:border prose-td:border-[#e5e7eb]
+            prose-code:bg-[#f3f0ff] prose-code:px-2 prose-code:py-0.5 prose-code:rounded prose-code:text-[#7c42f3] prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
+            [&_table]:block [&_table]:w-full [&_table]:overflow-x-auto [&_table]:whitespace-nowrap">
+            {children}
+          </article>
         </div>
       </section>
     </div>

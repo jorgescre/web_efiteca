@@ -29,19 +29,21 @@ function ContactHeroSection({ content, editable }: { content: any; editable?: an
   if (!hero) return null;
 
   return (
-    <section className="relative overflow-hidden bg-[#080813] px-[20px] py-[52px] md:px-[48px] md:py-[72px] xl:px-[230px]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.12),transparent_34%),radial-gradient(circle_at_100%_100%,rgba(255,255,255,0.08),transparent_28%)]" />
-      <div className="relative mx-auto flex max-w-[1460px] flex-col items-center text-center">
+    <section className="relative overflow-hidden bg-[#7c42f3] px-[20px] py-[52px] md:px-[40px] md:py-[72px] xl:px-[160px] 2xl:px-[160px]">
+      <img src="/images/about-hero-texture.png" alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_24%_112%,rgba(8,8,19,0.42),transparent_34%)]" />
+      <img src="/images/about-hero-outline.svg" alt="" className="pointer-events-none absolute bottom-[-232px] right-[-300px] hidden w-[900px] max-w-none opacity-80 lg:block xl:bottom-[-280px] xl:right-[-220px] xl:w-[1040px]" />
+      <div className="relative flex flex-col items-center text-center">
         <div className="inline-flex items-center gap-[10px] rounded-full border border-white/30 bg-white/10 px-[14px] py-[6px]">
-          <span className="h-[8px] w-[8px] rounded-full bg-white/80" />
-          <span className="text-[12px] font-bold leading-[1.1] text-white" data-tina-field={fieldFor(editable?.contactHero, "eyebrow")}>
+          <span className="h-[8px] w-[8px] rounded-full bg-[#fcc63d]" />
+          <span className="text-[12px] font-bold leading-[1.1] text-[#fcc63d]" data-tina-field={fieldFor(editable?.contactHero, "eyebrow")}>
             {hero.eyebrow}
           </span>
         </div>
         <h1 className="mt-[20px] max-w-[820px] text-[34px] font-bold leading-[1.08] text-white md:text-[56px]">
           <span data-tina-field={fieldFor(editable?.contactHero, "title")}>{hero.title} </span>
           {hero.highlight ? (
-            <span className="text-[#cda4ff]" data-tina-field={fieldFor(editable?.contactHero, "highlight")}>
+            <span className="text-[#fcc63d]" data-tina-field={fieldFor(editable?.contactHero, "highlight")}>
               {hero.highlight}
             </span>
           ) : null}
@@ -51,7 +53,7 @@ function ContactHeroSection({ content, editable }: { content: any; editable?: an
         </p>
         <div className="mt-[24px] flex w-full flex-col items-center justify-center gap-[12px] sm:flex-row">
           <a
-            href={hero.primaryCta?.href || "#contacto"}
+            href="#contacto"
             className="inline-flex w-full items-center justify-center rounded-full bg-[#fcc63d] px-[24px] py-[14px] text-[12px] font-bold uppercase tracking-[1.5px] text-[#080813] no-underline sm:w-auto md:px-[32px] md:py-[16px] shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)]"
             data-tina-field={fieldFor(editable?.contactHero?.primaryCta, "label")}
           >
@@ -59,7 +61,9 @@ function ContactHeroSection({ content, editable }: { content: any; editable?: an
           </a>
           {hero.secondaryCta ? (
             <a
-              href={hero.secondaryCta.href || "#whatsapp"}
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center rounded-full border border-white/35 bg-white px-[24px] py-[14px] text-[12px] font-bold uppercase tracking-[1.5px] text-[#4f3bf9] no-underline sm:w-auto md:px-[32px] md:py-[16px] transition-all duration-300 hover:-translate-y-[2px] hover:bg-white/90 hover:shadow-lg"
               data-tina-field={fieldFor(editable?.contactHero?.secondaryCta, "label")}
             >
@@ -77,8 +81,8 @@ function ContactIntroSection({ content, editable }: { content: any; editable?: a
   if (!section) return null;
 
   return (
-    <section className="bg-white px-[20px] py-[56px] md:px-[48px] md:py-[80px] xl:px-[230px]">
-      <div className="mx-auto grid max-w-[1460px] grid-cols-1 items-center gap-[32px] lg:grid-cols-[540px_minmax(0,1fr)] lg:gap-[80px]" data-tina-field={fieldFor(editable, "contactIntro")}>
+    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]">
+      <div className="grid w-full grid-cols-1 items-center gap-[32px] lg:grid-cols-[540px_minmax(0,1fr)] lg:gap-[80px]" data-tina-field={fieldFor(editable, "contactIntro")}>
         <div>
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#101828] md:text-[40px]">
             <span data-tina-field={fieldFor(editable?.contactIntro, "title")}>{section.title} </span>
@@ -112,7 +116,7 @@ function ContactIntroSection({ content, editable }: { content: any; editable?: a
         <div className="relative overflow-hidden rounded-[24px]">
           <img src={section.image} alt={section.title} className="h-[320px] w-full object-cover md:h-[514px]" data-tina-field={fieldFor(editable?.contactIntro, "image")} />
           {section.floatingLabel ? (
-            <div className="absolute right-[16px] top-[16px] rounded-full bg-[#25d366] px-[16px] py-[10px] text-[12px] font-bold text-white shadow-[0px_8px_24px_rgba(37,211,102,0.35)]" data-tina-field={fieldFor(editable?.contactIntro, "floatingLabel")}>
+            <div className="absolute right-[16px] top-[16px] rounded-full bg-[#7c42f3] px-[16px] py-[10px] text-[12px] font-bold text-white shadow-[0px_8px_24px_rgba(124,66,243,0.35)]" data-tina-field={fieldFor(editable?.contactIntro, "floatingLabel")}>
               {section.floatingLabel}
             </div>
           ) : null}
@@ -127,8 +131,8 @@ function DiagnosticStepsSection({ content, editable }: { content: any; editable?
   if (!section) return null;
 
   return (
-    <section className="bg-white px-[20px] py-[56px] md:px-[48px] md:py-[80px] xl:px-[230px]">
-      <div className="mx-auto max-w-[1460px] text-center" data-tina-field={fieldFor(editable, "diagnosticSteps")}>
+    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]">
+      <div className="w-full text-center" data-tina-field={fieldFor(editable, "diagnosticSteps")}>
         <h2 className="text-[28px] font-bold leading-[1.1] text-[#101828] md:text-[40px]" data-tina-field={fieldFor(editable?.diagnosticSteps, "title")}>
           {section.title}
         </h2>
@@ -180,8 +184,8 @@ function ContactSection({ content, editable, sectionId = "contacto-soluciones" }
   if (!contact) return null;
 
   return (
-    <section id={sectionId} className="bg-[#f9fafb] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "contact")}>
-      <div className="mx-auto grid max-w-[1460px] grid-cols-1 gap-[32px] md:items-center lg:grid-cols-[1fr_798px]">
+    <section id={sectionId} className="bg-[#f9fafb] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "contact")}>
+      <div className="grid w-full grid-cols-1 gap-[32px] md:items-center lg:grid-cols-[1fr_798px]">
         <div>
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#080813] md:text-[40px]" data-tina-field={fieldFor(editable?.contact, "title")}>{contact.title}</h2>
           <p className="mt-[20px] text-[15px] leading-[1.15] text-[#080813]" data-tina-field={fieldFor(editable?.contact, "description")}>{contact.description}</p>
@@ -256,11 +260,10 @@ function ShortcutCtaSection({ content, editable }: { content: any; editable?: an
 
   return (
     <section
-      className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]"
+      className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]"
       data-tina-field={fieldFor(editable, "shortcutCta")}
     >
-      <div className="mx-auto max-w-[1460px]">
-        <div className="flex w-full flex-col items-start justify-between gap-[32px] overflow-hidden rounded-[24px] bg-[#8949ff] px-[28px] py-[48px] md:px-[60px] md:py-[80px] md:flex-row md:items-center">
+      <div className="flex w-full flex-col items-start justify-between gap-[32px] overflow-hidden rounded-[24px] bg-[#8949ff] px-[28px] py-[48px] md:px-[60px] md:py-[80px] lg:flex-row lg:items-center">
           <div className="flex w-full max-w-[787px] flex-col items-start gap-[16px]">
             <h2
               className="text-[30px] font-bold leading-[1.1] text-white md:text-[40px]"
@@ -276,7 +279,9 @@ function ShortcutCtaSection({ content, editable }: { content: any; editable?: an
             </p>
           </div>
           <a
-            href={shortcutCta.button?.href || "#whatsapp"}
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-[56px] w-full shrink-0 items-center justify-center gap-[12px] rounded-full bg-[#fcc63d] px-[20px] py-[14px] text-center no-underline shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:-translate-y-[2px] hover:bg-[#ffe07e] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)] focus-visible:bg-[#ffe07e] sm:w-auto sm:px-[24px] md:px-[40px] md:py-[20px]"
             data-tina-field={fieldFor(editable?.shortcutCta?.button, "label")}
           >
@@ -285,15 +290,18 @@ function ShortcutCtaSection({ content, editable }: { content: any; editable?: an
             </span>
           </a>
         </div>
-      </div>
     </section>
   );
 }
 
-function FloatingWhatsApp({ href = "#whatsapp" }: { href?: string }) {
+const WHATSAPP_URL = "https://wa.link/rmtjml";
+
+function FloatingWhatsApp() {
   return (
     <a
-      href={href}
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       className="fixed bottom-[24px] right-[24px] z-40 inline-flex items-center gap-[8px] rounded-full bg-[#25d366] px-[20px] py-[12px] text-[15px] font-bold text-white no-underline shadow-[0px_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0px_8px_24px_rgba(37,211,102,0.6)]"
     >
       <WhatsAppIcon />
@@ -319,7 +327,7 @@ export default function ReactContactPage({
 
   return (
     <div className="bg-white">
-      <FloatingWhatsApp href={page?.shortcutCta?.button?.href || "#whatsapp"} />
+      <FloatingWhatsApp />
       <ContactHeroSection content={page} editable={editable} />
       <ContactIntroSection content={page} editable={editable} />
       <DiagnosticStepsSection content={page} editable={editable} />

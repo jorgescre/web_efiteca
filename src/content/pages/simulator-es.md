@@ -331,7 +331,9 @@ contact:
 
 
 
-  scheduleText: "Lunes a jueves 10 a. m. a 6 p. m.\nViernes de 10 a. m. a 5 p. m."
+  scheduleText: |-
+    Lunes a jueves 10 a.m. a 6 p.m.
+    Viernes de 10 a.m. a 5 p.m.
 
 
 
@@ -411,7 +413,7 @@ locationsShowcase:
 
 
 
-  description: "Atendemos de forma digital con acompañamiento personalizado durante todo el proceso."
+  description: "Atendemos de forma digital en toda España con acompañamiento personalizado durante todo el proceso."
 
 
 
@@ -496,180 +498,49 @@ faq:
 
 
 locations:
-
-
-
-  title: Acompañamiento hipotecaria en las principales ciudades de España
-
-
-
-  subtitle: "Atendemos de forma digital con acompañamiento personalizado durante todo el proceso."
-
-
-
+  title: Acompañamiento hipotecario en las principales ciudades de España
+  subtitle: Atendemos de forma digital con acompañamiento personalizado durante todo el proceso.
   items:
-
-
-
-    - city: Sevilla
-
-
-
-      address: "Atención digital en Sevilla"
-
-
-
-      summary: "Te ayudamos a conseguir o mejorar tu hipoteca en Sevilla con acompañamiento experto, análisis personalizado y coordinación integral para llegar a firma sin sorpresas."
-
-
-
-      seoLabel: Asesorí­a hipotecaria en Sevilla
-
-
-
-      image: /images/sevilla.png
-
-
-
-      cta:
-
-
-
-        label: Ver en mapa
-
-
-
-        href: "#contacto-simulador"
-
-
-
-    - city: Madrid
-
-
-
-      address: "Atención digital en Madrid"
-
-
-
-      summary: "Si buscas comprar vivienda o mejorar tu hipoteca en Madrid, te guiamos con opciones claras y acompañamiento completo hasta la firma final."
-
-
-
-      seoLabel: Asesorí­a hipotecaria en Madrid
-
-
-
-      image: /images/madrid.png
-
-
-
-      cta:
-
-
-
-        label: Ver en mapa
-
-
-
-        href: "#contacto-simulador"
-
-
-
     - city: Barcelona
-
-
-
-      address: "Calle cartagena 245, planta 3 puerta e, 08025, barcelona"
-
-
-
-      summary: "En Barcelona analizamos tu perfil hipotecario para encontrar la mejor ruta posible, comparando opciones reales y coordinando el proceso hasta llegar a firma correctamente."
-
-
-
-      seoLabel: Asesorí­a hipotecaria en Barcelona
-
-
-
+      address: 'C/ d''Aragó, 383, Pl. 5ª, 08013'
+      summary: 'En Barcelona analizamos tu perfil hipotecario para encontrar la mejor ruta posible, comparando opciones reales y coordinando el proceso hasta llegar a firma correctamente.'
+      seoLabel: Asesoría hipotecaria en Barcelona
       image: /images/barcelona.png
-
-
-
       cta:
-
-
-
         label: Ver en mapa
-
-
-
-        href: "#contacto-simulador"
-
-
-
+        href: '/es/contacto/'
+    - city: Madrid
+      address: 'Paseo de la Castellana, 193, 28046'
+      summary: 'Si buscas comprar vivienda o mejorar tu hipoteca en Madrid, te guiamos con opciones claras, estrategia adecuada y acompañamiento completo hasta la firma final.'
+      seoLabel: Asesoría hipotecaria en Madrid
+      image: /images/madrid.png
+      cta:
+        label: Ver en mapa
+        href: '/es/contacto/'
     - city: Valencia
-
-
-
-      address: "Atención digital en Valencia"
-
-
-
-      summary: "Te ayudamos a conseguir o mejorar tu hipoteca en Valencia con un proceso claro, opciones comparadas y acompañamiento experto desde el diagnóstico hasta la firma."
-
-
-
-      seoLabel: Asesorí­a hipotecaria en Valencia
-
-
-
+      address: 'Av. Corts Valencianes, 58, 46015'
+      summary: 'Te ayudamos a conseguir o mejorar tu hipoteca en Valencia con un proceso claro, opciones comparadas y acompañamiento experto desde el diagnóstico hasta la firma.'
+      seoLabel: Asesoría hipotecaria en Valencia
       image: /images/valencia.png
-
-
-
       cta:
-
-
-
         label: Ver en mapa
-
-
-
-        href: "#contacto-simulador"
-
-
-
-    - city: Malaga
-
-
-
-      address: "Atención digital en Málaga"
-
-
-
-      summary: "Te ayudamos a conseguir o mejorar tu hipoteca en Málaga con un proceso claro, opciones comparadas y acompañamiento experto desde el diagnóstico hasta la firma."
-
-
-
-      seoLabel: Asesorí­a hipotecaria en Málaga
-
-
-
-      image: /images/malaga.png
-
-
-
+        href: '/es/contacto/'
+    - city: Marbella
+      address: 'Av. Ricardo Soriano, 4, Pl. 6ª D, 29601'
+      summary: 'Te ayudamos a conseguir o mejorar tu hipoteca en Marbella con acompañamiento experto, análisis personalizado y coordinación integral para llegar a firma sin sorpresas ni retrasos innecesarios.'
+      seoLabel: Asesoría hipotecaria en Marbella
+      image: /images/marbella.png
       cta:
-
-
-
         label: Ver en mapa
-
-
-
-        href: "#contacto-simulador"
-
-
+        href: '/es/contacto/'
+    - city: Málaga
+      address: ''
+      summary: 'Te ayudamos a conseguir o mejorar tu hipoteca en Málaga con un proceso claro, opciones comparadas y acompañamiento experto desde el diagnóstico hasta la firma.'
+      seoLabel: Asesoría hipotecaria en Málaga
+      image: /images/locations/malaga.png
+      cta:
+        label: Ver en mapa
+        href: '/es/contacto/'
 
 ---
 

@@ -31,7 +31,7 @@ const relatedPosts = allNews.slice(0, 3).map(p => ({
   title: p.data.title,
   excerpt: p.data.excerpt,
   lang: p.data.lang,
-  image: undefined // news schema has no image field; ReactBlogPost shows emoji fallback
+  image: p.data.image
 }));
 
 const alternates = [
@@ -53,12 +53,13 @@ const alternates = [
   path={`/${lang}/news/${entry.slug}/`}
   alternates={alternates}
 >
-  <ReactBlogPost 
-    client:load 
+  <ReactBlogPost
+    client:load
     title={entry.data.title}
     category={entry.data.category}
     publishedAt={formatDate(entry.data.publishedAt, lang)}
     excerpt={entry.data.excerpt}
+    image={entry.data.image}
     relatedPosts={relatedPosts}
   >
     <Content />

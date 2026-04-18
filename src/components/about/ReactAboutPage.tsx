@@ -1,7 +1,7 @@
 import { LocationsShowcaseSection } from "@/components/shared/LocationsShowcase";
+import { TestimonialsMetricsSection } from "@/components/solutions/ReactSolutionsPage";
 import React from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
-import { TestimonialsSection } from "@/components/home/ReactHome";
 
 function fieldFor(object: any, property: string) {
   return object ? tinaField(object, property) : undefined;
@@ -11,15 +11,6 @@ function CheckIcon({ className = "h-[18px] w-[18px]" }: { className?: string }) 
   return (
     <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
       <path d="M6 12.5L10 16.5L18 8.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function LocationPinIcon({ className = "h-[20px] w-[20px]" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
-      <path d="M12 21C15.5 16.8 18 13.7 18 10.5A6 6 0 1 0 6 10.5C6 13.7 8.5 16.8 12 21Z" stroke="currentColor" strokeWidth="2" />
-      <circle cx="12" cy="10.5" r="2.4" fill="currentColor" />
     </svg>
   );
 }
@@ -112,7 +103,7 @@ function AboutHeroSection({ content, editable }: { content: any; editable?: any 
   if (!hero) return null;
 
   return (
-    <section className="relative overflow-hidden bg-[#7c42f3] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]">
+    <section className="relative overflow-hidden bg-[#7c42f3] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]">
       {hero.texture ? (
         <img
           src={hero.texture}
@@ -130,7 +121,12 @@ function AboutHeroSection({ content, editable }: { content: any; editable?: any 
           data-tina-field={fieldFor(editable?.aboutHero, "outlineImage")}
         />
       ) : null}
-      <div className="relative z-10 mx-auto flex min-h-[420px] max-w-[1460px] items-center justify-start md:min-h-[560px]">
+      <img
+        src="/images/Sobre-nosotros-logo-lineas.png"
+        alt=""
+        className="pointer-events-none absolute bottom-0 right-0 hidden md:block"
+      />
+      <div className="relative z-10 flex w-full min-h-[320px] items-center justify-start md:min-h-[560px]">
         <div className="max-w-[620px]">
           <div className="inline-flex items-center gap-[12px] rounded-full border border-[#c993ff] bg-[rgba(255,255,255,0.1)] px-[16px] py-[8px]">
             <span className="h-[8px] w-[8px] rounded-full bg-white/80"></span>
@@ -149,7 +145,7 @@ function AboutHeroSection({ content, editable }: { content: any; editable?: any 
           </p>
           <a
             href={hero.cta?.href || "#contacto-sobre-nosotros"}
-            className="mt-[32px] inline-flex items-center justify-center rounded-full bg-[#fcc63d] px-[32px] py-[16px] text-[14px] font-bold uppercase tracking-[1.8px] text-[#101828] no-underline shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)] md:text-[18px]"
+            className="mt-[32px] inline-flex w-full items-center justify-center rounded-full bg-[#fcc63d] px-[32px] py-[16px] text-center text-[14px] font-bold uppercase tracking-[1.8px] text-[#101828] no-underline shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)] sm:w-auto md:text-[18px]"
             data-tina-field={fieldFor(editable?.aboutHero?.cta, "label")}
           >
             {hero.cta?.label}
@@ -165,8 +161,8 @@ function TrajectorySection({ content, editable }: { content: any; editable?: any
   if (!trajectory) return null;
 
   return (
-    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "trajectory")}>
-      <div className="mx-auto grid max-w-[1460px] grid-cols-1 items-stretch gap-[32px] xl:grid-cols-2 xl:gap-[80px]">
+    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "trajectory")}>
+      <div className="grid w-full grid-cols-1 items-stretch gap-[32px] xl:grid-cols-2 xl:gap-[80px]">
         <div className="flex flex-col justify-center py-0 xl:py-[40px]">
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#101828] md:text-[40px]" data-tina-field={fieldFor(editable?.trajectory, "title")}>
             {trajectory.title}
@@ -180,20 +176,23 @@ function TrajectorySection({ content, editable }: { content: any; editable?: any
             </p>
           </div>
         </div>
-        <div className="relative min-h-[420px] overflow-hidden rounded-[40px]">
+        <div className="relative min-h-[260px] overflow-hidden rounded-[40px] md:min-h-[420px]">
           <img
             src={trajectory.image}
             alt={trajectory.title}
             className="absolute inset-0 h-full w-full object-cover"
             data-tina-field={fieldFor(editable?.trajectory, "image")}
           />
-          <div className="absolute bottom-[26px] left-[26px] rounded-[16px] border border-white bg-[#f9fafb] p-[24px] shadow-[0px_20px_25px_rgba(0,0,0,0.1),0px_8px_10px_rgba(0,0,0,0.1)]">
-            <p className="text-[12px] font-bold leading-[1.1] text-[#6a7282]" data-tina-field={fieldFor(editable?.trajectory, "badgeLabel")}>
-              {trajectory.badgeLabel}
-            </p>
-            <p className="mt-[4px] text-[15px] font-bold leading-[1.1] text-[#080813]" data-tina-field={fieldFor(editable?.trajectory, "badgeText")}>
-              {trajectory.badgeText}
-            </p>
+          <div className="absolute bottom-[26px] left-[26px] flex items-center gap-[14px] rounded-[16px] border border-white bg-[#f9fafb] p-[20px] shadow-[0px_20px_25px_rgba(0,0,0,0.1),0px_8px_10px_rgba(0,0,0,0.1)]">
+            <img src="/images/Icono-registro-guard.svg" alt="" className="h-[40px] w-[40px] shrink-0" aria-hidden="true" />
+            <div>
+              <p className="text-[12px] font-bold leading-[1.1] text-[#6a7282]" data-tina-field={fieldFor(editable?.trajectory, "badgeLabel")}>
+                {trajectory.badgeLabel}
+              </p>
+              <p className="mt-[4px] text-[15px] font-bold leading-[1.1] text-[#080813]" data-tina-field={fieldFor(editable?.trajectory, "badgeText")}>
+                {trajectory.badgeText}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -206,9 +205,9 @@ function PurposeSection({ content, editable }: { content: any; editable?: any })
   if (!section) return null;
 
   return (
-    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "purposeSection")}>
-      <div className="mx-auto grid max-w-[1460px] grid-cols-1 items-stretch gap-[32px] xl:grid-cols-2 xl:gap-[80px]">
-        <div className="relative order-2 min-h-[420px] overflow-hidden rounded-[40px] xl:order-1">
+    <section className="bg-white px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "purposeSection")}>
+      <div className="grid w-full grid-cols-1 items-stretch gap-[32px] xl:grid-cols-2 xl:gap-[80px]">
+        <div className="relative order-2 min-h-[260px] overflow-hidden rounded-[40px] md:min-h-[420px] xl:order-1">
           <img
             src={section.image}
             alt={section.title}
@@ -250,7 +249,7 @@ function PartnersSection({ content, editable }: { content: any; editable?: any }
 
   return (
     <section className="bg-white" data-tina-field={fieldFor(editable, "partners")}>
-      <div className="relative mx-auto flex w-full max-w-[1460px] flex-col items-center gap-[24px] px-[20px] py-[40px] md:gap-[32px] md:px-[40px] md:py-[72px] xl:px-[64px] 2xl:px-[80px]">
+      <div className="relative flex w-full flex-col items-center gap-[24px] px-[20px] py-[40px] md:gap-[32px] md:px-[40px] md:py-[72px] xl:px-[160px] 2xl:px-[160px]">
         <div className="relative flex w-full max-w-[760px] flex-col items-center gap-[16px] text-center">
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#080813] md:text-[40px]" data-tina-field={fieldFor(editable?.partners, "title")}>
             {partners.title}
@@ -308,8 +307,8 @@ function CertificationsSection({ content, editable }: { content: any; editable?:
   if (!certifications) return null;
 
   return (
-    <section className="bg-[#fcfaf7] px-[20px] pb-[56px] md:px-[40px] md:pb-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "certifications")}>
-      <div className="mx-auto max-w-[1460px] rounded-[20px] border border-[#ece7f4] bg-white px-[24px] py-[28px] shadow-[0px_10px_30px_rgba(16,24,40,0.05)] md:px-[40px] md:py-[40px]">
+    <section className="bg-[#f9f6f3] px-[20px] pb-[56px] md:px-[40px] md:pb-[80px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "certifications")}>
+      <div className="w-full rounded-[20px] border border-[#ece7f4] bg-white px-[24px] py-[28px] shadow-[0px_10px_30px_rgba(16,24,40,0.05)] md:px-[40px] md:py-[40px]">
         <div className="grid grid-cols-1 items-center gap-[28px] lg:grid-cols-[minmax(0,1fr)_300px] lg:gap-[40px]">
           <div>
             <h2 className="text-[28px] font-bold leading-[1.1] text-[#080813] md:text-[32px]" data-tina-field={fieldFor(editable?.certifications, "title")}>
@@ -324,7 +323,7 @@ function CertificationsSection({ content, editable }: { content: any; editable?:
               <img
                 src={certifications.logoImage}
                 alt={certifications.title}
-                className="w-full max-w-[255px] object-contain"
+                className="h-[100px] w-auto object-contain lg:h-[180px]"
                 data-tina-field={fieldFor(editable?.certifications, "logoImage")}
               />
             </div>
@@ -341,19 +340,11 @@ function RecognitionsSection({ content, editable }: { content: any; editable?: a
   if (!recognitions && !companyInfo) return null;
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#4f3bf9_0%,#3f2ab6_100%)] px-[20px] py-[56px] text-white md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]">
-      {recognitions?.texture ? (
-        <img
-          src={recognitions.texture}
-          alt=""
-          className="pointer-events-none absolute right-[-160px] top-[40px] hidden opacity-25 md:block"
-          data-tina-field={fieldFor(editable?.recognitions, "texture")}
-        />
-      ) : null}
-      <div className="relative mx-auto max-w-[1460px] space-y-[32px]">
+    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#4f3bf9_0%,#3f2ab6_100%)] px-[20px] py-[56px] text-white md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]">
+      <div className="relative w-full space-y-[64px] md:space-y-[80px]">
         {recognitions ? (
-          <div className="px-[4px] py-[8px] text-white md:px-[20px]" data-tina-field={fieldFor(editable, "recognitions")}>
-            <div className="mx-auto max-w-[980px] text-center">
+          <div data-tina-field={fieldFor(editable, "recognitions")}>
+            <div className="text-center">
               <h2 className="text-[28px] font-bold leading-[1.1] md:text-[40px]" data-tina-field={fieldFor(editable?.recognitions, "title")}>
                 {recognitions.title}
               </h2>
@@ -361,17 +352,17 @@ function RecognitionsSection({ content, editable }: { content: any; editable?: a
                 {recognitions.description}
               </p>
             </div>
-            <div className="mt-[40px] grid grid-cols-1 gap-[20px] xl:grid-cols-3 xl:gap-[32px]">
+            <div className="mt-[40px] grid grid-cols-1 gap-[20px] md:grid-cols-3 md:gap-[32px]">
               {(recognitions.items || []).map((item: any, index: number) => (
                 <article key={`${item.title}-${index}`} className="rounded-[20px] border border-white/15 bg-white px-[24px] py-[28px] text-center text-[#101828] shadow-[0px_10px_30px_rgba(8,8,19,0.15)]" data-tina-field={fieldFor(editable?.recognitions?.items?.[index], "title")}>
-                  <div className="mx-auto flex h-[40px] w-[40px] items-center justify-center rounded-[10px] bg-[#ffdf80] text-[#8949ff]">
-                    <StarIcon />
+                  <div className="mx-auto flex h-[56px] w-[56px] items-center justify-center">
+                    <img src="/images/Icon-award.svg" alt="" className="h-[56px] w-[56px]" aria-hidden="true" />
                   </div>
                   <div className="mt-[16px] flex justify-center gap-[8px] text-[#fcc63d]">
                     <StarIcon className="h-[18px] w-[18px]" /><StarIcon className="h-[18px] w-[18px]" /><StarIcon className="h-[18px] w-[18px]" /><StarIcon className="h-[18px] w-[18px]" /><StarIcon className="h-[18px] w-[18px]" />
                   </div>
-                  <h3 className="mt-[18px] text-[18px] font-bold leading-[1.1]" data-tina-field={fieldFor(editable?.recognitions?.items?.[index], "title")}>{item.title}</h3>
-                  {item.subtitle ? <p className="mt-[8px] text-[14px] leading-[1.1] text-[#6a7282]" data-tina-field={fieldFor(editable?.recognitions?.items?.[index], "subtitle")}>{item.subtitle}</p> : null}
+                  <h3 className="mt-[18px] text-[18px] font-bold leading-[1.1]">{item.title}</h3>
+                  {item.subtitle ? <p className="mt-[8px] text-[14px] leading-[1.1] text-[#6a7282]">{item.subtitle}</p> : null}
                 </article>
               ))}
             </div>
@@ -381,38 +372,34 @@ function RecognitionsSection({ content, editable }: { content: any; editable?: a
         {companyInfo ? (
           <div className="overflow-hidden rounded-[24px] bg-[#080813] px-[24px] py-[28px] shadow-[0px_25px_60px_rgba(8,8,19,0.3)] md:px-[40px] md:py-[40px]" data-tina-field={fieldFor(editable, "companyInfo")}>
             <div className="grid grid-cols-1 gap-[32px] xl:grid-cols-[minmax(0,1fr)_520px] xl:gap-[48px]">
-              <div className="relative">
-                <div className="absolute left-[25%] top-[-40px] hidden h-[360px] w-[360px] rounded-full bg-[rgba(79,59,249,0.22)] blur-[90px] md:block"></div>
-                <div className="absolute left-[45%] top-[-40px] hidden h-[240px] w-[240px] rounded-full bg-[rgba(137,73,255,0.25)] blur-[70px] md:block"></div>
-                <div className="relative">
-                  <h2 className="text-[28px] font-bold leading-[1.1] text-white md:text-[40px]" data-tina-field={fieldFor(editable?.companyInfo, "title")}>
-                    {companyInfo.title}
-                  </h2>
-                  <div className="mt-[32px] space-y-[24px]" data-tina-field={fieldFor(editable?.companyInfo, "items")}>
-                    {(companyInfo.items || []).map((item: string, index: number) => (
-                      <div key={`${item}-${index}`} className="flex items-start gap-[12px]">
-                        <div className="mt-[2px] flex h-[24px] w-[24px] items-center justify-center rounded-full bg-[rgba(158,105,255,0.3)] text-white">
-                          <CheckIcon className="h-[16px] w-[16px]" />
-                        </div>
-                        <p className="text-[16px] leading-[1.5] text-white" data-tina-field={fieldFor(editable?.companyInfo, "items")}>{item}</p>
+              <div>
+                <h2 className="text-[28px] font-bold leading-[1.1] text-white md:text-[40px]" data-tina-field={fieldFor(editable?.companyInfo, "title")}>
+                  {companyInfo.title}
+                </h2>
+                <div className="mt-[32px] space-y-[24px]" data-tina-field={fieldFor(editable?.companyInfo, "items")}>
+                  {(companyInfo.items || []).map((item: string, index: number) => (
+                    <div key={`${item}-${index}`} className="flex items-start gap-[12px]">
+                      <div className="mt-[2px] flex h-[24px] w-[24px] shrink-0 items-center justify-center rounded-full bg-[rgba(158,105,255,0.3)] text-white">
+                        <CheckIcon className="h-[16px] w-[16px]" />
                       </div>
-                    ))}
-                  </div>
-                  <div className="mt-[32px] flex flex-wrap gap-[16px]" data-tina-field={fieldFor(editable?.companyInfo, "legalLinks")}>
-                    {(companyInfo.legalLinks || []).map((link: any, index: number) => (
-                      <a
-                        key={`${link.label}-${index}`}
-                        href={link.href || "#"}
-                        className="inline-flex items-center gap-[10px] rounded-[16px] border border-[#e2e8f0] bg-white px-[20px] py-[12px] text-[15px] font-bold leading-[1.1] text-[#364153] no-underline"
-                        data-tina-field={fieldFor(editable?.companyInfo?.legalLinks?.[index], "label")}
-                      >
-                        {index === 0 ? <LegalScaleIcon /> : null}
-                        {index === 1 ? <LegalShieldIcon /> : null}
-                        {index === 2 ? <LegalDocIcon /> : null}
-                        {link.label}
-                      </a>
-                    ))}
-                  </div>
+                      <p className="text-[16px] leading-[1.5] text-white/90">{item}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-[32px] flex flex-wrap gap-[16px]" data-tina-field={fieldFor(editable?.companyInfo, "legalLinks")}>
+                  {(companyInfo.legalLinks || []).map((link: any, index: number) => (
+                    <a
+                      key={`${link.label}-${index}`}
+                      href={link.href || "#"}
+                      className="inline-flex items-center gap-[10px] rounded-[16px] border border-[#e2e8f0] bg-white px-[20px] py-[12px] text-[15px] font-bold leading-[1.1] text-[#364153] no-underline"
+                      data-tina-field={fieldFor(editable?.companyInfo?.legalLinks?.[index], "label")}
+                    >
+                      {index === 0 ? <LegalScaleIcon /> : null}
+                      {index === 1 ? <LegalShieldIcon /> : null}
+                      {index === 2 ? <LegalDocIcon /> : null}
+                      {link.label}
+                    </a>
+                  ))}
                 </div>
               </div>
               <div className="relative min-h-[320px] overflow-hidden rounded-[20px]">
@@ -436,8 +423,8 @@ export function ContactSection({ content, editable, sectionId = "contacto-sobre-
   if (!contact) return null;
 
   return (
-    <section id={sectionId} className="bg-[#f9fafb] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "contact")}>
-      <div className="mx-auto grid max-w-[1460px] grid-cols-1 gap-[32px] lg:grid-cols-[1fr_798px] lg:items-center">
+    <section id={sectionId} className="bg-[#f9fafb] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "contact")}>
+      <div className="grid w-full grid-cols-1 gap-[32px] lg:grid-cols-[1fr_798px] lg:items-center">
         <div>
           <h2 className="text-[28px] font-bold leading-[1.1] text-[#080813] md:text-[40px]" data-tina-field={fieldFor(editable?.contact, "title")}>{contact.title}</h2>
           <p className="mt-[20px] text-[16px] leading-[1.5] text-[#080813]" data-tina-field={fieldFor(editable?.contact, "description")}>{contact.description}</p>
@@ -454,7 +441,13 @@ export function ContactSection({ content, editable, sectionId = "contacto-sobre-
           {(contact.scheduleLabel || contact.scheduleText) ? (
             <div className="mt-[32px] border-t border-[#dfe4ec] pt-[24px]">
               {contact.scheduleLabel ? <p className="text-[15px] font-bold text-[#8949ff]" data-tina-field={fieldFor(editable?.contact, "scheduleLabel")}>{contact.scheduleLabel}</p> : null}
-              {contact.scheduleText ? <p className="mt-[16px] whitespace-pre-line text-[15px] font-bold leading-[1.15] text-[#101828]" data-tina-field={fieldFor(editable?.contact, "scheduleText")}>{contact.scheduleText}</p> : null}
+              {contact.scheduleText ? (
+                <div className="mt-[16px] space-y-[4px]" data-tina-field={fieldFor(editable?.contact, "scheduleText")}>
+                  {(contact.scheduleText || "").split("\n").filter((line: string) => line.trim()).map((line: string, idx: number) => (
+                    <p key={idx} className="text-[15px] font-bold leading-[1.15] text-[#101828]">{line.trim()}</p>
+                  ))}
+                </div>
+              ) : null}
             </div>
           ) : null}
           <div className="mt-[28px] space-y-[12px]">
@@ -486,7 +479,7 @@ export function ContactSection({ content, editable, sectionId = "contacto-sobre-
               <input type="checkbox" className="h-[24px] w-[24px] rounded-[4px] border border-[#9d9ba8] bg-[#ecddee]" />
               <span className="text-[12px] font-bold text-[#d9d9d9]">{contact.form?.terms_label}</span>
             </label>
-            <button type="button" className="inline-flex items-center justify-center rounded-full bg-[#fcc63d] px-[40px] py-[19px] text-[18px] font-bold uppercase tracking-[1.8px] text-[#0f172b] shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)]" data-tina-field={fieldFor(editable?.contact?.form, "submit_label")}>
+            <button type="button" className="inline-flex w-full items-center justify-center rounded-full bg-[#fcc63d] px-[40px] py-[19px] text-[18px] font-bold uppercase tracking-[1.8px] text-[#0f172b] shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)] md:w-auto" data-tina-field={fieldFor(editable?.contact?.form, "submit_label")}>
               {contact.form?.submit_label}
             </button>
           </div>
@@ -513,11 +506,15 @@ export default function ReactAboutPage({
 
   return (
     <div className="bg-white">
+      <a href="https://wa.link/rmtjml" target="_blank" rel="noopener noreferrer" className="fixed bottom-[24px] right-[24px] z-40 inline-flex items-center gap-[8px] rounded-full bg-[#25d366] px-[20px] py-[12px] text-[15px] font-bold text-white no-underline shadow-[0px_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-[2px]">
+        <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]" aria-hidden="true"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 13.66 3.45 15.22 4.23 16.56L3 21L7.58 19.8C8.9 20.58 10.4 21 12 21Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M9 8.8C9 12.07 11.74 14.8 15 14.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /><path d="M14.2 11.4L15.9 10.9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+        WhatsApp
+      </a>
       <AboutHeroSection content={page} editable={editable} />
       <TrajectorySection content={page} editable={editable} />
       <PurposeSection content={page} editable={editable} />
       <PartnersSection content={page} editable={editable} />
-      <TestimonialsSection content={page} editable={editable} />
+      <TestimonialsMetricsSection content={page} editable={editable} />
       <CertificationsSection content={page} editable={editable} />
       <RecognitionsSection content={page} editable={editable} />
       <ContactSection content={page} editable={editable} />
@@ -525,4 +522,3 @@ export default function ReactAboutPage({
     </div>
   );
 }
-

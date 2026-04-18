@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import ReactBlogPage from "@/components/blog/ReactBlogPage";
 import { LOCALES, type Lang } from "@/data/locales";
 import { buildLanguageAlternates } from "@/lib/seo/meta";
-import { getEntry } from "astro:content";
+import { getEntry, getCollection } from "astro:content";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({
@@ -113,6 +113,15 @@ if (import.meta.env.DEV) {
 if (!content) {
   return Astro.redirect(`/${lang}/404`);
 }
+
+const newsEntries = await getCollection("news", ({ data }) => data.lang === lang);
+const sortedNews = newsEntries.sort((a, b) => b.data.publishedAt.localeCompare(a.data.publishedAt));
+const newsItems = sortedNews.map((entry) => ({
+  title: entry.data.title,
+  description: entry.data.excerpt,
+  image: entry.data.image,
+  href: `/${lang}/news/${entry.slug}/`,
+}));
 ---
 
 <BaseLayout
@@ -122,5 +131,5 @@ if (!content) {
   path={`/${lang}/news/`}
   alternates={buildLanguageAlternates("/news/")}
 >
-  <ReactBlogPage client:load content={content} {...tinaProps} lang={lang} />
+  <ReactBlogPage client:load content={content} {...tinaProps} lang={lang} newsItems={newsItems} />
 </BaseLayout>

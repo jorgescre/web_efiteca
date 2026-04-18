@@ -2917,7 +2917,7 @@ function ActionCtaSection({ content }: { content: any }) {
 
 
 
-      <div className="bg-[#8949ff] content-stretch flex flex-col md:flex-row gap-[32px] items-start md:items-center justify-between overflow-hidden px-[28px] md:px-[60px] py-[48px] md:py-[80px] relative rounded-[24px] w-full">
+      <div className="bg-[#8949ff] content-stretch flex flex-col lg:flex-row gap-[32px] items-start lg:items-center justify-between overflow-hidden px-[28px] md:px-[60px] py-[48px] md:py-[80px] relative rounded-[24px] w-full">
 
 
 
@@ -14763,7 +14763,7 @@ export function FigmaHeader({ currentPath }: { currentPath?: string }) {
 
 
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
 
 
 
@@ -14775,7 +14775,7 @@ export function FigmaHeader({ currentPath }: { currentPath?: string }) {
 
 
 
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
 
 
 
@@ -14795,7 +14795,7 @@ export function FigmaHeader({ currentPath }: { currentPath?: string }) {
 
 
 
-          className="md:hidden flex flex-col justify-center items-center gap-[5px] size-[44px]"
+          className="lg:hidden flex flex-col justify-center items-center gap-[5px] size-[44px]"
 
 
 
@@ -14839,7 +14839,7 @@ export function FigmaHeader({ currentPath }: { currentPath?: string }) {
 
 
 
-        <div className="md:hidden border-t border-[#e5e7eb]">
+        <div className="lg:hidden border-t border-[#e5e7eb]">
 
 
 
@@ -15304,8 +15304,10 @@ export default function Home({
 
 
     <div className="bg-white content-stretch flex flex-col items-center pb-[2px] relative size-full overflow-hidden" data-name="Home">
-
-
+      <a href="https://wa.link/rmtjml" target="_blank" rel="noopener noreferrer" className="fixed bottom-[24px] right-[24px] z-40 inline-flex items-center gap-[8px] rounded-full bg-[#25d366] px-[20px] py-[12px] text-[15px] font-bold text-white no-underline shadow-[0px_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-[2px]">
+        <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]" aria-hidden="true"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 13.66 3.45 15.22 4.23 16.56L3 21L7.58 19.8C8.9 20.58 10.4 21 12 21Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M9 8.8C9 12.07 11.74 14.8 15 14.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /><path d="M14.2 11.4L15.9 10.9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+        WhatsApp
+      </a>
 
       <style>{`
 
@@ -15578,7 +15580,7 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-    <section className="mb-[-60px] relative shrink-0 w-full min-h-[680px] md:min-h-[847px] overflow-hidden bg-[#e6e2df] flex flex-col md:block">
+    <section className="mb-[-60px] relative shrink-0 w-full min-h-[680px] lg:min-h-[847px] overflow-hidden bg-[#e6e2df] flex flex-col lg:block">
 
 
 
@@ -15590,7 +15592,7 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-        className="absolute inset-0 max-w-none object-cover pointer-events-none size-full hidden md:block z-[0]"
+        className="absolute inset-0 max-w-none object-cover pointer-events-none size-full hidden lg:block z-[0]"
 
 
 
@@ -15614,7 +15616,7 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-        className="absolute inset-0 max-w-none object-cover pointer-events-none size-full md:hidden z-[0]"
+        className="absolute inset-0 max-w-none object-cover pointer-events-none size-full lg:hidden z-[0]"
 
 
 
@@ -15630,7 +15632,7 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-      <div className="relative w-full max-w-[1460px] mx-auto flex flex-col xl:flex-row xl:items-center min-h-0 md:min-h-[847px] z-10 pt-[30px] xl:pt-0 3xl:overflow-visible">
+      <div className="relative w-full max-w-[1460px] mx-auto flex flex-col xl:flex-row xl:items-center min-h-0 lg:min-h-[847px] z-10 pt-[30px] xl:pt-0 3xl:overflow-visible">
 
 
 
@@ -15638,15 +15640,15 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-        <div className="relative w-full h-[320px] md:h-[450px] xl:absolute xl:inset-0 xl:w-full xl:h-full z-[20] pointer-events-none flex justify-center xl:justify-end items-start md:items-end">
+        <div className="relative w-full h-[320px] lg:h-[450px] xl:absolute xl:inset-0 xl:w-full xl:h-full z-[20] pointer-events-none flex justify-center xl:justify-end items-start lg:items-end">
 
 
 
-          <img src="/images/hero-familia-mobile.png" className="w-[85%] h-auto md:hidden relative top-0 object-contain object-top drop-shadow-xl" alt="" />
+          <img src="/images/hero-familia-mobile.png" className="w-[85%] h-auto lg:hidden relative top-0 object-contain object-top drop-shadow-xl" alt="" />
 
 
 
-          <img src="/images/hero-familia-desktop.png" className="hidden md:block xl:hidden w-auto h-full relative top-[20px] object-contain object-bottom drop-shadow-2xl" alt="" />
+          <img src="/images/hero-familia-desktop.png" className="hidden lg:block xl:hidden w-auto h-full relative top-[20px] object-contain object-bottom drop-shadow-2xl" alt="" />
 
 
 
@@ -15662,11 +15664,11 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-        <div className="relative w-full px-[20px] pb-[140px] pt-0 md:px-[48px] xl:px-[80px] md:pb-[80px] md:pt-[19px] z-[30] xl:z-[10] mt-[-120px] md:mt-0 flex flex-col justify-center pointer-events-none">
+        <div className="relative w-full px-[20px] pb-[140px] pt-0 lg:px-[48px] xl:px-[80px] lg:pb-[80px] lg:pt-[19px] z-[30] xl:z-[10] mt-[-120px] lg:mt-0 flex flex-col justify-center pointer-events-none">
 
 
 
-          <div className="bg-[linear-gradient(163deg,#8949FF_0%,#4F3BF9_100%)] rounded-[32px] p-[32px] pt-[20px] md:p-[56px] flex flex-col gap-[24px] md:gap-[40px] w-full lg:max-w-[800px] xl:max-w-[688px] mx-auto xl:mx-0 relative shadow-[0px_20px_50px_rgba(79,59,249,0.3)] pointer-events-auto mt-0 md:mt-0">
+          <div className="bg-[linear-gradient(163deg,#8949FF_0%,#4F3BF9_100%)] rounded-[32px] p-[32px] pt-[20px] lg:p-[56px] flex flex-col gap-[24px] lg:gap-[40px] w-full lg:max-w-[800px] xl:max-w-[688px] mx-auto xl:mx-0 relative shadow-[0px_20px_50px_rgba(79,59,249,0.3)] pointer-events-auto">
 
 
 

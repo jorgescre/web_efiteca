@@ -41,12 +41,15 @@ function HeroSection({ page, editable }: { page: any; editable?: any }) {
   if (!section) return null;
 
   return (
-    <section className="bg-[#080813] px-[20px] py-[72px] md:px-[48px] md:py-[110px] xl:px-[230px]" data-tina-field={fieldFor(editable, "newsLanding")}>
-      <div className="mx-auto flex max-w-[1296px] flex-col items-center text-center">
+    <section className="relative overflow-hidden bg-[#7c42f3] px-[20px] py-[72px] md:px-[40px] md:py-[110px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "newsLanding")}>
+      <img src="/images/about-hero-texture.png" alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_24%_112%,rgba(8,8,19,0.42),transparent_34%)]" />
+      <img src="/images/about-hero-outline.svg" alt="" className="pointer-events-none absolute bottom-[-232px] right-[-300px] hidden w-[900px] max-w-none opacity-80 lg:block xl:bottom-[-280px] xl:right-[-220px] xl:w-[1040px]" />
+      <div className="relative z-10 flex flex-col items-center text-center">
         <h1 className="text-[38px] font-bold leading-[1.08] tracking-[0.2px] text-white md:text-[56px]">
           <span data-tina-field={fieldFor(editable?.newsLanding, "heroTitle")}>{section.heroTitle} </span>
           {section.heroHighlight ? (
-            <span className="text-[#c993ff]" data-tina-field={fieldFor(editable?.newsLanding, "heroHighlight")}>
+            <span className="text-[#fcc63d]" data-tina-field={fieldFor(editable?.newsLanding, "heroHighlight")}>
               {section.heroHighlight}
             </span>
           ) : null}
@@ -59,17 +62,20 @@ function HeroSection({ page, editable }: { page: any; editable?: any }) {
   );
 }
 
-function ArticleGrid({ page, editable, lang }: { page: any; editable?: any; lang: "es" | "en" }) {
-  const blog = page?.blog;
+function ArticleGrid({ page, editable, lang, newsItems }: { page: any; editable?: any; lang: "es" | "en"; newsItems?: Array<{ title: string; description: string; image?: string; href: string }> }) {
   const section = page?.newsLanding;
-  if (!blog?.items?.length || !section) return null;
+  const items = newsItems && newsItems.length > 0
+    ? newsItems
+    : (page?.blog?.items || []).map((item: any) => ({ title: item.title, description: item.description, image: item.image, href: item.cta?.href || "#" }));
+
+  if (!items.length || !section) return null;
 
   const readLabel = lang === "es" ? "Ver noticia" : "Read article";
 
   return (
-    <section className="bg-[#fbf7ec] py-[56px] md:py-[80px]">
-      <div className="content-stretch mx-auto flex max-w-[1460px] flex-col px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] w-full relative">
-        <div className="max-w-[800px] mb-[40px] md:mb-[64px]" data-tina-field={fieldFor(editable, "newsLanding")}>
+    <section className="bg-[#fbf7ec] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]">
+      <div className="flex w-full flex-col">
+        <div className="w-full max-w-[1100px] mb-[40px] md:mb-[64px]" data-tina-field={fieldFor(editable, "newsLanding")}>
           <h2 className="text-[32px] font-bold leading-[1.1] text-[#080813] md:text-[40px] xl:text-[48px]" data-tina-field={fieldFor(editable?.newsLanding, "listingTitle")}>
             {section.listingTitle}
           </h2>
@@ -79,28 +85,32 @@ function ArticleGrid({ page, editable, lang }: { page: any; editable?: any; lang
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[24px] md:gap-[32px] items-start w-full">
-          {(blog.items || []).map((item: any, index: number) => (
-            <article key={`${item.title}-${index}`} className="group flex flex-col items-start w-full transition-transform duration-300 hover:-translate-y-[4px]" data-tina-field={fieldFor(editable?.blog?.items?.[index], "title")}>
-              <a href={item.cta?.href || "#"} className="block overflow-hidden rounded-[24px] w-full mb-[20px]">
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="h-[240px] md:h-[280px] xl:h-[320px] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]" 
-                  data-tina-field={fieldFor(editable?.blog?.items?.[index], "image")} 
-                />
+          {items.map((item: any, index: number) => (
+            <article key={`${item.title}-${index}`} className="group flex flex-col items-start w-full transition-transform duration-300 hover:-translate-y-[4px]">
+              <a href={item.href || "#"} className="block overflow-hidden rounded-[24px] w-full mb-[20px]">
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="h-[240px] md:h-[280px] xl:h-[320px] w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05]"
+                  />
+                ) : (
+                  <div className="h-[240px] md:h-[280px] xl:h-[320px] w-full bg-[linear-gradient(135deg,rgba(137,73,255,0.15),rgba(252,198,61,0.15))] flex items-center justify-center text-[48px]">
+                    🏠
+                  </div>
+                )}
               </a>
               <div className="flex flex-1 flex-col w-full">
                 <h3 className="text-[24px] md:text-[28px] font-bold leading-[1.1] text-[#080813] mb-[12px]">
-                  <a href={item.cta?.href || "#"}>{item.title}</a>
+                  <a href={item.href || "#"}>{item.title}</a>
                 </h3>
                 <p className="text-[16px] leading-[1.4] text-[#364153] mb-[20px] flex-1">{item.description}</p>
                 <div className="flex items-center gap-[8px]">
                   <a
-                    href={item.cta?.href || "#"}
+                    href={item.href || "#"}
                     className="inline-flex items-center font-bold text-[18px] text-[#8949ff] no-underline transition-colors duration-300 group-hover:text-[#c993ff]"
-                    data-tina-field={fieldFor(editable?.blog?.items?.[index], "cta")}
                   >
-                    {item.cta?.label || readLabel}
+                    {readLabel}
                   </a>
                   <div className="transition-transform duration-300 group-hover:translate-x-[4px] text-[#8949ff] group-hover:text-[#c993ff]">
                     <ArrowIcon />
@@ -121,8 +131,8 @@ function NewsletterAndCta({ page, editable }: { page: any; editable?: any }) {
   if (!newsletter && !actionCta) return null;
 
   return (
-    <section className="bg-[linear-gradient(90deg,rgba(137,73,255,0.92)_0%,rgba(103,67,252,0.92)_38%,rgba(137,73,255,0.72)_100%)] py-[64px] md:py-[96px]">
-      <div className="content-stretch mx-auto flex max-w-[1460px] flex-col items-center gap-[56px] px-[20px] md:px-[40px] xl:px-[64px] 2xl:px-[80px] w-full relative">
+    <section className="bg-[linear-gradient(90deg,rgba(137,73,255,0.92)_0%,rgba(103,67,252,0.92)_38%,rgba(137,73,255,0.72)_100%)] px-[20px] py-[64px] md:px-[40px] md:py-[96px] xl:px-[160px] 2xl:px-[160px]">
+      <div className="flex w-full flex-col items-center gap-[56px]">
         {newsletter ? (
           <div id="newsletter" className="w-full max-w-[920px] text-center" data-tina-field={fieldFor(editable, "newsletter")}>
 
@@ -156,7 +166,7 @@ function NewsletterAndCta({ page, editable }: { page: any; editable?: any }) {
               </p>
               <a
                 href={actionCta.button?.href || "#"}
-                className="inline-flex items-center justify-center self-start rounded-full bg-[#fcc63d] px-[32px] py-[18px] text-[16px] font-bold uppercase tracking-[1.8px] text-[#080813] no-underline shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] md:px-[40px] md:py-[24px] md:text-[18px] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)]"
+                className="inline-flex shrink-0 items-center justify-center self-center whitespace-nowrap rounded-full bg-[#fcc63d] px-[28px] py-[18px] text-[14px] font-bold uppercase tracking-[1px] text-[#080813] no-underline shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] md:px-[40px] md:py-[24px] md:text-[16px] md:tracking-[1.5px] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] hover:shadow-[0px_25px_50px_0px_rgba(252,198,61,0.4)]"
                 data-tina-field={fieldFor(editable?.actionCta?.button, "label")}
               >
                 {actionCta.button?.label}
@@ -174,13 +184,15 @@ export default function ReactBlogPage({
   data,
   query,
   variables,
-  lang
+  lang,
+  newsItems,
 }: {
   content: any;
   data?: any;
   query?: string;
   variables?: Record<string, any>;
   lang: "es" | "en";
+  newsItems?: Array<{ title: string; description: string; image?: string; href: string }>;
 }) {
   const tinaState = query && variables && data ? useTina({ query, variables, data }) : null;
   const page = tinaState?.data?.pages ?? content;
@@ -190,7 +202,7 @@ export default function ReactBlogPage({
     <div className="bg-white">
       <FloatingWhatsApp />
       <HeroSection page={page} editable={editable} />
-      <ArticleGrid page={page} editable={editable} lang={lang} />
+      <ArticleGrid page={page} editable={editable} lang={lang} newsItems={newsItems} />
       <NewsletterAndCta page={page} editable={editable} />
     </div>
   );

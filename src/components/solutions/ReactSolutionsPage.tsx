@@ -258,7 +258,7 @@ const HOME_TESTIMONIALS_CONTENT = {
 
 
 
-      "Personas en situaciones reales lograron tomar decisiónes con mayor claridad, mejorar condiciones o conseguíir su hipoteca con acompañamiento experto y coordinación hasta la firma.",
+      "Personas en situaciones reales lograron tomar decisiones con mayor claridad, mejorar condiciones o conseguir su hipoteca con acompañamiento experto y coordinación hasta la firma.",
 
 
 
@@ -322,7 +322,7 @@ const HOME_TESTIMONIALS_CONTENT = {
 
 
 
-          "Sin duda la experiencia con el equeipo de Efiteca ha sido 100% satisfactoria\n\nAndres es un profesional que se implica y sin duda pone toda la carne en el asador en cada operación\n\nSu intermediación ha sido fundamental en todos los sentidos ya que ha facilitado todas las gestiones de manera rápida, eficaz y con solvencia contrastada.\n\nSin duda lo recomiendo al 100% ★★★★★★★★★★"
+          "Sin duda la experiencia con el equipo de Efiteca ha sido 100% satisfactoria. Andres es un profesional que se implica y sin duda pone toda la carne en el asador en cada operación. Su intermediación ha sido fundamental en todos los sentidos ya que ha facilitado todas las gestiones de manera rápida, eficaz y con solvencia contrastada. Sin duda lo recomiendo al 100%"
 
 
 
@@ -346,7 +346,7 @@ const HOME_TESTIMONIALS_CONTENT = {
 
 
 
-        stars: 4,
+        stars: 5,
 
 
 
@@ -858,7 +858,7 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-        className="absolute inset-0 hidden h-full w-full object-cover md:block"
+        className="absolute inset-0 hidden h-full w-full object-cover lg:block"
 
 
 
@@ -870,7 +870,7 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
 
 
 
-      <div className="md:hidden w-full h-[240px] relative overflow-hidden">
+      <div className="lg:hidden w-full h-[240px] relative overflow-hidden">
         <img
           src={hero.background_mobile || hero.background_desktop}
           alt=""
@@ -879,11 +879,11 @@ function HeroSection({ content, editable }: { content: any; editable?: any }) {
         />
       </div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,19,0.18)_0%,rgba(8,8,19,0)_55%)] hidden md:block" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(8,8,19,0.18)_0%,rgba(8,8,19,0)_55%)] hidden lg:block" />
 
-      <div className="relative mx-auto flex flex-col md:flex-row min-h-0 md:min-h-[803px] w-full max-w-[1460px] items-center px-0 md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-0 md:py-[56px]">
+      <div className="relative mx-auto flex flex-col lg:flex-row min-h-0 lg:min-h-[803px] w-full max-w-[1460px] items-center px-0 md:px-[40px] xl:px-[64px] 2xl:px-[80px] py-0 md:py-[56px]">
 
-        <div className="w-full max-w-none md:max-w-[680px] rounded-none md:rounded-[20px] bg-[linear-gradient(180deg,#ad81ff_0%,#8949ff_58%,#2b2148_100%)] p-[24px] shadow-[0px_24px_60px_rgba(137,73,255,0.28)] md:p-[40px]">
+        <div className="w-full max-w-none lg:max-w-[680px] rounded-none lg:rounded-[20px] bg-[linear-gradient(180deg,#ad81ff_0%,#8949ff_58%,#2b2148_100%)] p-[24px] shadow-[0px_24px_60px_rgba(137,73,255,0.28)] md:p-[40px]">
 
 
 
@@ -2079,7 +2079,7 @@ function ActionCtaSection({ content, editable }: { content: any; editable?: any 
 
 
 
-        <div className="flex w-full flex-col items-start justify-between gap-[32px] overflow-hidden rounded-[24px] bg-[#8949ff] px-[28px] py-[48px] md:px-[60px] md:py-[80px] md:flex-row md:items-center">
+        <div className="flex w-full flex-col items-start justify-between gap-[32px] overflow-hidden rounded-[24px] bg-[#8949ff] px-[28px] py-[48px] md:px-[60px] md:py-[80px] lg:flex-row lg:items-center">
 
 
 
@@ -2390,7 +2390,7 @@ export function TestimonialsMetricsSection({ content, editable }: { content: any
 
 
 
-      <div className="mx-auto flex w-full max-w-[1460px] flex-col items-center gap-[40px] px-[20px] py-[56px] md:gap-[48px] md:px-[40px] md:py-[80px] xl:px-[64px] 2xl:px-[80px]">
+      <div className="flex w-full flex-col items-center gap-[40px] px-[20px] py-[80px] md:gap-[48px] md:px-[40px] xl:px-[160px] 2xl:px-[160px]">
 
 
 
@@ -2493,101 +2493,40 @@ export function TestimonialsMetricsSection({ content, editable }: { content: any
 
 
                         <article
-
-
-
-                          className="flex min-h-[320px] w-full flex-col justify-between rounded-[32px] border border-[#d9d9d9] bg-white px-[24px] py-[24px] md:min-h-[340px] md:px-[32px] md:py-[32px] xl:rounded-[40px] xl:px-[36px] xl:py-[34px]"
-
-
-
+                          className="flex w-full flex-col gap-[16px] rounded-[20px] border border-[#e5e7eb] bg-white px-[20px] py-[20px] md:px-[24px] md:py-[24px]"
                           data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "text")}
-
-
-
                         >
-
-
-
-                          <div className="flex flex-col gap-[20px] md:gap-[24px]">
-
-
-
-                            <div className="flex gap-[10px] text-[20px] leading-none text-[#fcc63d]">
-
-
-
-                              {Array.from({ length: item.stars || 5 }).map((_, starIndex) => (
-
-
-
-                                <div key={starIndex} className="text-[#fcc63d]"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fcc63d" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-
-
-
-                              ))}
-
-
-
+                          <div className="flex items-center gap-[12px]">
+                            <img src={item.image} alt={item.name} className="size-[44px] shrink-0 rounded-full object-cover bg-[#f2eff7]" data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "image")} />
+                            <div className="flex min-w-0 flex-col gap-[2px]">
+                              <div className="flex items-center gap-[6px]">
+                                <p className="font-['Inter:Bold',sans-serif] text-[15px] font-bold leading-none text-[#101828]" data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "name")}>{item.name}</p>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" /><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#fff" /></svg>
+                              </div>
+                              <div className="flex items-center gap-[4px]">
+                                <p className="font-['Inter:Regular',sans-serif] text-[12px] text-[#6a7282]" data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "role")}>{item.role} · activado</p>
+                                <svg width="36" height="12" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/><path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/><path d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.03 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/></svg>
+                              </div>
                             </div>
-
-
-
-                            <p
-
-
-
-                              className="overflow-hidden text-[18px] font-bold leading-[1.1] text-[#364153] md:text-[20px] xl:text-[22px]"
-
-
-
-                              style={{ display: "-webkit-box", WebkitLineClamp: 6, WebkitBoxOrient: "vertical" }}
-
-
-
-                            >
-
-
-
-                              {item.text}
-
-
-
-                            </p>
-
-
-
                           </div>
-
-
-
-                          <div className="flex items-center gap-[12px] pt-[20px]">
-
-
-
-                            <img src={item.image} alt={item.name} className="size-[46px] shrink-0 rounded-full object-cover bg-[#f2eff7]" />
-
-
-
-                            <div className="flex min-w-0 flex-col">
-
-
-
-                              <p className="text-[16px] font-bold leading-[1.1] text-[#101828]">{item.name}</p>
-
-
-
-                              <p className="text-[14px] leading-[1.2] text-[#6a7282] md:text-[15px]">{item.role}</p>
-
-
-
-                            </div>
-
-
-
+                          <div className="flex gap-[4px] text-[18px] leading-none text-[#fcc63d]">
+                            {renderStars(item.stars || 5)}
                           </div>
-
-
-
+                          <p
+                            className="overflow-hidden font-['Inter:Regular',sans-serif] text-[14px] leading-[1.5] text-[#374151] md:text-[15px]"
+                            style={{ display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}
+                            data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "text")}
+                          >
+                            {item.text}
+                          </p>
+                          <a
+                            href="https://www.google.com/search?q=efiteca#lrd=0x12a4a36361809249:0x7dacaebfd27bc034,1,,,,"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-['Inter:Bold',sans-serif] text-[14px] font-semibold text-[#4285F4] hover:underline"
+                          >
+                            Leer más
+                          </a>
                         </article>
 
 
@@ -2679,102 +2618,41 @@ export function TestimonialsMetricsSection({ content, editable }: { content: any
 
 
                   <article
-
-
-
-                    className="flex min-h-[320px] w-full flex-col justify-between rounded-[32px] border border-[#d9d9d9] bg-white px-[24px] py-[24px] md:min-h-[340px] md:px-[32px] md:py-[32px] xl:rounded-[40px] xl:px-[36px] xl:py-[34px]"
-
-
-
-                    data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "text")}
-
-
-
-                  >
-
-
-
-                    <div className="flex flex-col gap-[20px] md:gap-[24px]">
-
-
-
-                      <div className="flex gap-[10px] text-[20px] leading-none text-[#fcc63d]">
-
-
-
-                        {Array.from({ length: item.stars || 5 }).map((_, starIndex) => (
-
-
-
-                          <div key={starIndex} className="text-[#fcc63d]"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fcc63d" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-
-
-
-                        ))}
-
-
-
-                      </div>
-
-
-
-                      <p
-
-
-
-                        className="overflow-hidden text-[18px] font-bold leading-[1.1] text-[#364153] md:text-[20px] xl:text-[22px]"
-
-
-
-                        style={{ display: "-webkit-box", WebkitLineClamp: 6, WebkitBoxOrient: "vertical" }}
-
-
-
-                      >
-
-
-
-                        {item.text}
-
-
-
-                      </p>
-
-
-
-                    </div>
-
-
-
-                    <div className="flex items-center gap-[12px] pt-[20px]">
-
-
-
-                      <img src={item.image} alt={item.name} className="size-[46px] shrink-0 rounded-full object-cover bg-[#f2eff7]" />
-
-
-
-                      <div className="flex min-w-0 flex-col">
-
-
-
-                        <p className="text-[16px] font-bold leading-[1.1] text-[#101828]">{item.name}</p>
-
-
-
-                        <p className="text-[14px] leading-[1.2] text-[#6a7282] md:text-[15px]">{item.role}</p>
-
-
-
-                      </div>
-
-
-
-                    </div>
-
-
-
-                  </article>
+                          className="flex w-full flex-col gap-[16px] rounded-[20px] border border-[#e5e7eb] bg-white px-[20px] py-[20px] md:px-[24px] md:py-[24px]"
+                          data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "text")}
+                        >
+                          <div className="flex items-center gap-[12px]">
+                            <img src={item.image} alt={item.name} className="size-[44px] shrink-0 rounded-full object-cover bg-[#f2eff7]" data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "image")} />
+                            <div className="flex min-w-0 flex-col gap-[2px]">
+                              <div className="flex items-center gap-[6px]">
+                                <p className="font-['Inter:Bold',sans-serif] text-[15px] font-bold leading-none text-[#101828]" data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "name")}>{item.name}</p>
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="#4285F4"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" /><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#fff" /></svg>
+                              </div>
+                              <div className="flex items-center gap-[4px]">
+                                <p className="font-['Inter:Regular',sans-serif] text-[12px] text-[#6a7282]" data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "role")}>{item.role} · activado</p>
+                                <svg width="36" height="12" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg"><path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/><path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/><path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/><path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/><path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/><path d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.03 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/></svg>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="flex gap-[4px] text-[18px] leading-none text-[#fcc63d]">
+                            {renderStars(item.stars || 5)}
+                          </div>
+                          <p
+                            className="overflow-hidden font-['Inter:Regular',sans-serif] text-[14px] leading-[1.5] text-[#374151] md:text-[15px]"
+                            style={{ display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical" }}
+                            data-tina-field={fieldFor(editable?.testimonials?.items?.[index], "text")}
+                          >
+                            {item.text}
+                          </p>
+                          <a
+                            href="https://www.google.com/search?q=efiteca#lrd=0x12a4a36361809249:0x7dacaebfd27bc034,1,,,,"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-['Inter:Bold',sans-serif] text-[14px] font-semibold text-[#4285F4] hover:underline"
+                          >
+                            Leer más
+                          </a>
+                        </article>
 
 
 
@@ -3227,8 +3105,10 @@ export default function ReactSolutionsPage({
 
 
     <div className="bg-white">
-
-
+      <a href="https://wa.link/rmtjml" target="_blank" rel="noopener noreferrer" className="fixed bottom-[24px] right-[24px] z-40 inline-flex items-center gap-[8px] rounded-full bg-[#25d366] px-[20px] py-[12px] text-[15px] font-bold text-white no-underline shadow-[0px_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-[2px]">
+        <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]" aria-hidden="true"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 13.66 3.45 15.22 4.23 16.56L3 21L7.58 19.8C8.9 20.58 10.4 21 12 21Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M9 8.8C9 12.07 11.74 14.8 15 14.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /><path d="M14.2 11.4L15.9 10.9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+        WhatsApp
+      </a>
 
       <HeroSection content={page} editable={editable} />
 

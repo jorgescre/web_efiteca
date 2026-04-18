@@ -139,9 +139,8 @@ contact:
     - Comparativa imparcial de mercado
   scheduleLabel: Horario de atención
   scheduleText: |-
-    Lunes a jueves 10 a. m. a 6 p. m.
-
-    Viernes de 10 a. m. a 5 p. m.
+    Lunes a jueves 10 a.m. a 6 p.m.
+    Viernes de 10 a.m. a 5 p.m.
   phone: "+34 696611291"
   email: clientes@efiteca.com
   form:
@@ -162,7 +161,7 @@ contact:
 
 locationsShowcase:
   title: Conoce nuestras ubicaciones
-  description: ""
+  description: "Atendemos de forma digital en toda España con acompañamiento personalizado durante todo el proceso."
   mapImage: /images/map.png
   cta:
     title: "¿Listo para pasar de la teoría a la acción?"
@@ -176,7 +175,7 @@ locations:
   subtitle: ""
   items:
     - city: Barcelona
-      address: "Calle cartagena 245, planta 3 puerta e, 08025, barcelona"
+      address: "Calle Cartagena 245, Planta 3 Puerta E, 08025, Barcelona"
       summary: "En Barcelona analizamos tu perfil hipotecario para encontrar la mejor ruta posible, comparando opciones reales y coordinando el proceso hasta llegar a firma correctamente."
       seoLabel: Asesoría hipotecaria en Barcelona
       image: /images/barcelona.png

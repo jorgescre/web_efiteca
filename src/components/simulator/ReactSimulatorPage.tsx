@@ -4,6 +4,8 @@ import { LocationsShowcaseSection } from "@/components/shared/LocationsShowcase"
 import { FaqSection, Frame60 } from "@/components/home/ReactHome";
 import { TestimonialsMetricsSection } from "@/components/solutions/ReactSolutionsPage";
 
+const WHATSAPP_URL = "https://wa.link/rmtjml";
+
 function fieldFor(object: any, property: string) {
   return object ? tinaField(object, property) : undefined;
 }
@@ -43,11 +45,13 @@ function WhatsAppIcon() {
   );
 }
 
-function FloatingWhatsApp({ href = "#contacto-simulador" }: { href?: string }) {
+function FloatingWhatsApp() {
   return (
     <a
-      href={href}
-      className="fixed bottom-[24px] right-[24px] z-40 inline-flex items-center gap-[8px] rounded-full bg-[#25d366] px-[20px] py-[12px] text-[15px] font-bold text-white no-underline shadow-[0px_8px_24px_rgba(37,211,102,0.4)]"
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-[24px] right-[24px] z-40 inline-flex items-center gap-[8px] rounded-full bg-[#25d366] px-[20px] py-[12px] text-[15px] font-bold text-white no-underline shadow-[0px_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-[2px] hover:shadow-[0px_8px_24px_rgba(37,211,102,0.6)]"
     >
       <WhatsAppIcon />
       WhatsApp
@@ -60,35 +64,36 @@ function SimulatorHeroSection({ page, editable }: { page: any; editable?: any })
   if (!simulator) return null;
 
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f7f4ff_100%)] xl:px-[30px]">
-      <div className="pointer-events-none absolute left-[-120px] top-[40px] h-[260px] w-[260px] rounded-full bg-[rgba(252,198,61,0.16)] blur-[110px]" />
-      <div className="pointer-events-none absolute right-[-180px] top-[20px] hidden h-[420px] w-[420px] rounded-full bg-[rgba(137,73,255,0.2)] blur-[120px] lg:block" />
-      <div className="mx-auto grid max-w-[1460px] grid-cols-1 gap-[32px] px-[20px] pb-[48px] pt-[56px] md:px-[40px] md:pb-[72px] md:pt-[80px] xl:grid-cols-[minmax(0,620px)_minmax(0,560px)] xl:items-center xl:gap-[72px] xl:px-[64px] 2xl:px-[80px]" data-tina-field={fieldFor(editable, "simulator")}>
+    <section className="relative overflow-hidden bg-[#7c42f3] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]">
+      <img src="/images/about-hero-texture.png" alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_24%_112%,rgba(8,8,19,0.42),transparent_34%)]" />
+      <img src="/images/about-hero-outline.svg" alt="" className="pointer-events-none absolute bottom-[-232px] right-[-300px] hidden w-[900px] max-w-none opacity-80 lg:block xl:bottom-[-280px] xl:right-[-220px] xl:w-[1040px]" />
+      <div className="relative z-10 grid w-full grid-cols-1 gap-[40px] xl:grid-cols-[minmax(0,1fr)_minmax(0,520px)] xl:items-center xl:gap-[72px]" data-tina-field={fieldFor(editable, "simulator")}>
         <div className="pt-[8px]">
-          <div className="inline-flex items-center gap-[10px] rounded-full border border-[#cda4ff] bg-white px-[16px] py-[8px]">
-            <span className="h-[8px] w-[8px] rounded-full bg-[#8949ff]" />
-            <span className="text-[12px] font-bold leading-[1.1] text-[#8949ff]">Asesoría hipotecaria sin sorpresas</span>
+          <div className="inline-flex items-center gap-[10px] rounded-full border border-white/30 bg-white/10 px-[14px] py-[6px]">
+            <span className="h-[8px] w-[8px] rounded-full bg-[#fcc63d]" />
+            <span className="text-[12px] font-bold leading-[1.1] text-[#fcc63d]">Asesoría hipotecaria sin sorpresas</span>
           </div>
-          <h1 className="mt-[24px] text-[34px] font-bold leading-[1.08] text-[#080813] md:text-[56px]" data-tina-field={fieldFor(editable?.simulator, "title")}>
+          <h1 className="mt-[24px] text-[34px] font-bold leading-[1.08] text-white md:text-[56px]" data-tina-field={fieldFor(editable?.simulator, "title")}>
             {simulator.title}
           </h1>
-          <div className="mt-[24px] max-w-[640px] space-y-[16px] text-[15px] leading-[1.2] text-[#364153] md:text-[16px]">
+          <div className="mt-[24px] space-y-[16px] text-[15px] leading-[1.2] text-white/90 md:text-[16px]">
             <p data-tina-field={fieldFor(editable?.simulator, "description")}>{simulator.description}</p>
             {simulator.secondaryDescription ? (
               <p data-tina-field={fieldFor(editable?.simulator, "secondaryDescription")}>{simulator.secondaryDescription}</p>
             ) : null}
-            <div className="rounded-[16px] border-l-[3px] border-[#8949ff] bg-[#f8f5ff] px-[20px] py-[18px]">
+            <div className="rounded-[16px] border border-white/20 bg-white/10 px-[20px] py-[18px]">
               {simulator.noteTitle ? (
-                <p className="text-[16px] font-bold leading-[1.2] text-[#8949ff]" data-tina-field={fieldFor(editable?.simulator, "noteTitle")}>
+                <p className="text-[16px] font-bold leading-[1.2] text-[#fcc63d]" data-tina-field={fieldFor(editable?.simulator, "noteTitle")}>
                   {simulator.noteTitle}
                 </p>
               ) : null}
-              <p className={`${simulator.noteTitle ? "mt-[10px] " : ""}text-[14px] font-bold leading-[1.4] text-[#364153]`} data-tina-field={fieldFor(editable?.simulator, "noteText")}>
+              <p className={`${simulator.noteTitle ? "mt-[10px] " : ""}text-[14px] font-bold leading-[1.4] text-white/80`} data-tina-field={fieldFor(editable?.simulator, "noteText")}>
                 {simulator.noteText}
               </p>
             </div>
           </div>
-          <div className="mt-[24px] flex flex-col gap-[10px] text-[13px] font-bold leading-[1.1] text-[#667085] md:flex-row md:gap-[20px]">
+          <div className="mt-[24px] flex flex-col gap-[10px] text-[13px] font-bold leading-[1.1] text-white/70 md:flex-row md:gap-[20px]">
             <div className="flex items-center gap-[8px]">
               <CheckIcon />
               <span>Regulado por el BdE · E377</span>
@@ -103,11 +108,10 @@ function SimulatorHeroSection({ page, editable }: { page: any; editable?: any })
             </div>
           </div>
         </div>
-        <div className="relative">
-          <div className="absolute inset-0 scale-[0.96] rounded-[34px] bg-[linear-gradient(135deg,rgba(137,73,255,0.22)_0%,rgba(205,164,255,0.08)_100%)] blur-[16px]" />
-          <div className="relative overflow-hidden rounded-[32px] border border-[#ebe5f6] bg-[linear-gradient(135deg,#ffffff_0%,#f6f0ff_100%)] p-[14px] shadow-[0px_28px_70px_rgba(137,73,255,0.14)] md:rounded-[40px] md:p-[18px]">
+        <div className="relative hidden xl:block">
+          <div className="absolute inset-0 scale-[0.96] rounded-[34px] bg-[linear-gradient(135deg,rgba(255,255,255,0.15)_0%,rgba(255,255,255,0.05)_100%)] blur-[16px]" />
+          <div className="relative overflow-hidden rounded-[32px] border border-white/20 bg-white/10 p-[14px] shadow-[0px_28px_70px_rgba(8,8,19,0.3)] md:rounded-[40px] md:p-[18px]">
             <div className="relative overflow-hidden rounded-[24px] md:rounded-[30px]">
-              <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-[140px] bg-[linear-gradient(180deg,rgba(8,8,19,0.14)_0%,rgba(8,8,19,0)_100%)]" />
               <img
                 src={simulator.image}
                 alt={simulator.calculatorTitle || simulator.title}
@@ -120,13 +124,15 @@ function SimulatorHeroSection({ page, editable }: { page: any; editable?: any })
       </div>
     </section>
   );
-}function RequirementsBannerSection({ page, editable }: { page: any; editable?: any }) {
+}
+
+function RequirementsBannerSection({ page, editable }: { page: any; editable?: any }) {
   const section = page?.requirementsBanner;
   if (!section) return null;
 
   return (
-    <section className="overflow-hidden bg-[linear-gradient(135deg,#4f3bf9_0%,#8949ff_45%,#7a49ff_100%)] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[30px] xl:py-[80px]" data-tina-field={fieldFor(editable, "requirementsBanner")}>
-      <div className="mx-auto grid max-w-[1460px] grid-cols-1 gap-[24px] rounded-[32px] bg-[#0f172b] p-[24px] shadow-[0px_24px_60px_rgba(8,8,19,0.26)] md:p-[36px] lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center lg:gap-[28px] xl:grid-cols-[minmax(0,1fr)_520px] xl:gap-[32px] xl:rounded-[40px]">
+    <section className="overflow-hidden bg-[linear-gradient(135deg,#4f3bf9_0%,#8949ff_45%,#7a49ff_100%)] px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "requirementsBanner")}>
+      <div className="grid w-full grid-cols-1 gap-[24px] rounded-[32px] bg-[#0f172b] p-[24px] shadow-[0px_24px_60px_rgba(8,8,19,0.26)] md:p-[36px] lg:grid-cols-[minmax(0,1fr)_420px] lg:items-center lg:gap-[28px] xl:grid-cols-[minmax(0,1fr)_520px] xl:gap-[32px] xl:rounded-[40px]">
         <div>
           <h2 className="max-w-[420px] text-[30px] font-bold leading-[1.08] text-white md:text-[40px]" data-tina-field={fieldFor(editable?.requirementsBanner, "title")}>
             {section.title}
@@ -143,7 +149,7 @@ function SimulatorHeroSection({ page, editable }: { page: any; editable?: any })
           </div>
           <a
             href={section.button?.href || "#contacto-simulador"}
-            className="mt-[28px] inline-flex items-center justify-center rounded-full bg-[#fcc63d] px-[24px] py-[16px] text-[14px] font-bold uppercase tracking-[1.6px] text-[#080813] no-underline shadow-[0px_18px_30px_rgba(252,198,61,0.22)] md:px-[32px] md:text-[16px]"
+            className="mt-[28px] inline-flex w-full items-center justify-center rounded-full bg-[#fcc63d] px-[24px] py-[16px] text-[14px] font-bold uppercase tracking-[1.6px] text-[#080813] no-underline shadow-[0px_18px_30px_rgba(252,198,61,0.22)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] sm:w-auto md:px-[32px] md:text-[16px]"
             data-tina-field={fieldFor(editable?.requirementsBanner?.button, "label")}
           >
             {section.button?.label}
@@ -229,8 +235,8 @@ function CalculatorEmbedSection({ page, editable }: { page: any; editable?: any 
   if (!section?.src) return null;
 
   return (
-    <section className="bg-white xl:px-[30px]" data-tina-field={fieldFor(editable, "calculatorEmbed")}>
-      <div className="mx-auto max-w-[1460px] px-[20px] pb-[24px] pt-[56px] md:px-[40px] md:pb-[32px] md:pt-[80px] xl:px-[64px] xl:pt-[80px] 2xl:px-[80px]">
+    <section className="bg-white px-[20px] pt-[56px] pb-[24px] md:px-[40px] md:pt-[80px] md:pb-[32px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "calculatorEmbed")}>
+      <div className="w-full">
         {section.eyebrow ? (
           <p className="text-[13px] font-bold uppercase tracking-[1.4px] text-[#8949ff]" data-tina-field={fieldFor(editable?.calculatorEmbed, "eyebrow")}>
             {section.eyebrow}
@@ -242,7 +248,7 @@ function CalculatorEmbedSection({ page, editable }: { page: any; editable?: any 
         <p className="mt-[16px] max-w-[760px] text-[15px] leading-[1.2] text-[#4b5565] md:text-[17px]" data-tina-field={fieldFor(editable?.calculatorEmbed, "description")}>
           {section.description}
         </p>
-        <div className="mt-[28px] overflow-hidden rounded-[24px] border border-[#ebe5f6] bg-white shadow-[0px_22px_60px_rgba(8,8,19,0.08)] md:rounded-[32px]">
+        <div className="mt-[28px] w-full overflow-hidden">
           <iframe
             ref={iframeRef}
             src={section.src}
@@ -262,18 +268,22 @@ function MetricsSection({ page, editable }: { page: any; editable?: any }) {
   if (!metrics?.items?.length) return null;
 
   return (
-    <section className="bg-white" data-tina-field={fieldFor(editable, "metrics")}>
-      <div className="mx-auto max-w-[1460px] rounded-[32px] bg-[#12192d] px-[24px] py-[24px] mx-[20px] mb-[56px] md:mx-[40px] md:mb-[80px] md:px-[60px] md:py-[32px] xl:mx-[30px] xl:mb-[80px]">
-        <div className="grid grid-cols-1 gap-[20px] md:grid-cols-3 md:gap-[40px]">
+    <section className="bg-white px-[20px] pb-[56px] md:px-[40px] md:pb-[80px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "metrics")}>
+      <div className="w-full rounded-[32px] bg-[#12192d] px-[24px] py-[24px] md:px-[60px] md:py-[32px]">
+        <div className="flex flex-col md:flex-row md:items-stretch">
           {(metrics.items || []).map((item: any, index: number) => (
-            <div
-              key={`${item.title}-${index}`}
-              className={index < metrics.items.length - 1 ? "border-b border-[#744c98] pb-[20px] md:border-b-0 md:border-r md:pb-0 md:pr-[40px]" : ""}
-              data-tina-field={fieldFor(editable?.metrics?.items?.[index], "value")}
-            >
-              <p className="text-[42px] font-normal leading-none text-[#c993ff] md:text-[56px]">{item.value}</p>
-              <p className="mt-[10px] text-[18px] font-bold leading-[1.2] text-white md:text-[22px]">{item.title}</p>
-            </div>
+            <React.Fragment key={`${item.title}-${index}`}>
+              {index > 0 && (
+                <div className="h-px w-full shrink-0 md:h-auto md:w-px md:self-stretch" style={{ backgroundColor: '#744c98' }} aria-hidden="true" />
+              )}
+              <div
+                className={`flex-1 py-[20px] md:py-0 ${index === 0 ? 'md:pr-[40px]' : index === metrics.items.length - 1 ? 'md:pl-[40px]' : 'md:px-[40px]'}`}
+                data-tina-field={fieldFor(editable?.metrics?.items?.[index], "value")}
+              >
+                <p className="text-[42px] font-normal leading-none text-[#c993ff] md:text-[56px]">{item.value}</p>
+                <p className="mt-[10px] text-[18px] font-bold leading-[1.2] text-white md:text-[22px]">{item.title}</p>
+              </div>
+            </React.Fragment>
           ))}
         </div>
       </div>
@@ -291,17 +301,17 @@ function SimulatorContactSection({ page, editable }: { page: any; editable?: any
   return (
     <section
       id="contacto-simulador"
-      className="relative overflow-hidden xl:px-[30px]"
+      className="relative overflow-hidden px-[20px] py-[56px] md:px-[40px] md:py-[80px] xl:px-[160px] 2xl:px-[160px]"
       style={{ backgroundColor }}
       data-tina-field={fieldFor(editable, "contact")}
     >
       <div className="pointer-events-none absolute inset-x-0 bottom-[-120px] mx-auto h-[320px] max-w-[980px] rounded-full bg-[rgba(137,73,255,0.26)] blur-[110px]" />
-      <div className="relative mx-auto grid max-w-[1460px] grid-cols-1 gap-[32px] px-[20px] py-[40px] md:px-[40px] md:py-[56px] lg:grid-cols-[1fr_798px] lg:items-center xl:px-[64px] xl:py-[56px] 2xl:px-[80px]">
+      <div className="relative grid w-full grid-cols-1 gap-[32px] lg:grid-cols-[1fr_798px] lg:items-center">
         <div>
           <h2 className="text-[28px] font-bold leading-[1.1] text-white md:text-[40px]" data-tina-field={fieldFor(editable?.contact, "title")}>
             {contact.title}
           </h2>
-          <p className="mt-[20px] max-w-[560px] text-[15px] leading-[1.15] text-white/85" data-tina-field={fieldFor(editable?.contact, "description")}>
+          <p className="mt-[20px] text-[15px] leading-[1.15] text-white/85" data-tina-field={fieldFor(editable?.contact, "description")}>
             {contact.description}
           </p>
           <div className="mt-[24px] space-y-[16px]" data-tina-field={fieldFor(editable?.contact, "highlights")}>
@@ -322,9 +332,11 @@ function SimulatorContactSection({ page, editable }: { page: any; editable?: any
                 </p>
               ) : null}
               {contact.scheduleText ? (
-                <p className="mt-[6px] whitespace-pre-line text-[15px] leading-[1.3] text-white" data-tina-field={fieldFor(editable?.contact, "scheduleText")}>
-                  {contact.scheduleText}
-                </p>
+                <div className="mt-[6px] space-y-[4px]" data-tina-field={fieldFor(editable?.contact, "scheduleText")}>
+                  {(contact.scheduleText || "").split("\n").filter((line: string) => line.trim()).map((line: string, idx: number) => (
+                    <p key={idx} className="text-[15px] leading-[1.3] text-white">{line.trim()}</p>
+                  ))}
+                </div>
               ) : null}
             </div>
           ) : null}
@@ -380,7 +392,7 @@ function SimulatorContactSection({ page, editable }: { page: any; editable?: any
               <input type="checkbox" className="h-[24px] w-[24px] rounded-[4px] border border-[#9d9ba8] bg-[#ecddee]" />
               <span className="text-[12px] font-bold text-[#f2e8ff]">{contact.form?.terms_label}</span>
             </label>
-            <button type="button" className="inline-flex items-center justify-center rounded-full bg-[#fcc63d] px-[40px] py-[19px] text-[18px] font-bold uppercase tracking-[1.8px] text-[#0f172b]" data-tina-field={fieldFor(editable?.contact?.form, "submit_label")}>
+            <button type="button" className="inline-flex w-full items-center justify-center rounded-full bg-[#fcc63d] px-[40px] py-[19px] text-[18px] font-bold uppercase tracking-[1.8px] text-[#0f172b] shadow-[0px_25px_50px_0px_rgba(252,198,61,0.3)] transition-all duration-300 hover:bg-[#ffe07e] hover:-translate-y-[2px] md:w-auto" data-tina-field={fieldFor(editable?.contact?.form, "submit_label")}>
               {contact.form?.submit_label}
             </button>
           </div>
@@ -407,7 +419,7 @@ export default function ReactSimulatorPage({
 
   return (
     <div className="bg-white">
-      <FloatingWhatsApp href={page?.contact ? "#contacto-simulador" : "#"} />
+      <FloatingWhatsApp />
       <SimulatorHeroSection page={page} editable={editable} />
       <CalculatorEmbedSection page={page} editable={editable} />
       <RequirementsBannerSection page={page} editable={editable} />
@@ -421,4 +433,3 @@ export default function ReactSimulatorPage({
     </div>
   );
 }
-

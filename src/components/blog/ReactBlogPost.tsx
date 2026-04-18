@@ -6,6 +6,7 @@ interface BlogPostProps {
   category: string;
   publishedAt: string;
   excerpt: string;
+  image?: string;
   children: React.ReactNode;
   relatedPosts?: Array<{
     slug: string;
@@ -64,6 +65,7 @@ export const ReactBlogPost: React.FC<BlogPostProps> = ({
   category,
   publishedAt,
   excerpt,
+  image,
   children,
   relatedPosts = [],
 }) => {
@@ -82,60 +84,59 @@ export const ReactBlogPost: React.FC<BlogPostProps> = ({
 
   return (
     <div style={{ backgroundColor: '#f1f2f4', minHeight: '100vh' }}>
+      <a href="https://wa.link/rmtjml" target="_blank" rel="noopener noreferrer" className="fixed bottom-[24px] right-[24px] z-40 inline-flex items-center gap-[8px] rounded-full bg-[#25d366] px-[20px] py-[12px] text-[15px] font-bold text-white no-underline shadow-[0px_8px_24px_rgba(37,211,102,0.4)] transition-all duration-300 hover:-translate-y-[2px]">
+        <svg viewBox="0 0 24 24" fill="none" className="h-[18px] w-[18px]" aria-hidden="true"><path d="M12 21C16.97 21 21 16.97 21 12C21 7.03 16.97 3 12 3C7.03 3 3 7.03 3 12C3 13.66 3.45 15.22 4.23 16.56L3 21L7.58 19.8C8.9 20.58 10.4 21 12 21Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M9 8.8C9 12.07 11.74 14.8 15 14.8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /><path d="M14.2 11.4L15.9 10.9" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+        WhatsApp
+      </a>
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <header
-        className="relative pt-32 pb-20 overflow-hidden"
-        style={{
-          background: `radial-gradient(circle at top left, rgba(137,72,255,0.12), transparent 30%), radial-gradient(circle at top right, rgba(137,72,255,0.07), transparent 25%), ${BRAND_DARK}`,
-        }}
-      >
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.07]"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-          }}
-        />
+      <header className="relative overflow-hidden bg-[#7c42f3] px-[20px] pt-[120px] pb-[56px] md:px-[40px] md:pt-[140px] md:pb-[72px] xl:px-[160px] 2xl:px-[160px]">
+        <img src="/images/about-hero-texture.png" alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_18%,rgba(255,255,255,0.06),transparent_28%),radial-gradient(circle_at_24%_112%,rgba(8,8,19,0.42),transparent_34%)]" />
+        <img src="/images/about-hero-outline.svg" alt="" className="pointer-events-none absolute bottom-[-232px] right-[-300px] hidden w-[900px] max-w-none opacity-80 lg:block xl:bottom-[-280px] xl:right-[-220px] xl:w-[1040px]" />
 
-        <div className="mx-auto max-w-[900px] px-5 md:px-10 relative z-10">
+        <div className="relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center gap-4 mb-6">
-              <span
-                className="px-4 py-1.5 text-xs font-bold tracking-widest uppercase rounded-full"
-                style={{ backgroundColor: `${BRAND_PURPLE}20`, color: BRAND_PURPLE }}
-              >
-                {categoryLabel[category] ?? category}
-              </span>
-              <span className="text-white/40 text-sm">{publishedAt}</span>
+            <div className="flex items-center gap-[12px] mb-[20px]">
+              <div className="inline-flex items-center gap-[10px] rounded-full border border-[#c993ff] bg-white/10 px-[16px] py-[8px]">
+                <span className="h-[8px] w-[8px] rounded-full bg-[#fcc63d]" />
+                <span className="text-[12px] font-bold text-[#fcc63d] uppercase tracking-[0.18em]">
+                  {categoryLabel[category] ?? category}
+                </span>
+              </div>
+              <span className="text-white/50 text-[13px]">{publishedAt}</span>
             </div>
 
-            <h1
-              className="text-4xl md:text-6xl font-bold text-white leading-tight mb-8"
-              style={{ fontFamily: 'Inter, sans-serif', lineHeight: 1.08 }}
-            >
+            <h1 className="text-[32px] md:text-[52px] font-bold text-white leading-[1.08] mb-[20px] max-w-[820px]">
               {title}
             </h1>
 
-            <p className="text-xl text-white/60 leading-relaxed max-w-2xl">
+            <p className="text-[16px] md:text-[18px] text-white/70 leading-[1.5] max-w-[680px]">
               {excerpt}
             </p>
 
-            {/* Reading time estimate */}
-            <p className="mt-6 text-sm text-white/30">
-              ⏱ Lectura: ~6 min · Categoría: {categoryLabel[category] ?? category}
+            <p className="mt-[16px] text-[13px] text-white/35">
+              Lectura: ~6 min · {categoryLabel[category] ?? category}
             </p>
           </motion.div>
         </div>
+
+        {image && (
+          <div className="relative z-10 mt-[48px] w-full overflow-hidden rounded-[24px] shadow-[0_24px_64px_rgba(0,0,0,0.3)]">
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-[260px] md:h-[420px] xl:h-[520px] object-cover"
+            />
+          </div>
+        )}
       </header>
 
       {/* ── MAIN GRID ────────────────────────────────────────────────── */}
-      <div className="mx-auto max-w-[1460px] px-5 md:px-10 xl:px-16 2xl:px-20 py-16">
+      <div className="px-[20px] py-[56px] md:px-[40px] md:py-[72px] xl:px-[160px] 2xl:px-[160px]">
         <div className="grid grid-cols-1 lg:grid-cols-[220px_1fr_220px] gap-12 xl:gap-16">
 
           {/* LEFT SIDEBAR — Sticky TOC */}
@@ -281,13 +282,27 @@ export const ReactBlogPost: React.FC<BlogPostProps> = ({
                 </p>
                 <div className="flex flex-col gap-3">
                   {[
-                    { label: 'LinkedIn', icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z', href: '#' },
-                    { label: 'Twitter/X', icon: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z', href: '#' },
-                    { label: 'WhatsApp', icon: 'M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z', href: '#' },
+                    {
+                      label: 'LinkedIn',
+                      icon: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z',
+                      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`,
+                    },
+                    {
+                      label: 'Twitter/X',
+                      icon: 'M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z',
+                      href: `https://twitter.com/intent/tweet?url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&text=${encodeURIComponent(title)}`,
+                    },
+                    {
+                      label: 'WhatsApp',
+                      icon: 'M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z',
+                      href: `https://wa.me/?text=${encodeURIComponent(`${title} — ${typeof window !== 'undefined' ? window.location.href : ''}`)}`,
+                    },
                   ].map(({ label, icon, href }) => (
                     <a
                       key={label}
                       href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-3 text-sm font-medium transition-all group"
                       style={{ color: `${BRAND_INK}60` }}
                       aria-label={`Compartir en ${label}`}
@@ -316,7 +331,7 @@ export const ReactBlogPost: React.FC<BlogPostProps> = ({
           className="py-20 border-t"
           style={{ backgroundColor: '#ffffff', borderColor: `${BRAND_INK}08` }}
         >
-          <div className="mx-auto max-w-[1460px] px-5 md:px-10 xl:px-16 2xl:px-20">
+          <div className="px-[20px] md:px-[40px] xl:px-[160px] 2xl:px-[160px]">
             <h2 className="text-3xl font-bold mb-12" style={{ color: BRAND_INK, fontFamily: 'Inter, sans-serif' }}>
               Sigue leyendo
             </h2>

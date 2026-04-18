@@ -29,13 +29,14 @@ const { Content } = await render(entry);
   path={`/${lang}/nueva-reclamacion/`}
   alternates={buildLanguageAlternates("/nueva-reclamacion/")}
 >
-  <div class="bg-[#f1f2f4]">
+  <div class="bg-[#f9f6f3]">
     <ReactLegalPage title={entry.data.title} client:idle>
       <Content />
     </ReactLegalPage>
-    <!-- Form is outside the content prose area for correct full-width rendering -->
-    <div class="mx-auto max-w-[900px] px-5 md:px-10 pb-24">
-      <ReactFormReclamacion client:idle />
+    <div class="px-[20px] pb-[80px] md:px-[40px] xl:px-[160px] 2xl:px-[160px]">
+      <div class="w-full rounded-[32px] bg-white px-[28px] py-[40px] md:px-[56px] md:py-[64px] shadow-[0_18px_60px_rgba(16,24,40,0.07)]">
+        <ReactFormReclamacion client:idle />
+      </div>
     </div>
   </div>
 </BaseLayout>

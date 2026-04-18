@@ -35,7 +35,7 @@
       font-family:var(--ef-font-body);
     }
 
-    .wrap{max-width:1260px;margin:0 auto;padding:24px 20px 64px;}
+    .wrap{max-width:none;margin:0;padding:32px 24px 56px;}
     header{text-align:center;margin:0 0 20px;display:none;}
 
     .tabs{
@@ -69,10 +69,10 @@
     .panel{
       display:none;
       background:#ffffff;
-      border:1px solid var(--ef-border);
-      border-radius:var(--ef-radius);
-      box-shadow:var(--ef-card-shadow);
-      padding:30px 22px;
+      border:none;
+      border-radius:0;
+      box-shadow:none;
+      padding:0;
     }
     .panel.active{ display:block; }
 
@@ -90,9 +90,9 @@
 
     .card{
       background:linear-gradient(145deg,#f8f4ff 0%,#ede4ff 100%);
-      border:1px solid var(--ef-border);
+      border:none;
       border-radius:var(--ef-radius);
-      box-shadow:var(--ef-card-shadow);
+      box-shadow:none;
       padding:26px 22px;
     }
     .card h2{
@@ -144,17 +144,17 @@
     }
 
     .help{
-      width:28px;
-      height:28px;
+      width:26px;
+      height:26px;
       border-radius:50%;
       display:grid;
       place-items:center;
       background:var(--ef-purple-deep);
       color:#fff;
       font-weight:900;
-      font-size:15px;
+      font-size:13px;
       cursor:help;
-      flex:0 0 28px;
+      flex:0 0 26px;
       user-select:none;
     }
 
@@ -164,7 +164,7 @@
       align-items:center;
     }
     .inline > *{ flex:1; }
-    .inline .help{ flex:0 0 28px; }
+    .inline .help{ flex:0 0 26px; }
 
     .check{
       display:flex;
@@ -216,13 +216,13 @@
       flex-wrap:wrap;
     }
     .bigResult{
-      background:#ffffff;
-      border:1px solid var(--ef-border);
+      background:var(--ef-surface);
+      border:none;
       border-radius:var(--ef-radius);
-      box-shadow:var(--ef-card-shadow);
+      box-shadow:none;
       padding:24px 20px;
-      min-width:min(520px,100%);
-      flex:1 1 520px;
+      min-width:0;
+      flex:1 1 auto;
     }
     .bigResult .title{
       text-align:center;
@@ -419,14 +419,32 @@
       color:var(--ef-purple-deep);
     }
 
+    .tipbox{
+      position:fixed;
+      z-index:9999;
+      max-width:260px;
+      background:#1a0a3c;
+      color:#fff;
+      font-size:12px;
+      line-height:1.45;
+      padding:9px 13px;
+      border-radius:10px;
+      pointer-events:none;
+      opacity:0;
+      transition:opacity .15s ease;
+      box-shadow:0 8px 28px rgba(0,0,0,.28);
+    }
+    .tipbox.show{ opacity:1; }
+
     @media (max-width: 768px){
-      .wrap{ padding:32px 16px 56px; }
-      .panel{ padding:24px 16px; }
-      .card{ padding:22px 18px; }
-      .bigResult{ padding:22px 18px; min-width:100%; }
+      .wrap{ padding:20px 16px 40px; }
+      .card{ padding:20px 16px; }
+      .bigResult{ padding:20px 16px; }
+      .row{ grid-template-columns:1fr; }
       .tab-btn{ width:100%; justify-content:center; }
       .btns{ justify-content:stretch; }
       .btns .btn{ flex:1 1 0; }
+      .help{ width:20px; height:20px; font-size:11px; flex:0 0 20px; }
     }
   </style>
 </head>
@@ -939,6 +957,7 @@
     </section>
 
   </div>
+  <div class="tipbox" id="tipbox" role="tooltip" aria-live="polite"></div>
 
   <script>
     /******************************************************************
@@ -1131,8 +1150,7 @@
       outDti: document.getElementById("v_out_dti"),
       outMsg: document.getElementById("v_out_msg"),
       outExtra: document.getElementById("v_out_extra"),
-      cta1: document.getElementById("v_cta1"),
-      cta2: document.getElementById("v_cta2")
+      cta1: document.getElementById("v_cta1")
     };
 
     function calcViabilidad(){
@@ -1705,6 +1723,58 @@ Un saludo.`
     });
 
     scheduleHeightReport();
+
+    /******************************************************************
+     * Tooltip para botones "i"
+     ******************************************************************/
+    const tipbox = document.getElementById("tipbox");
+    let tipAnchor = null;
+
+    function positionTip(el){
+      const rect = el.getBoundingClientRect();
+      const tipW = Math.min(260, window.innerWidth - 24);
+      tipbox.style.maxWidth = tipW + "px";
+      tipbox.classList.add("show");
+      const tipH = tipbox.offsetHeight;
+
+      let left = rect.left + rect.width / 2 - tipW / 2;
+      left = Math.max(12, Math.min(window.innerWidth - tipW - 12, left));
+
+      const top = rect.top > tipH + 16
+        ? rect.top - tipH - 8
+        : rect.bottom + 8;
+
+      tipbox.style.left = left + "px";
+      tipbox.style.top = top + "px";
+    }
+
+    function showTip(el){
+      tipbox.textContent = el.dataset.tip;
+      tipAnchor = el;
+      positionTip(el);
+    }
+
+    function hideTip(){
+      tipbox.classList.remove("show");
+      tipAnchor = null;
+    }
+
+    document.querySelectorAll(".help").forEach(el => {
+      const text = el.getAttribute("title") || "";
+      if(!text) return;
+      el.setAttribute("data-tip", text);
+      el.removeAttribute("title");
+
+      el.addEventListener("mouseenter", () => showTip(el));
+      el.addEventListener("mouseleave", hideTip);
+      el.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if(tipAnchor === el){ hideTip(); } else { showTip(el); }
+      });
+    });
+
+    document.addEventListener("click", hideTip);
+    window.addEventListener("scroll", hideTip, true);
   </script>
 </body>
 </html>
