@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   return entries.map((entry) => ({
     params: {
       lang: entry.data.lang,
-      slug: entry.slug
+      slug: entry.id
     },
     props: {
       entry
@@ -27,7 +27,7 @@ const { Content } = await render(entry);
 // Related posts logic
 const allNews = await getCollection("news", ({ data }) => data.lang === lang && data.title !== entry.data.title);
 const relatedPosts = allNews.slice(0, 3).map(p => ({
-  slug: p.slug,
+  slug: p.id,
   title: p.data.title,
   excerpt: p.data.excerpt,
   lang: p.data.lang,
@@ -37,15 +37,15 @@ const relatedPosts = allNews.slice(0, 3).map(p => ({
 const alternates = [
   {
     hreflang: lang === "es" ? "es-ES" : "en",
-    href: absoluteUrl(`/${lang}/news/${entry.slug}/`)
+    href: absoluteUrl(`/${lang}/news/${entry.id}/`)
   },
   {
     hreflang: "x-default",
-    href: absoluteUrl(`/${lang}/news/${entry.slug}/`)
+    href: absoluteUrl(`/${lang}/news/${entry.id}/`)
   }
 ];
 
-const articleUrl = absoluteUrl(`/${lang}/news/${entry.slug}/`);
+const articleUrl = absoluteUrl(`/${lang}/news/${entry.id}/`);
 const articleImage = entry.data.image
   ? (entry.data.image.startsWith("http") ? entry.data.image : absoluteUrl(entry.data.image))
   : absoluteUrl("/images/og-default.svg");
@@ -84,7 +84,7 @@ const articleSchema = {
   lang={lang}
   title={entry.data.seo.title}
   description={entry.data.seo.description}
-  path={`/${lang}/news/${entry.slug}/`}
+  path={`/${lang}/news/${entry.id}/`}
   alternates={alternates}
   ogType="article"
   image={entry.data.image}
@@ -112,7 +112,7 @@ const articleSchema = {
         "@type": "ListItem",
         "position": 3,
         "name": entry.data.title,
-        "item": absoluteUrl(`/${lang}/news/${entry.slug}/`)
+        "item": absoluteUrl(`/${lang}/news/${entry.id}/`)
       }
     ]
   })} />

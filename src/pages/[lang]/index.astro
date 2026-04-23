@@ -21,7 +21,7 @@ const latestNews = latestNewsEntries.map((entry) => ({
   title: entry.data.title,
   description: entry.data.excerpt,
   image: entry.data.image || null,
-  href: `/${lang}/news/${entry.slug}/`
+  href: `/${lang}/news/${entry.id}/`
 }));
 
 const entry = await getEntry("pages", `home-${lang}`);

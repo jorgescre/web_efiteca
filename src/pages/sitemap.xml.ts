@@ -27,7 +27,7 @@ export const GET: APIRoute = async () => {
       market.languages.map((lang) => absoluteUrl(`/${lang}/${market.slug}/`))
     ),
     ...newsEntries.map((entry: CollectionEntry<"news">) =>
-      absoluteUrl(`/${entry.data.lang}/news/${entry.slug}/`)
+      absoluteUrl(`/${entry.data.lang}/news/${entry.id}/`)
     )
   ];
 
