@@ -225,30 +225,30 @@ const pages = defineCollection({
       }))
     }).optional(),
     metrics: z.object({
+      title: z.string(),
+      items: z.array(z.object({
         title: z.string(),
-        items: z.array(z.object({
-            title: z.string(),
-            value: z.string(),
-        }))
+        value: z.string(),
+      }))
     }).optional(),
     guides: z.object({
       title: z.string(),
       items: z.array(z.object({
         title: z.string(),
         cta: buttonSchema
-        }))
+      }))
     }).optional(),
     testimonials: z.object({
-        title: z.string(),
-        backgroundColor: z.string().optional(),
-        description: z.string(),
-        items: z.array(z.object({
-            name: z.string(),
-            role: z.string(),
-            text: z.string(),
-            image: z.string(),
-            stars: z.number().default(5)
-        }))
+      title: z.string(),
+      backgroundColor: z.string().optional(),
+      description: z.string(),
+      items: z.array(z.object({
+        name: z.string(),
+        role: z.string(),
+        text: z.string(),
+        image: z.string(),
+        stars: z.number().default(5)
+      }))
     }).optional(),
     certifications: z.object({
       title: z.string(),
@@ -278,14 +278,14 @@ const pages = defineCollection({
       badgeText: z.string(),
       button: buttonSchema
     }).optional(),
-      partners: z.object({
-        title: z.string(),
-        description: z.string(),
-        items: z.array(z.object({
-            name: z.string(),
-            image: z.string().optional()
-        }))
-      }).optional(),
+    partners: z.object({
+      title: z.string(),
+      description: z.string(),
+      items: z.array(z.object({
+        name: z.string(),
+        image: z.string().optional()
+      }))
+    }).optional(),
     faq: z.object({
       title: z.string(),
       items: z.array(z.object({
