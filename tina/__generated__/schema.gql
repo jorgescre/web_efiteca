@@ -255,7 +255,6 @@ type PagesCalculatorEmbed {
   eyebrow: String
   title: String
   description: String
-  src: String
 }
 
 type PagesWhoIsItForItems {
@@ -822,7 +821,6 @@ input PagesCalculatorEmbedFilter {
   eyebrow: StringFilter
   title: StringFilter
   description: StringFilter
-  src: StringFilter
 }
 
 input PagesWhoIsItForItemsFilter {
@@ -1507,7 +1505,6 @@ input PagesCalculatorEmbedMutation {
   eyebrow: String
   title: String
   description: String
-  src: String
 }
 
 input PagesWhoIsItForItemsMutation {

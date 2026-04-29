@@ -155,7 +155,6 @@ fragment PagesParts on Pages {
     eyebrow
     title
     description
-    src
   }
   whoIsItFor {
     __typename

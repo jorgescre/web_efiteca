@@ -283,8 +283,7 @@ var config_default = defineConfig({
             fields: [
               { type: "string", name: "eyebrow", label: "Eyebrow" },
               { type: "string", name: "title", label: "Title" },
-              { type: "string", name: "description", label: "Description", ui: { component: "textarea" } },
-              { type: "string", name: "src", label: "Source URL" }
+              { type: "string", name: "description", label: "Description", ui: { component: "textarea" } }
             ]
           },
           {

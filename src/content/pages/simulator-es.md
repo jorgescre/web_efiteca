@@ -171,7 +171,6 @@ calculatorEmbed:
 
 
 
-  src: /tools/efiteca-calculadora.html
 
 
 

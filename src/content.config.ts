@@ -158,8 +158,7 @@ const pages = defineCollection({
     calculatorEmbed: z.object({
       eyebrow: z.string().optional(),
       title: z.string(),
-      description: z.string(),
-      src: z.string()
+      description: z.string()
     }).optional(),
     whoIsItFor: z.object({
       title: z.string(),

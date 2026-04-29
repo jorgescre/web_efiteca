@@ -46,7 +46,6 @@ calculatorEmbed:
   eyebrow: Efiteca calculators
   title: Check viability, costs and compare mortgages
   description: "Use the full tool to explore affordability, estimate buying costs and compare mortgage scenarios before speaking with an expert."
-  src: /tools/efiteca-calculadora.html
 testimonials:
   title: Testimonials
   backgroundColor: "#ffffff"

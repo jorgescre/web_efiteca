@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { tinaField, useTina } from "tinacms/dist/react";
 import { LocationsShowcaseSection } from "@/components/shared/LocationsShowcase";
 import { FaqSection, Frame60 } from "@/components/home/ReactHome";
 import { TestimonialsMetricsSection } from "@/components/solutions/ReactSolutionsPage";
+import CalculatorTabs from "@/components/simulator/calculator/CalculatorTabs";
 
 const WHATSAPP_URL = "https://wa.link/rmtjml";
 
@@ -174,93 +175,12 @@ function RequirementsBannerSection({ page, editable }: { page: any; editable?: a
 
 function CalculatorEmbedSection({ page, editable }: { page: any; editable?: any }) {
   const section = page?.calculatorEmbed;
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
-  const [height, setHeight] = useState(980);
-
-  useEffect(() => {
-    const iframe = iframeRef.current;
-    if (!iframe) return;
-
-    let resizeObserver: ResizeObserver | null = null;
-    let fallbackTimer: number | null = null;
-
-    const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== window.location.origin) return;
-      if (event.source !== iframe.contentWindow) return;
-      if (event.data?.type !== "efiteca-calculator-height") return;
-
-      const nextHeight = Number(event.data.height);
-      if (Number.isFinite(nextHeight) && nextHeight > 0) {
-        setHeight((prev) => Math.abs(prev - (nextHeight + 8)) > 15 ? nextHeight + 8 : prev);
-      }
-    };
-
-    const updateHeight = () => {
-      try {
-        const doc = iframe.contentDocument;
-        if (!doc) return;
-        const nextHeight = Math.max(
-          doc.body?.scrollHeight || 0,
-          doc.documentElement?.scrollHeight || 0,
-          760
-        );
-        setHeight((prev) => Math.abs(prev - (nextHeight + 8)) > 15 ? nextHeight + 8 : prev);
-      } catch {
-        return;
-      }
-    };
-
-    const handleLoad = () => {
-      updateHeight();
-      try {
-        const doc = iframe.contentDocument;
-        if (!doc) return;
-        resizeObserver = new ResizeObserver(() => updateHeight());
-        resizeObserver.observe(doc.body);
-        resizeObserver.observe(doc.documentElement);
-        fallbackTimer = window.setInterval(updateHeight, 500);
-      } catch {
-        return;
-      }
-    };
-
-    iframe.addEventListener("load", handleLoad);
-    window.addEventListener("message", handleMessage);
-
-    return () => {
-      iframe.removeEventListener("load", handleLoad);
-      window.removeEventListener("message", handleMessage);
-      if (resizeObserver) resizeObserver.disconnect();
-      if (fallbackTimer) window.clearInterval(fallbackTimer);
-    };
-  }, [section?.src]);
-
-  if (!section?.src) return null;
+  if (!section) return null;
 
   return (
     <section className="bg-white px-[20px] pt-[56px] pb-[24px] md:px-[40px] md:pt-[80px] md:pb-[32px] xl:px-[160px] 2xl:px-[160px]" data-tina-field={fieldFor(editable, "calculatorEmbed")}>
       <div className="w-full">
-        {section.eyebrow ? (
-          <p className="text-[13px] font-bold uppercase tracking-[1.4px] text-[#8949ff]" data-tina-field={fieldFor(editable?.calculatorEmbed, "eyebrow")}>
-            {section.eyebrow}
-          </p>
-        ) : null}
-        <h2 className="mt-[10px] max-w-[920px] text-[30px] font-bold leading-[1.06] text-[#080813] md:text-[48px]" data-tina-field={fieldFor(editable?.calculatorEmbed, "title")}>
-          {section.title}
-        </h2>
-        <p className="mt-[16px] max-w-[760px] text-[15px] leading-[1.2] text-[#4b5565] md:text-[17px]" data-tina-field={fieldFor(editable?.calculatorEmbed, "description")}>
-          {section.description}
-        </p>
-        <div className="mt-[28px] w-full overflow-hidden">
-          <iframe
-            ref={iframeRef}
-            src={section.src}
-            title={section.title}
-            className="block w-full border-0"
-            style={{ height: `${height}px` }}
-            data-tina-field={fieldFor(editable?.calculatorEmbed, "src")}
-          />
-        </div>
+        <CalculatorTabs content={section} />
       </div>
     </section>
   );
