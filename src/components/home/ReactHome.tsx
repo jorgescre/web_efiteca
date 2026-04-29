@@ -12,6 +12,8 @@ import useEmblaCarousel from 'embla-carousel-react';
 
 import * as Accordion from '@radix-ui/react-accordion';
 
+import { ArrowRight as LucideArrowRight } from 'lucide-react';
+
 
 
 import { tinaField, useTina } from 'tinacms/dist/react';
@@ -798,11 +800,11 @@ function Container() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-current text-[24px] text-center transition-colors duration-300">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-current text-[24px] text-center transition-colors duration-300">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -942,11 +944,11 @@ function Container1() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-current text-[24px] text-center transition-colors duration-300">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-current text-[24px] text-center transition-colors duration-300">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -1094,11 +1096,11 @@ function Container2() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-current text-[24px] text-center transition-colors duration-300">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-current text-[24px] text-center transition-colors duration-300">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -1246,11 +1248,11 @@ function Container3() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-current text-[24px] text-center transition-colors duration-300">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-current text-[24px] text-center transition-colors duration-300">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -9453,11 +9455,11 @@ function Container39() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -9517,11 +9519,11 @@ function Container40() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -9581,11 +9583,11 @@ function Container41() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -10673,11 +10675,11 @@ function Container42() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -10833,11 +10835,11 @@ function Container43() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -10993,11 +10995,11 @@ function Container44() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -11153,11 +11155,11 @@ function Container45() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -12557,11 +12559,11 @@ function Container47() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -12757,11 +12759,11 @@ function Container48() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -12957,11 +12959,11 @@ function Container49() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -13157,11 +13159,11 @@ function Container50() {
 
 
 
-      <div className="flex flex-col material-icons justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
+      <div className="flex flex-col justify-center leading-[0] not-italic relative shrink-0 size-[24px] text-[#8949ff] text-[24px] text-center">
 
 
 
-        <p className="leading-[24px]">arrow_forward</p>
+        <LucideArrowRight aria-hidden="true" className="size-[24px]" strokeWidth={2.25} />
 
 
 
@@ -17164,6 +17166,5 @@ export function FigmaFooter() {
 
 
 }
-
 
 

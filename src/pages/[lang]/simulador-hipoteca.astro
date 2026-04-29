@@ -167,22 +167,26 @@ if (import.meta.env.DEV) {
   const variables = {
     relativePath: `simulator-${lang}.md`
   };
-  const response = await fetch("http://localhost:4001/graphql", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({ query, variables })
-  });
-  const result = await response.json();
+  try {
+    const response = await fetch("http://localhost:4001/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ query, variables })
+    });
+    const result = await response.json();
 
-  if (result?.data?.pages) {
-    content = result.data.pages;
-    tinaProps = {
-      query,
-      variables,
-      data: result.data
-    };
+    if (result?.data?.pages) {
+      content = result.data.pages;
+      tinaProps = {
+        query,
+        variables,
+        data: result.data
+      };
+    }
+  } catch (error) {
+    console.warn("[tina] GraphQL dev server not available, using local Astro content.", error);
   }
 }
 

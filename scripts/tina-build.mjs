@@ -1,4 +1,7 @@
 import { spawnSync } from "node:child_process";
+import { loadTinaEnv } from "./tina-env.mjs";
+
+loadTinaEnv();
 
 const hasCloudCredentials = Boolean(process.env.TINA_CLIENT_ID && process.env.TINA_TOKEN);
 
@@ -8,8 +11,7 @@ if (!hasCloudCredentials) {
 }
 
 const result = spawnSync("npx", ["tinacms", "build"], {
-  stdio: "inherit",
-  shell: true
+  stdio: "inherit"
 });
 
 process.exit(result.status ?? 1);
